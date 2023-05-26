@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="Streams" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/asyncio-stream.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>Streams &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streams &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,41 +52,83 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Streams</a><ul>
-<li><a class="reference internal" href="#streamreader">StreamReader</a></li>
-<li><a class="reference internal" href="#streamwriter">StreamWriter</a></li>
+<li><a class="reference internal" href="#asyncio.open_connection"><code class="docutils literal notranslate"><span class="pre">open_connection()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.start_server"><code class="docutils literal notranslate"><span class="pre">start_server()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.open_unix_connection"><code class="docutils literal notranslate"><span class="pre">open_unix_connection()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.start_unix_server"><code class="docutils literal notranslate"><span class="pre">start_unix_server()</span></code></a></li>
+<li><a class="reference internal" href="#streamreader">StreamReader</a><ul>
+<li><a class="reference internal" href="#asyncio.StreamReader"><code class="docutils literal notranslate"><span class="pre">StreamReader</span></code></a><ul>
+<li><a class="reference internal" href="#asyncio.StreamReader.read"><code class="docutils literal notranslate"><span class="pre">StreamReader.read()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamReader.readline"><code class="docutils literal notranslate"><span class="pre">StreamReader.readline()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamReader.readexactly"><code class="docutils literal notranslate"><span class="pre">StreamReader.readexactly()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamReader.readuntil"><code class="docutils literal notranslate"><span class="pre">StreamReader.readuntil()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamReader.at_eof"><code class="docutils literal notranslate"><span class="pre">StreamReader.at_eof()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#streamwriter">StreamWriter</a><ul>
+<li><a class="reference internal" href="#asyncio.StreamWriter"><code class="docutils literal notranslate"><span class="pre">StreamWriter</span></code></a><ul>
+<li><a class="reference internal" href="#asyncio.StreamWriter.write"><code class="docutils literal notranslate"><span class="pre">StreamWriter.write()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.writelines"><code class="docutils literal notranslate"><span class="pre">StreamWriter.writelines()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.close"><code class="docutils literal notranslate"><span class="pre">StreamWriter.close()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.can_write_eof"><code class="docutils literal notranslate"><span class="pre">StreamWriter.can_write_eof()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.write_eof"><code class="docutils literal notranslate"><span class="pre">StreamWriter.write_eof()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.transport"><code class="docutils literal notranslate"><span class="pre">StreamWriter.transport</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.get_extra_info"><code class="docutils literal notranslate"><span class="pre">StreamWriter.get_extra_info()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.drain"><code class="docutils literal notranslate"><span class="pre">StreamWriter.drain()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.start_tls"><code class="docutils literal notranslate"><span class="pre">StreamWriter.start_tls()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.is_closing"><code class="docutils literal notranslate"><span class="pre">StreamWriter.is_closing()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.wait_closed"><code class="docutils literal notranslate"><span class="pre">StreamWriter.wait_closed()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#examples">Examples</a><ul>
 <li><a class="reference internal" href="#tcp-echo-client-using-streams">TCP echo client using streams</a></li>
 <li><a class="reference internal" href="#tcp-echo-server-using-streams">TCP echo server using streams</a></li>
@@ -151,7 +193,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -163,14 +205,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -181,7 +230,7 @@
           <div class="body" role="main">
             
   <section id="streams">
-<span id="asyncio-streams"></span><h1>Streams<a class="headerlink" href="#streams" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="asyncio-streams"></span><h1>Streams<a class="headerlink" href="#streams" title="Permalink to this heading">¶</a></h1>
 <p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.11/Lib/asyncio/streams.py">Lib/asyncio/streams.py</a></p>
 <hr class="docutils" />
 <p>Streams are high-level async/await-ready primitives to work with
@@ -293,7 +342,9 @@ server created. To close the socket, call the server’s
 <a class="reference internal" href="#asyncio.StreamWriter" title="asyncio.StreamWriter"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamWriter</span></code></a> created. To close the socket, call its
 <a class="reference internal" href="#asyncio.StreamWriter.close" title="asyncio.StreamWriter.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a> method.</p>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.7 sürümünde değişti: </span>Added the <em>ssl_handshake_timeout</em> parameter.
 The <em>path</em> parameter can now be a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a></p>
@@ -319,7 +370,9 @@ The <em>path</em> parameter can now be a <a class="reference internal" href="../
 server created. To close the socket, call the server’s
 <a class="reference internal" href="asyncio-eventloop.html#asyncio.Server.close" title="asyncio.Server.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a> method.</p>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.7 sürümünde değişti: </span>Added the <em>ssl_handshake_timeout</em> and <em>start_serving</em> parameters.
 The <em>path</em> parameter can now be a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
@@ -333,7 +386,7 @@ The <em>path</em> parameter can now be a <a class="reference internal" href="../
 </dd></dl>
 
 <section id="streamreader">
-<h2>StreamReader<a class="headerlink" href="#streamreader" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>StreamReader<a class="headerlink" href="#streamreader" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="asyncio.StreamReader">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asyncio.</span></span><span class="sig-name descname"><span class="pre">StreamReader</span></span><a class="headerlink" href="#asyncio.StreamReader" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -345,11 +398,17 @@ directly; use <a class="reference internal" href="#asyncio.open_connection" titl
 instead.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="asyncio.StreamReader.read">
-<em class="property"><span class="pre">coroutine</span> </em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#asyncio.StreamReader.read" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
-<dd><p>Read up to <em>n</em> bytes.  If <em>n</em> is not provided, or set to <code class="docutils literal notranslate"><span class="pre">-1</span></code>,
-read until EOF and return all read bytes.</p>
-<p>If EOF was received and the internal buffer is empty,
+<em class="property"><span class="pre">coroutine</span> </em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#asyncio.StreamReader.read" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
+<dd><p>Read up to <em>n</em> bytes from the stream.</p>
+<p>If <em>n</em> is not provided or set to <code class="docutils literal notranslate"><span class="pre">-1</span></code>,
+read until EOF, then return all read <a class="reference internal" href="stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>.
+If EOF was received and the internal buffer is empty,
 return an empty <code class="docutils literal notranslate"><span class="pre">bytes</span></code> object.</p>
+<p>If <em>n</em> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, return an empty <code class="docutils literal notranslate"><span class="pre">bytes</span></code> object immediately.</p>
+<p>If <em>n</em> is positive, return at most <em>n</em> available <code class="docutils literal notranslate"><span class="pre">bytes</span></code>
+as soon as at least 1 byte is available in the internal buffer.
+If EOF is received before any byte is read, return an empty
+<code class="docutils literal notranslate"><span class="pre">bytes</span></code> object.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -402,7 +461,7 @@ was called.</p>
 
 </section>
 <section id="streamwriter">
-<h2>StreamWriter<a class="headerlink" href="#streamwriter" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>StreamWriter<a class="headerlink" href="#streamwriter" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="asyncio.StreamWriter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asyncio.</span></span><span class="sig-name descname"><span class="pre">StreamWriter</span></span><a class="headerlink" href="#asyncio.StreamWriter" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -442,7 +501,8 @@ sent.</p>
 <dt class="sig sig-object py" id="asyncio.StreamWriter.close">
 <span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#asyncio.StreamWriter.close" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>The method closes the stream and the underlying socket.</p>
-<p>The method should be used along with the <code class="docutils literal notranslate"><span class="pre">wait_closed()</span></code> method:</p>
+<p>The method should be used, though not mandatory,
+along with the <code class="docutils literal notranslate"><span class="pre">wait_closed()</span></code> method:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">stream</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="k">await</span> <span class="n">stream</span><span class="o">.</span><span class="n">wait_closed</span><span class="p">()</span>
 </pre></div>
@@ -526,7 +586,8 @@ being closed.</p>
 <em class="property"><span class="pre">coroutine</span> </em><span class="sig-name descname"><span class="pre">wait_closed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#asyncio.StreamWriter.wait_closed" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Wait until the stream is closed.</p>
 <p>Should be called after <a class="reference internal" href="#asyncio.StreamWriter.close" title="asyncio.StreamWriter.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a> to wait until the underlying
-connection is closed.</p>
+connection is closed, ensuring that all data has been flushed
+before e.g. exiting the program.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">3.7 sürümünde geldi.</span></p>
 </div>
@@ -536,9 +597,9 @@ connection is closed.</p>
 
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <section id="tcp-echo-client-using-streams">
-<span id="asyncio-tcp-echo-client-streams"></span><h3>TCP echo client using streams<a class="headerlink" href="#tcp-echo-client-using-streams" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="asyncio-tcp-echo-client-streams"></span><h3>TCP echo client using streams<a class="headerlink" href="#tcp-echo-client-using-streams" title="Permalink to this heading">¶</a></h3>
 <p>TCP echo client using the <a class="reference internal" href="#asyncio.open_connection" title="asyncio.open_connection"><code class="xref py py-func docutils literal notranslate"><span class="pre">asyncio.open_connection()</span></code></a> function:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -555,6 +616,7 @@ connection is closed.</p>
 
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Close the connection&#39;</span><span class="p">)</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">await</span> <span class="n">writer</span><span class="o">.</span><span class="n">wait_closed</span><span class="p">()</span>
 
 <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tcp_echo_client</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">))</span>
 </pre></div>
@@ -566,7 +628,7 @@ example uses the low-level <a class="reference internal" href="asyncio-eventloop
 </div>
 </section>
 <section id="tcp-echo-server-using-streams">
-<span id="asyncio-tcp-echo-server-streams"></span><h3>TCP echo server using streams<a class="headerlink" href="#tcp-echo-server-using-streams" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="asyncio-tcp-echo-server-streams"></span><h3>TCP echo server using streams<a class="headerlink" href="#tcp-echo-server-using-streams" title="Permalink to this heading">¶</a></h3>
 <p>TCP echo server using the <a class="reference internal" href="#asyncio.start_server" title="asyncio.start_server"><code class="xref py py-func docutils literal notranslate"><span class="pre">asyncio.start_server()</span></code></a> function:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -583,6 +645,7 @@ example uses the low-level <a class="reference internal" href="asyncio-eventloop
 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Close the connection&quot;</span><span class="p">)</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">await</span> <span class="n">writer</span><span class="o">.</span><span class="n">wait_closed</span><span class="p">()</span>
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">server</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">start_server</span><span class="p">(</span>
@@ -604,7 +667,7 @@ example uses the <a class="reference internal" href="asyncio-eventloop.html#asyn
 </div>
 </section>
 <section id="get-http-headers">
-<h3>Get HTTP headers<a class="headerlink" href="#get-http-headers" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Get HTTP headers<a class="headerlink" href="#get-http-headers" title="Permalink to this heading">¶</a></h3>
 <p>Simple example querying HTTP headers of the URL passed on the command line:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="kn">import</span> <span class="nn">urllib.parse</span>
@@ -637,6 +700,7 @@ example uses the <a class="reference internal" href="asyncio-eventloop.html#asyn
 
     <span class="c1"># Ignore the body, close the socket</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">await</span> <span class="n">writer</span><span class="o">.</span><span class="n">wait_closed</span><span class="p">()</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">print_http_headers</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
@@ -652,7 +716,7 @@ example uses the <a class="reference internal" href="asyncio-eventloop.html#asyn
 </div>
 </section>
 <section id="register-an-open-socket-to-wait-for-data-using-streams">
-<span id="asyncio-example-create-connection-streams"></span><h3>Register an open socket to wait for data using streams<a class="headerlink" href="#register-an-open-socket-to-wait-for-data-using-streams" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="asyncio-example-create-connection-streams"></span><h3>Register an open socket to wait for data using streams<a class="headerlink" href="#register-an-open-socket-to-wait-for-data-using-streams" title="Permalink to this heading">¶</a></h3>
 <p>Coroutine waiting until a socket receives data using the
 <a class="reference internal" href="#asyncio.open_connection" title="asyncio.open_connection"><code class="xref py py-func docutils literal notranslate"><span class="pre">open_connection()</span></code></a> function:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
@@ -678,6 +742,7 @@ example uses the <a class="reference internal" href="asyncio-eventloop.html#asyn
     <span class="c1"># Got data, we are done: close the socket</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">await</span> <span class="n">writer</span><span class="o">.</span><span class="n">wait_closed</span><span class="p">()</span>
 
     <span class="c1"># Close the second socket</span>
     <span class="n">wsock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -707,8 +772,38 @@ the <a class="reference internal" href="asyncio-eventloop.html#asyncio.loop.crea
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Streams</a><ul>
-<li><a class="reference internal" href="#streamreader">StreamReader</a></li>
-<li><a class="reference internal" href="#streamwriter">StreamWriter</a></li>
+<li><a class="reference internal" href="#asyncio.open_connection"><code class="docutils literal notranslate"><span class="pre">open_connection()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.start_server"><code class="docutils literal notranslate"><span class="pre">start_server()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.open_unix_connection"><code class="docutils literal notranslate"><span class="pre">open_unix_connection()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.start_unix_server"><code class="docutils literal notranslate"><span class="pre">start_unix_server()</span></code></a></li>
+<li><a class="reference internal" href="#streamreader">StreamReader</a><ul>
+<li><a class="reference internal" href="#asyncio.StreamReader"><code class="docutils literal notranslate"><span class="pre">StreamReader</span></code></a><ul>
+<li><a class="reference internal" href="#asyncio.StreamReader.read"><code class="docutils literal notranslate"><span class="pre">StreamReader.read()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamReader.readline"><code class="docutils literal notranslate"><span class="pre">StreamReader.readline()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamReader.readexactly"><code class="docutils literal notranslate"><span class="pre">StreamReader.readexactly()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamReader.readuntil"><code class="docutils literal notranslate"><span class="pre">StreamReader.readuntil()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamReader.at_eof"><code class="docutils literal notranslate"><span class="pre">StreamReader.at_eof()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#streamwriter">StreamWriter</a><ul>
+<li><a class="reference internal" href="#asyncio.StreamWriter"><code class="docutils literal notranslate"><span class="pre">StreamWriter</span></code></a><ul>
+<li><a class="reference internal" href="#asyncio.StreamWriter.write"><code class="docutils literal notranslate"><span class="pre">StreamWriter.write()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.writelines"><code class="docutils literal notranslate"><span class="pre">StreamWriter.writelines()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.close"><code class="docutils literal notranslate"><span class="pre">StreamWriter.close()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.can_write_eof"><code class="docutils literal notranslate"><span class="pre">StreamWriter.can_write_eof()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.write_eof"><code class="docutils literal notranslate"><span class="pre">StreamWriter.write_eof()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.transport"><code class="docutils literal notranslate"><span class="pre">StreamWriter.transport</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.get_extra_info"><code class="docutils literal notranslate"><span class="pre">StreamWriter.get_extra_info()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.drain"><code class="docutils literal notranslate"><span class="pre">StreamWriter.drain()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.start_tls"><code class="docutils literal notranslate"><span class="pre">StreamWriter.start_tls()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.is_closing"><code class="docutils literal notranslate"><span class="pre">StreamWriter.is_closing()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.StreamWriter.wait_closed"><code class="docutils literal notranslate"><span class="pre">StreamWriter.wait_closed()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#examples">Examples</a><ul>
 <li><a class="reference internal" href="#tcp-echo-client-using-streams">TCP echo client using streams</a></li>
 <li><a class="reference internal" href="#tcp-echo-server-using-streams">TCP echo server using streams</a></li>
@@ -743,6 +838,10 @@ the <a class="reference internal" href="asyncio-eventloop.html#asyncio.loop.crea
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -772,7 +871,7 @@ the <a class="reference internal" href="asyncio-eventloop.html#asyncio.loop.crea
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -784,14 +883,21 @@ the <a class="reference internal" href="asyncio-eventloop.html#asyncio.loop.crea
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -810,11 +916,11 @@ the <a class="reference internal" href="asyncio-eventloop.html#asyncio.loop.crea
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

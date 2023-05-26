@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="platform —  Access to underlying platform’s identifying data" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/platform.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>platform — Access to underlying platform’s identifying data &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>platform — Access to underlying platform’s identifying data &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,45 +52,93 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">platform</span></code> —  Access to underlying platform’s identifying data</a><ul>
-<li><a class="reference internal" href="#cross-platform">Cross Platform</a></li>
-<li><a class="reference internal" href="#java-platform">Java Platform</a></li>
-<li><a class="reference internal" href="#windows-platform">Windows Platform</a></li>
-<li><a class="reference internal" href="#macos-platform">macOS Platform</a></li>
-<li><a class="reference internal" href="#unix-platforms">Unix Platforms</a></li>
-<li><a class="reference internal" href="#linux-platforms">Linux Platforms</a></li>
+<li><a class="reference internal" href="#cross-platform">Cross Platform</a><ul>
+<li><a class="reference internal" href="#platform.architecture"><code class="docutils literal notranslate"><span class="pre">architecture()</span></code></a></li>
+<li><a class="reference internal" href="#platform.machine"><code class="docutils literal notranslate"><span class="pre">machine()</span></code></a></li>
+<li><a class="reference internal" href="#platform.node"><code class="docutils literal notranslate"><span class="pre">node()</span></code></a></li>
+<li><a class="reference internal" href="#platform.platform"><code class="docutils literal notranslate"><span class="pre">platform()</span></code></a></li>
+<li><a class="reference internal" href="#platform.processor"><code class="docutils literal notranslate"><span class="pre">processor()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_build"><code class="docutils literal notranslate"><span class="pre">python_build()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_compiler"><code class="docutils literal notranslate"><span class="pre">python_compiler()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_branch"><code class="docutils literal notranslate"><span class="pre">python_branch()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_implementation"><code class="docutils literal notranslate"><span class="pre">python_implementation()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_revision"><code class="docutils literal notranslate"><span class="pre">python_revision()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_version"><code class="docutils literal notranslate"><span class="pre">python_version()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_version_tuple"><code class="docutils literal notranslate"><span class="pre">python_version_tuple()</span></code></a></li>
+<li><a class="reference internal" href="#platform.release"><code class="docutils literal notranslate"><span class="pre">release()</span></code></a></li>
+<li><a class="reference internal" href="#platform.system"><code class="docutils literal notranslate"><span class="pre">system()</span></code></a></li>
+<li><a class="reference internal" href="#platform.system_alias"><code class="docutils literal notranslate"><span class="pre">system_alias()</span></code></a></li>
+<li><a class="reference internal" href="#platform.version"><code class="docutils literal notranslate"><span class="pre">version()</span></code></a></li>
+<li><a class="reference internal" href="#platform.uname"><code class="docutils literal notranslate"><span class="pre">uname()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#java-platform">Java Platform</a><ul>
+<li><a class="reference internal" href="#platform.java_ver"><code class="docutils literal notranslate"><span class="pre">java_ver()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#windows-platform">Windows Platform</a><ul>
+<li><a class="reference internal" href="#platform.win32_ver"><code class="docutils literal notranslate"><span class="pre">win32_ver()</span></code></a></li>
+<li><a class="reference internal" href="#platform.win32_edition"><code class="docutils literal notranslate"><span class="pre">win32_edition()</span></code></a></li>
+<li><a class="reference internal" href="#platform.win32_is_iot"><code class="docutils literal notranslate"><span class="pre">win32_is_iot()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#macos-platform">macOS Platform</a><ul>
+<li><a class="reference internal" href="#platform.mac_ver"><code class="docutils literal notranslate"><span class="pre">mac_ver()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#unix-platforms">Unix Platforms</a><ul>
+<li><a class="reference internal" href="#platform.libc_ver"><code class="docutils literal notranslate"><span class="pre">libc_ver()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux-platforms">Linux Platforms</a><ul>
+<li><a class="reference internal" href="#platform.freedesktop_os_release"><code class="docutils literal notranslate"><span class="pre">freedesktop_os_release()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -148,7 +196,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -159,14 +207,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -177,7 +232,7 @@
           <div class="body" role="main">
             
   <section id="module-platform">
-<span id="platform-access-to-underlying-platform-s-identifying-data"></span><h1><a class="reference internal" href="#module-platform" title="platform: Retrieves as much platform identifying data as possible."><code class="xref py py-mod docutils literal notranslate"><span class="pre">platform</span></code></a> —  Access to underlying platform’s identifying data<a class="headerlink" href="#module-platform" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="platform-access-to-underlying-platform-s-identifying-data"></span><h1><a class="reference internal" href="#module-platform" title="platform: Retrieves as much platform identifying data as possible."><code class="xref py py-mod docutils literal notranslate"><span class="pre">platform</span></code></a> —  Access to underlying platform’s identifying data<a class="headerlink" href="#module-platform" title="Permalink to this heading">¶</a></h1>
 <p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.11/Lib/platform.py">Lib/platform.py</a></p>
 <hr class="docutils" />
 <div class="admonition note">
@@ -186,7 +241,7 @@
 section.</p>
 </div>
 <section id="cross-platform">
-<h2>Cross Platform<a class="headerlink" href="#cross-platform" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Cross Platform<a class="headerlink" href="#cross-platform" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="platform.architecture">
 <span class="sig-prename descclassname"><span class="pre">platform.</span></span><span class="sig-name descname"><span class="pre">architecture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">executable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">sys.executable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linkage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#platform.architecture" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -353,7 +408,7 @@ for the first two attributes; <a class="reference internal" href="os.html#os.una
 
 </section>
 <section id="java-platform">
-<h2>Java Platform<a class="headerlink" href="#java-platform" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Java Platform<a class="headerlink" href="#java-platform" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="platform.java_ver">
 <span class="sig-prename descclassname"><span class="pre">platform.</span></span><span class="sig-name descname"><span class="pre">java_ver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">release</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vendor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vminfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('',</span> <span class="pre">'',</span> <span class="pre">'')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">osinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('',</span> <span class="pre">'',</span> <span class="pre">'')</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#platform.java_ver" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -366,7 +421,7 @@ the defaults given as parameters (which all default to <code class="docutils lit
 
 </section>
 <section id="windows-platform">
-<h2>Windows Platform<a class="headerlink" href="#windows-platform" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Windows Platform<a class="headerlink" href="#windows-platform" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="platform.win32_ver">
 <span class="sig-prename descclassname"><span class="pre">platform.</span></span><span class="sig-name descname"><span class="pre">win32_ver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">release</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ptype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#platform.win32_ver" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -405,7 +460,7 @@ is recognized as an IoT edition.</p>
 
 </section>
 <section id="macos-platform">
-<h2>macOS Platform<a class="headerlink" href="#macos-platform" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>macOS Platform<a class="headerlink" href="#macos-platform" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="platform.mac_ver">
 <span class="sig-prename descclassname"><span class="pre">platform.</span></span><span class="sig-name descname"><span class="pre">mac_ver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">release</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">versioninfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('',</span> <span class="pre">'',</span> <span class="pre">'')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">machine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#platform.mac_ver" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -418,7 +473,7 @@ strings.</p>
 
 </section>
 <section id="unix-platforms">
-<h2>Unix Platforms<a class="headerlink" href="#unix-platforms" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Unix Platforms<a class="headerlink" href="#unix-platforms" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="platform.libc_ver">
 <span class="sig-prename descclassname"><span class="pre">platform.</span></span><span class="sig-name descname"><span class="pre">libc_ver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">executable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">sys.executable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16384</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#platform.libc_ver" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -433,7 +488,7 @@ using <strong class="program">gcc</strong>.</p>
 
 </section>
 <section id="linux-platforms">
-<h2>Linux Platforms<a class="headerlink" href="#linux-platforms" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Linux Platforms<a class="headerlink" href="#linux-platforms" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="platform.freedesktop_os_release">
 <span class="sig-prename descclassname"><span class="pre">platform.</span></span><span class="sig-name descname"><span class="pre">freedesktop_os_release</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#platform.freedesktop_os_release" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -481,12 +536,48 @@ Linux distributions.</p>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">platform</span></code> —  Access to underlying platform’s identifying data</a><ul>
-<li><a class="reference internal" href="#cross-platform">Cross Platform</a></li>
-<li><a class="reference internal" href="#java-platform">Java Platform</a></li>
-<li><a class="reference internal" href="#windows-platform">Windows Platform</a></li>
-<li><a class="reference internal" href="#macos-platform">macOS Platform</a></li>
-<li><a class="reference internal" href="#unix-platforms">Unix Platforms</a></li>
-<li><a class="reference internal" href="#linux-platforms">Linux Platforms</a></li>
+<li><a class="reference internal" href="#cross-platform">Cross Platform</a><ul>
+<li><a class="reference internal" href="#platform.architecture"><code class="docutils literal notranslate"><span class="pre">architecture()</span></code></a></li>
+<li><a class="reference internal" href="#platform.machine"><code class="docutils literal notranslate"><span class="pre">machine()</span></code></a></li>
+<li><a class="reference internal" href="#platform.node"><code class="docutils literal notranslate"><span class="pre">node()</span></code></a></li>
+<li><a class="reference internal" href="#platform.platform"><code class="docutils literal notranslate"><span class="pre">platform()</span></code></a></li>
+<li><a class="reference internal" href="#platform.processor"><code class="docutils literal notranslate"><span class="pre">processor()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_build"><code class="docutils literal notranslate"><span class="pre">python_build()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_compiler"><code class="docutils literal notranslate"><span class="pre">python_compiler()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_branch"><code class="docutils literal notranslate"><span class="pre">python_branch()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_implementation"><code class="docutils literal notranslate"><span class="pre">python_implementation()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_revision"><code class="docutils literal notranslate"><span class="pre">python_revision()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_version"><code class="docutils literal notranslate"><span class="pre">python_version()</span></code></a></li>
+<li><a class="reference internal" href="#platform.python_version_tuple"><code class="docutils literal notranslate"><span class="pre">python_version_tuple()</span></code></a></li>
+<li><a class="reference internal" href="#platform.release"><code class="docutils literal notranslate"><span class="pre">release()</span></code></a></li>
+<li><a class="reference internal" href="#platform.system"><code class="docutils literal notranslate"><span class="pre">system()</span></code></a></li>
+<li><a class="reference internal" href="#platform.system_alias"><code class="docutils literal notranslate"><span class="pre">system_alias()</span></code></a></li>
+<li><a class="reference internal" href="#platform.version"><code class="docutils literal notranslate"><span class="pre">version()</span></code></a></li>
+<li><a class="reference internal" href="#platform.uname"><code class="docutils literal notranslate"><span class="pre">uname()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#java-platform">Java Platform</a><ul>
+<li><a class="reference internal" href="#platform.java_ver"><code class="docutils literal notranslate"><span class="pre">java_ver()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#windows-platform">Windows Platform</a><ul>
+<li><a class="reference internal" href="#platform.win32_ver"><code class="docutils literal notranslate"><span class="pre">win32_ver()</span></code></a></li>
+<li><a class="reference internal" href="#platform.win32_edition"><code class="docutils literal notranslate"><span class="pre">win32_edition()</span></code></a></li>
+<li><a class="reference internal" href="#platform.win32_is_iot"><code class="docutils literal notranslate"><span class="pre">win32_is_iot()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#macos-platform">macOS Platform</a><ul>
+<li><a class="reference internal" href="#platform.mac_ver"><code class="docutils literal notranslate"><span class="pre">mac_ver()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#unix-platforms">Unix Platforms</a><ul>
+<li><a class="reference internal" href="#platform.libc_ver"><code class="docutils literal notranslate"><span class="pre">libc_ver()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux-platforms">Linux Platforms</a><ul>
+<li><a class="reference internal" href="#platform.freedesktop_os_release"><code class="docutils literal notranslate"><span class="pre">freedesktop_os_release()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -514,6 +605,10 @@ Linux distributions.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -543,7 +638,7 @@ Linux distributions.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -554,14 +649,21 @@ Linux distributions.</p>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -580,11 +682,11 @@ Linux distributions.</p>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

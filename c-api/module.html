@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="Module Objects" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/c-api/module.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>Module Objects &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Objects &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,35 +52,47 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
@@ -150,7 +162,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Referans Kılavuzu</a> &#187;</li>
@@ -161,14 +173,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -179,7 +198,7 @@
           <div class="body" role="main">
             
   <section id="module-objects">
-<span id="moduleobjects"></span><h1>Module Objects<a class="headerlink" href="#module-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="moduleobjects"></span><h1>Module Objects<a class="headerlink" href="#module-objects" title="Permalink to this heading">¶</a></h1>
 <span class="target" id="index-0"></span><dl class="c var">
 <dt class="sig sig-object c" id="c.PyModule_Type">
 <a class="reference internal" href="type.html#c.PyTypeObject" title="PyTypeObject"><span class="n"><span class="pre">PyTypeObject</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyModule_Type</span></span></span><a class="headerlink" href="#c.PyModule_Type" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
@@ -292,7 +311,7 @@ unencodable filenames, use <a class="reference internal" href="#c.PyModule_GetFi
 </dd></dl>
 
 <section id="initializing-c-modules">
-<span id="initializing-modules"></span><h2>Initializing C modules<a class="headerlink" href="#initializing-c-modules" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="initializing-modules"></span><h2>Initializing C modules<a class="headerlink" href="#initializing-c-modules" title="Permalink to this heading">¶</a></h2>
 <p>Modules objects are usually created from extension modules (shared libraries
 which export an initialization function), or compiled-in modules
 (where the initialization function is added using <a class="reference internal" href="import.html#c.PyImport_AppendInittab" title="PyImport_AppendInittab"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyImport_AppendInittab()</span></code></a>).
@@ -425,7 +444,7 @@ is <code class="docutils literal notranslate"><span class="pre">NULL</span></cod
 </dd></dl>
 
 <section id="single-phase-initialization">
-<h3>Single-phase initialization<a class="headerlink" href="#single-phase-initialization" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Single-phase initialization<a class="headerlink" href="#single-phase-initialization" title="Permalink to this heading">¶</a></h3>
 <p>The module initialization function may create and return the module object
 directly. This is referred to as “single-phase initialization”, and uses one
 of the following two module creation functions:</p>
@@ -454,7 +473,7 @@ instead; only use this if you are sure you need it.</p>
 object is typically populated using functions like <a class="reference internal" href="#c.PyModule_AddObjectRef" title="PyModule_AddObjectRef"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyModule_AddObjectRef()</span></code></a>.</p>
 </section>
 <section id="multi-phase-initialization">
-<span id="id1"></span><h3>Multi-phase initialization<a class="headerlink" href="#multi-phase-initialization" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="id1"></span><h3>Multi-phase initialization<a class="headerlink" href="#multi-phase-initialization" title="Permalink to this heading">¶</a></h3>
 <p>An alternate way to specify extensions is to request “multi-phase initialization”.
 Extension modules created this way behave more like Python modules: the
 initialization is split between the <em>creation phase</em>, when the module object
@@ -563,7 +582,7 @@ order they appear in the <em>m_slots</em> array.</p>
 <p>See <span class="target" id="index-8"></span><a class="pep reference external" href="https://peps.python.org/pep-0489/"><strong>PEP 489</strong></a> for more details on multi-phase initialization.</p>
 </section>
 <section id="low-level-module-creation-functions">
-<h3>Low-level module creation functions<a class="headerlink" href="#low-level-module-creation-functions" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Low-level module creation functions<a class="headerlink" href="#low-level-module-creation-functions" title="Permalink to this heading">¶</a></h3>
 <p>The following functions are called under the hood when using multi-phase
 initialization. They can be used directly, for example when creating module
 objects dynamically. Note that both <code class="docutils literal notranslate"><span class="pre">PyModule_FromDefAndSpec</span></code> and
@@ -571,7 +590,7 @@ objects dynamically. Note that both <code class="docutils literal notranslate"><
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyModule_FromDefAndSpec">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyModule_FromDefAndSpec</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyModuleDef" title="PyModuleDef"><span class="n"><span class="pre">PyModuleDef</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">def</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">spec</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyModule_FromDefAndSpec" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
-<dd><em class="refcount">Return value: New reference.</em><p>Create a new module object, given the definition in <em>module</em> and the
+<dd><em class="refcount">Return value: New reference.</em><p>Create a new module object, given the definition in <em>def</em> and the
 ModuleSpec <em>spec</em>.  This behaves like <a class="reference internal" href="#c.PyModule_FromDefAndSpec2" title="PyModule_FromDefAndSpec2"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyModule_FromDefAndSpec2()</span></code></a>
 with <em>module_api_version</em> set to <code class="xref py py-const docutils literal notranslate"><span class="pre">PYTHON_API_VERSION</span></code>.</p>
 <div class="versionadded">
@@ -582,7 +601,7 @@ with <em>module_api_version</em> set to <code class="xref py py-const docutils l
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyModule_FromDefAndSpec2">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyModule_FromDefAndSpec2</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#c.PyModuleDef" title="PyModuleDef"><span class="n"><span class="pre">PyModuleDef</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">def</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">spec</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">module_api_version</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyModule_FromDefAndSpec2" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
-<dd><em class="refcount">Return value: New reference.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p>Create a new module object, given the definition in <em>module</em> and the
+<dd><em class="refcount">Return value: New reference.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> since version 3.7.</em><p>Create a new module object, given the definition in <em>def</em> and the
 ModuleSpec <em>spec</em>, assuming the API version <em>module_api_version</em>.
 If that version does not match the version of the running interpreter,
 a <a class="reference internal" href="../library/exceptions.html#RuntimeWarning" title="RuntimeWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeWarning</span></code></a> is emitted.</p>
@@ -635,7 +654,7 @@ This function is called automatically when creating a module from
 
 </section>
 <section id="support-functions">
-<h3>Support functions<a class="headerlink" href="#support-functions" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Support functions<a class="headerlink" href="#support-functions" title="Permalink to this heading">¶</a></h3>
 <p>The module initialization function (if using single phase initialization) or
 a function called from a module execution slot (if using multi-phase
 initialization), can use the following functions to help initialize the module
@@ -781,7 +800,7 @@ Return <code class="docutils literal notranslate"><span class="pre">-1</span></c
 </section>
 </section>
 <section id="module-lookup">
-<h2>Module lookup<a class="headerlink" href="#module-lookup" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Module lookup<a class="headerlink" href="#module-lookup" title="Permalink to this heading">¶</a></h2>
 <p>Single-phase initialization creates singleton modules that can be looked up
 in the context of the current interpreter. This allows the module object to be
 retrieved later with only a reference to the module definition.</p>
@@ -876,6 +895,10 @@ Return 0 on success or -1 on failure.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -905,7 +928,7 @@ Return 0 on success or -1 on failure.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Referans Kılavuzu</a> &#187;</li>
@@ -916,14 +939,21 @@ Return 0 on success or -1 on failure.</p>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -942,11 +972,11 @@ Return 0 on success or -1 on failure.</p>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

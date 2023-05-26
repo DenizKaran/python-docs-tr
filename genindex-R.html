@@ -6,21 +6,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dizin &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dizin &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
     
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/translations.js"></script>
     
     <script src="_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="about.html" />
     <link rel="index" title="Dizin" href="genindex.html" />
@@ -39,35 +39,47 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="_static/py.svg" />
+<link rel="stylesheet" href="_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="_static/py.svg" />
             <script type="text/javascript" src="_static/copybutton.js"></script>
-            <script type="text/javascript" src="_static/menu.js"></script> 
+            <script type="text/javascript" src="_static/menu.js"></script>
+            <script type="text/javascript" src="_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
         </nav>
     </div>
 </div>
@@ -93,7 +105,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="index.html">3.11.1 Documentation</a> &#187;
+      <a href="index.html">3.11.2 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">Dizin</a></li>
@@ -102,14 +114,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -1367,7 +1386,7 @@
       <ul>
         <li><a href="library/xdrlib.html#index-2">RFC 1014</a>, <a href="library/xdrlib.html#index-3">[1]</a>
 </li>
-        <li><a href="library/time.html#index-21">RFC 1123</a>
+        <li><a href="library/time.html#index-45">RFC 1123</a>
 </li>
         <li><a href="library/hashlib.html#index-1">RFC 1321</a>
 </li>
@@ -1443,7 +1462,7 @@
 </li>
         <li><a href="howto/urllib2.html#index-0">RFC 2616</a>, <a href="howto/urllib2.html#index-1">[1]</a>, <a href="howto/urllib2.html#index-2">[2]</a>, <a href="library/urllib.error.html#index-0">[3]</a>, <a href="library/urllib.request.html#index-10">[4]</a>, <a href="library/urllib.request.html#index-6">[5]</a>, <a href="library/urllib.request.html#index-7">[6]</a>, <a href="library/wsgiref.html#index-10">[7]</a>, <a href="library/wsgiref.html#index-5">[8]</a>, <a href="whatsnew/3.2.html#index-7">[9]</a>
 </li>
-        <li><a href="library/ftplib.html#index-2">RFC 2640</a>, <a href="library/ftplib.html#index-3">[1]</a>, <a href="library/ftplib.html#index-5">[2]</a>, <a href="whatsnew/3.9.html#index-22">[3]</a>, <a href="whatsnew/changelog.html#index-133">[4]</a>
+        <li><a href="library/ftplib.html#index-2">RFC 2640</a>, <a href="library/ftplib.html#index-3">[1]</a>, <a href="library/ftplib.html#index-5">[2]</a>, <a href="whatsnew/3.9.html#index-78">[3]</a>, <a href="whatsnew/changelog.html#index-133">[4]</a>
 </li>
         <li><a href="library/urllib.parse.html#index-8">RFC 2732</a>, <a href="whatsnew/2.7.html#index-11">[1]</a>, <a href="whatsnew/3.2.html#index-13">[2]</a>
 </li>
@@ -1453,7 +1472,7 @@
 </li>
         <li><a href="library/email.html#index-0">RFC 2821</a>
 </li>
-        <li><a href="library/email.compat32-message.html#index-1">RFC 2822</a>, <a href="library/email.header.html#index-0">[1]</a>, <a href="library/email.header.html#index-10">[2]</a>, <a href="library/email.header.html#index-12">[3]</a>, <a href="library/email.header.html#index-2">[4]</a>, <a href="library/email.header.html#index-3">[5]</a>, <a href="library/email.header.html#index-9">[6]</a>, <a href="library/email.utils.html#index-0">[7]</a>, <a href="library/email.utils.html#index-10">[8]</a>, <a href="library/email.utils.html#index-2">[9]</a>, <a href="library/email.utils.html#index-3">[10]</a>, <a href="library/email.utils.html#index-4">[11]</a>, <a href="library/http.client.html#index-2">[12]</a>, <a href="library/http.server.html#index-2">[13]</a>, <a href="library/mailbox.html#index-0">[14]</a>, <a href="library/time.html#index-10">[15]</a>, <a href="library/time.html#index-22">[16]</a>, <a href="tutorial/stdlib.html#index-3">[17]</a>, <a href="whatsnew/2.2.html#index-20">[18]</a>
+        <li><a href="library/email.compat32-message.html#index-1">RFC 2822</a>, <a href="library/email.header.html#index-0">[1]</a>, <a href="library/email.header.html#index-10">[2]</a>, <a href="library/email.header.html#index-12">[3]</a>, <a href="library/email.header.html#index-2">[4]</a>, <a href="library/email.header.html#index-3">[5]</a>, <a href="library/email.header.html#index-9">[6]</a>, <a href="library/email.utils.html#index-0">[7]</a>, <a href="library/email.utils.html#index-10">[8]</a>, <a href="library/email.utils.html#index-2">[9]</a>, <a href="library/email.utils.html#index-3">[10]</a>, <a href="library/email.utils.html#index-4">[11]</a>, <a href="library/http.client.html#index-2">[12]</a>, <a href="library/http.server.html#index-2">[13]</a>, <a href="library/mailbox.html#index-0">[14]</a>, <a href="library/time.html#index-36">[15]</a>, <a href="library/time.html#index-46">[16]</a>, <a href="tutorial/stdlib.html#index-3">[17]</a>, <a href="whatsnew/2.2.html#index-20">[18]</a>
 </li>
         <li><a href="library/http.cookiejar.html#index-10">RFC 2964</a>
 </li>
@@ -1601,7 +1620,7 @@
 </li>
         <li><a href="library/smtplib.html#index-1">RFC 821</a>, <a href="library/smtplib.html#index-4">[1]</a>
 </li>
-        <li><a href="distutils/apiref.html#index-6">RFC 822</a>, <a href="library/email.examples.html#index-0">[1]</a>, <a href="library/email.header.html#index-1">[2]</a>, <a href="library/gettext.html#index-9">[3]</a>, <a href="library/http.client.html#index-3">[4]</a>, <a href="library/smtplib.html#index-10">[5]</a>, <a href="library/smtplib.html#index-12">[6]</a>, <a href="library/smtplib.html#index-6">[7]</a>, <a href="library/smtplib.html#index-9">[8]</a>, <a href="library/time.html#index-19">[9]</a>, <a href="library/time.html#index-20">[10]</a>, <a href="whatsnew/2.2.html#index-21">[11]</a>
+        <li><a href="distutils/apiref.html#index-6">RFC 822</a>, <a href="library/email.examples.html#index-0">[1]</a>, <a href="library/email.header.html#index-1">[2]</a>, <a href="library/gettext.html#index-9">[3]</a>, <a href="library/http.client.html#index-3">[4]</a>, <a href="library/smtplib.html#index-10">[5]</a>, <a href="library/smtplib.html#index-12">[6]</a>, <a href="library/smtplib.html#index-6">[7]</a>, <a href="library/smtplib.html#index-9">[8]</a>, <a href="library/time.html#index-43">[9]</a>, <a href="library/time.html#index-44">[10]</a>, <a href="whatsnew/2.2.html#index-21">[11]</a>
 </li>
         <li><a href="library/http.html#index-4">RFC 8297</a>
 </li>
@@ -2039,6 +2058,10 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -2062,7 +2085,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="index.html">3.11.1 Documentation</a> &#187;
+      <a href="index.html">3.11.2 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">Dizin</a></li>
@@ -2071,14 +2094,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -2097,11 +2127,11 @@
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

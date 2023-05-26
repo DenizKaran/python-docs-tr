@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="Using importlib.metadata" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/importlib.metadata.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>Using importlib.metadata &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using importlib.metadata &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,35 +52,47 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
@@ -155,7 +167,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -166,14 +178,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -184,7 +203,7 @@
           <div class="body" role="main">
             
   <section id="module-importlib.metadata">
-<span id="using-importlib-metadata"></span><span id="using"></span><h1>Using <code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib.metadata</span></code><a class="headerlink" href="#module-importlib.metadata" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="using-importlib-metadata"></span><span id="using"></span><h1>Using <code class="xref py py-mod docutils literal notranslate"><span class="pre">importlib.metadata</span></code><a class="headerlink" href="#module-importlib.metadata" title="Permalink to this heading">¶</a></h1>
 <div class="versionadded">
 <p><span class="versionmodified added">3.8 sürümünde geldi.</span></p>
 </div>
@@ -238,7 +257,7 @@ for existing users of <code class="docutils literal notranslate"><span class="pr
 </dl>
 </div>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>Let’s say you wanted to get the version string for a
 <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Distribution-Package">Distribution Package</a> you’ve installed
 using <code class="docutils literal notranslate"><span class="pre">pip</span></code>.  We start by creating a virtual environment and installing
@@ -268,10 +287,10 @@ collection of <a class="reference internal" href="#entry-points"><span class="st
 <a class="reference internal" href="#requirements"><span class="std std-ref">Distribution requirements</span></a>.</p>
 </section>
 <section id="functional-api">
-<h2>Functional API<a class="headerlink" href="#functional-api" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Functional API<a class="headerlink" href="#functional-api" title="Permalink to this heading">¶</a></h2>
 <p>This package provides the following functionality via its public API.</p>
 <section id="entry-points">
-<span id="id2"></span><h3>Entry points<a class="headerlink" href="#entry-points" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="id2"></span><h3>Entry points<a class="headerlink" href="#entry-points" title="Permalink to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">entry_points()</span></code> function returns a collection of entry points.
 Entry points are represented by <code class="docutils literal notranslate"><span class="pre">EntryPoint</span></code> instances;
 each <code class="docutils literal notranslate"><span class="pre">EntryPoint</span></code> has a <code class="docutils literal notranslate"><span class="pre">.name</span></code>, <code class="docutils literal notranslate"><span class="pre">.group</span></code>, and <code class="docutils literal notranslate"><span class="pre">.value</span></code> attributes and
@@ -340,7 +359,7 @@ will return an <code class="docutils literal notranslate"><span class="pre">Entr
 interface to retrieve entry points by group.</p>
 </section>
 <section id="distribution-metadata">
-<span id="metadata"></span><h3>Distribution metadata<a class="headerlink" href="#distribution-metadata" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="metadata"></span><h3>Distribution metadata<a class="headerlink" href="#distribution-metadata" title="Permalink to this heading">¶</a></h3>
 <p>Every <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Distribution-Package">Distribution Package</a> includes some metadata,
 which you can extract using the
 <code class="docutils literal notranslate"><span class="pre">metadata()</span></code> function:</p>
@@ -376,7 +395,7 @@ through the payload. Line continuation characters have been removed.</p>
 </div>
 </section>
 <section id="distribution-versions">
-<span id="version"></span><h3>Distribution versions<a class="headerlink" href="#distribution-versions" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="version"></span><h3>Distribution versions<a class="headerlink" href="#distribution-versions" title="Permalink to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">version()</span></code> function is the quickest way to get a
 <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Distribution-Package">Distribution Package</a>’s version
 number, as a string:</p>
@@ -386,7 +405,7 @@ number, as a string:</p>
 </div>
 </section>
 <section id="distribution-files">
-<span id="files"></span><h3>Distribution files<a class="headerlink" href="#distribution-files" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="files"></span><h3>Distribution files<a class="headerlink" href="#distribution-files" title="Permalink to this heading">¶</a></h3>
 <p>You can also get the full set of files contained within a distribution.  The
 <code class="docutils literal notranslate"><span class="pre">files()</span></code> function takes a <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Distribution-Package">Distribution Package</a> name
 and returns all of the
@@ -408,7 +427,7 @@ files installed by this distribution.  Each file object returned is a
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">util</span><span class="o">.</span><span class="n">read_text</span><span class="p">())</span>  
 <span class="go">import base64</span>
 <span class="go">import sys</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="go">def as_bytes(s):</span>
 <span class="go">    if isinstance(s, text_type):</span>
 <span class="go">        return s.encode(&#39;utf-8&#39;)</span>
@@ -429,7 +448,7 @@ or otherwise guard against this condition if the target
 distribution is not known to have the metadata present.</p>
 </section>
 <section id="distribution-requirements">
-<span id="requirements"></span><h3>Distribution requirements<a class="headerlink" href="#distribution-requirements" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="requirements"></span><h3>Distribution requirements<a class="headerlink" href="#distribution-requirements" title="Permalink to this heading">¶</a></h3>
 <p>To get the full set of requirements for a <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Distribution-Package">Distribution Package</a>,
 use the <code class="docutils literal notranslate"><span class="pre">requires()</span></code>
 function:</p>
@@ -439,7 +458,7 @@ function:</p>
 </div>
 </section>
 <section id="mapping-import-to-distribution-packages">
-<span id="import-distribution-package-mapping"></span><span id="package-distributions"></span><h3>Mapping import to distribution packages<a class="headerlink" href="#mapping-import-to-distribution-packages" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="import-distribution-package-mapping"></span><span id="package-distributions"></span><h3>Mapping import to distribution packages<a class="headerlink" href="#mapping-import-to-distribution-packages" title="Permalink to this heading">¶</a></h3>
 <p>A convenience method to resolve the <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Distribution-Package">Distribution Package</a>
 name (or names, in the case of a namespace package)
 that provide each importable top-level
@@ -454,7 +473,7 @@ Python module or <a class="reference external" href="https://packaging.python.or
 </section>
 </section>
 <section id="distributions">
-<span id="id9"></span><h2>Distributions<a class="headerlink" href="#distributions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="id9"></span><h2>Distributions<a class="headerlink" href="#distributions" title="Permalink to this heading">¶</a></h2>
 <p>While the above API is the most common and convenient usage, you can get all
 of that information from the <code class="docutils literal notranslate"><span class="pre">Distribution</span></code> class.  A <code class="docutils literal notranslate"><span class="pre">Distribution</span></code> is an
 abstract object that represents the metadata for
@@ -482,7 +501,7 @@ instance:</p>
 See the <a class="reference external" href="https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata">Core metadata specifications</a> for additional details.</p>
 </section>
 <section id="distribution-discovery">
-<h2>Distribution Discovery<a class="headerlink" href="#distribution-discovery" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Distribution Discovery<a class="headerlink" href="#distribution-discovery" title="Permalink to this heading">¶</a></h2>
 <p>By default, this package provides built-in support for discovery of metadata
 for file system and zip file <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Distribution-Package">Distribution Package</a>s.
 This metadata finder search defaults to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>, but varies slightly in how it interprets those values from how other import machinery does. In particular:</p>
@@ -492,7 +511,7 @@ This metadata finder search defaults to <code class="docutils literal notranslat
 </ul>
 </section>
 <section id="extending-the-search-algorithm">
-<h2>Extending the search algorithm<a class="headerlink" href="#extending-the-search-algorithm" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Extending the search algorithm<a class="headerlink" href="#extending-the-search-algorithm" title="Permalink to this heading">¶</a></h2>
 <p>Because <a class="reference external" href="https://packaging.python.org/en/latest/glossary/#term-Distribution-Package">Distribution Package</a> metadata
 is not available through <a class="reference internal" href="sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a> searches, or
 package loaders directly,
@@ -580,6 +599,10 @@ a custom finder, return instances of this derived <code class="docutils literal 
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -609,7 +632,7 @@ a custom finder, return instances of this derived <code class="docutils literal 
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -620,14 +643,21 @@ a custom finder, return instances of this derived <code class="docutils literal 
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -646,11 +676,11 @@ a custom finder, return instances of this derived <code class="docutils literal 
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

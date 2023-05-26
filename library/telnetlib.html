@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="telnetlib — Telnet client" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/telnetlib.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>telnetlib — Telnet client &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>telnetlib — Telnet client &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,40 +52,74 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code> — Telnet client</a><ul>
-<li><a class="reference internal" href="#telnet-objects">Telnet Objects</a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet"><code class="docutils literal notranslate"><span class="pre">Telnet</span></code></a></li>
+<li><a class="reference internal" href="#telnet-objects">Telnet Objects</a><ul>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_until"><code class="docutils literal notranslate"><span class="pre">Telnet.read_until()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_all"><code class="docutils literal notranslate"><span class="pre">Telnet.read_all()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_some"><code class="docutils literal notranslate"><span class="pre">Telnet.read_some()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_very_eager"><code class="docutils literal notranslate"><span class="pre">Telnet.read_very_eager()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_eager"><code class="docutils literal notranslate"><span class="pre">Telnet.read_eager()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_lazy"><code class="docutils literal notranslate"><span class="pre">Telnet.read_lazy()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_very_lazy"><code class="docutils literal notranslate"><span class="pre">Telnet.read_very_lazy()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_sb_data"><code class="docutils literal notranslate"><span class="pre">Telnet.read_sb_data()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.open"><code class="docutils literal notranslate"><span class="pre">Telnet.open()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.msg"><code class="docutils literal notranslate"><span class="pre">Telnet.msg()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.set_debuglevel"><code class="docutils literal notranslate"><span class="pre">Telnet.set_debuglevel()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.close"><code class="docutils literal notranslate"><span class="pre">Telnet.close()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.get_socket"><code class="docutils literal notranslate"><span class="pre">Telnet.get_socket()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.fileno"><code class="docutils literal notranslate"><span class="pre">Telnet.fileno()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.write"><code class="docutils literal notranslate"><span class="pre">Telnet.write()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.interact"><code class="docutils literal notranslate"><span class="pre">Telnet.interact()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.mt_interact"><code class="docutils literal notranslate"><span class="pre">Telnet.mt_interact()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.expect"><code class="docutils literal notranslate"><span class="pre">Telnet.expect()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.set_option_negotiation_callback"><code class="docutils literal notranslate"><span class="pre">Telnet.set_option_negotiation_callback()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#telnet-example">Telnet Example</a></li>
 </ul>
 </li>
@@ -144,7 +178,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -155,14 +189,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -173,7 +214,7 @@
           <div class="body" role="main">
             
   <section id="module-telnetlib">
-<span id="telnetlib-telnet-client"></span><h1><a class="reference internal" href="#module-telnetlib" title="telnetlib: Telnet client class. (kullanım dışı)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code></a> — Telnet client<a class="headerlink" href="#module-telnetlib" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="telnetlib-telnet-client"></span><h1><a class="reference internal" href="#module-telnetlib" title="telnetlib: Telnet client class. (kullanım dışı)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code></a> — Telnet client<a class="headerlink" href="#module-telnetlib" title="Permalink to this heading">¶</a></h1>
 <p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.11/Lib/telnetlib.py">Lib/telnetlib.py</a></p>
 <div class="deprecated-removed" id="index-0">
 <p><span class="versionmodified">Sürüm 3.11 ‘den beri kullanım dışı, sürüm 3.13 ‘da kaldırılacak: </span>The <a class="reference internal" href="#module-telnetlib" title="telnetlib: Telnet client class. (kullanım dışı)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code></a> module is deprecated
@@ -191,10 +232,12 @@ module source itself.</p>
 SE (Subnegotiation End), NOP (No Operation), DM (Data Mark), BRK (Break), IP
 (Interrupt process), AO (Abort output), AYT (Are You There), EC (Erase
 Character), EL (Erase Line), GA (Go Ahead), SB (Subnegotiation Begin).</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not Emscripten, not WASI.<p>This module does not work or is not available on WebAssembly platforms
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not Emscripten, not WASI.</p>
+<p>This module does not work or is not available on WebAssembly platforms
 <code class="docutils literal notranslate"><span class="pre">wasm32-emscripten</span></code> and <code class="docutils literal notranslate"><span class="pre">wasm32-wasi</span></code>. See
 <a class="reference internal" href="intro.html#wasm-availability"><span class="std std-ref">WebAssembly platforms</span></a> for more information.</p>
-</p>
+</div>
 <dl class="py class">
 <dt class="sig sig-object py" id="telnetlib.Telnet">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telnetlib.</span></span><span class="sig-name descname"><span class="pre">Telnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port=0</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#telnetlib.Telnet" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -232,7 +275,7 @@ an empty string for other reasons.  See the individual descriptions below.</p>
 </dl>
 </div>
 <section id="telnet-objects">
-<span id="id1"></span><h2>Telnet Objects<a class="headerlink" href="#telnet-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="id1"></span><h2>Telnet Objects<a class="headerlink" href="#telnet-objects" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="#telnetlib.Telnet" title="telnetlib.Telnet"><code class="xref py py-class docutils literal notranslate"><span class="pre">Telnet</span></code></a> instances have the following methods:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="telnetlib.Telnet.read_until">
@@ -398,7 +441,7 @@ called with the following parameters: callback(telnet socket, command
 
 </section>
 <section id="telnet-example">
-<span id="id2"></span><h2>Telnet Example<a class="headerlink" href="#telnet-example" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="id2"></span><h2>Telnet Example<a class="headerlink" href="#telnet-example" title="Permalink to this heading">¶</a></h2>
 <p>A simple example illustrating typical use:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span>
 <span class="kn">import</span> <span class="nn">telnetlib</span>
@@ -435,7 +478,29 @@ called with the following parameters: callback(telnet socket, command
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">telnetlib</span></code> — Telnet client</a><ul>
-<li><a class="reference internal" href="#telnet-objects">Telnet Objects</a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet"><code class="docutils literal notranslate"><span class="pre">Telnet</span></code></a></li>
+<li><a class="reference internal" href="#telnet-objects">Telnet Objects</a><ul>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_until"><code class="docutils literal notranslate"><span class="pre">Telnet.read_until()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_all"><code class="docutils literal notranslate"><span class="pre">Telnet.read_all()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_some"><code class="docutils literal notranslate"><span class="pre">Telnet.read_some()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_very_eager"><code class="docutils literal notranslate"><span class="pre">Telnet.read_very_eager()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_eager"><code class="docutils literal notranslate"><span class="pre">Telnet.read_eager()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_lazy"><code class="docutils literal notranslate"><span class="pre">Telnet.read_lazy()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_very_lazy"><code class="docutils literal notranslate"><span class="pre">Telnet.read_very_lazy()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.read_sb_data"><code class="docutils literal notranslate"><span class="pre">Telnet.read_sb_data()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.open"><code class="docutils literal notranslate"><span class="pre">Telnet.open()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.msg"><code class="docutils literal notranslate"><span class="pre">Telnet.msg()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.set_debuglevel"><code class="docutils literal notranslate"><span class="pre">Telnet.set_debuglevel()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.close"><code class="docutils literal notranslate"><span class="pre">Telnet.close()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.get_socket"><code class="docutils literal notranslate"><span class="pre">Telnet.get_socket()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.fileno"><code class="docutils literal notranslate"><span class="pre">Telnet.fileno()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.write"><code class="docutils literal notranslate"><span class="pre">Telnet.write()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.interact"><code class="docutils literal notranslate"><span class="pre">Telnet.interact()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.mt_interact"><code class="docutils literal notranslate"><span class="pre">Telnet.mt_interact()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.expect"><code class="docutils literal notranslate"><span class="pre">Telnet.expect()</span></code></a></li>
+<li><a class="reference internal" href="#telnetlib.Telnet.set_option_negotiation_callback"><code class="docutils literal notranslate"><span class="pre">Telnet.set_option_negotiation_callback()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#telnet-example">Telnet Example</a></li>
 </ul>
 </li>
@@ -464,6 +529,10 @@ called with the following parameters: callback(telnet socket, command
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -493,7 +562,7 @@ called with the following parameters: callback(telnet socket, command
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -504,14 +573,21 @@ called with the following parameters: callback(telnet socket, command
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -530,11 +606,11 @@ called with the following parameters: callback(telnet socket, command
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

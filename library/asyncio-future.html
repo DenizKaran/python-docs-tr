@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="Futures" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/asyncio-future.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>Futures &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futures &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,41 +52,73 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Futures</a><ul>
-<li><a class="reference internal" href="#future-functions">Future Functions</a></li>
-<li><a class="reference internal" href="#future-object">Future Object</a></li>
+<li><a class="reference internal" href="#future-functions">Future Functions</a><ul>
+<li><a class="reference internal" href="#asyncio.isfuture"><code class="docutils literal notranslate"><span class="pre">isfuture()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.ensure_future"><code class="docutils literal notranslate"><span class="pre">ensure_future()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.wrap_future"><code class="docutils literal notranslate"><span class="pre">wrap_future()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#future-object">Future Object</a><ul>
+<li><a class="reference internal" href="#asyncio.Future"><code class="docutils literal notranslate"><span class="pre">Future</span></code></a><ul>
+<li><a class="reference internal" href="#asyncio.Future.result"><code class="docutils literal notranslate"><span class="pre">Future.result()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.set_result"><code class="docutils literal notranslate"><span class="pre">Future.set_result()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.set_exception"><code class="docutils literal notranslate"><span class="pre">Future.set_exception()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.done"><code class="docutils literal notranslate"><span class="pre">Future.done()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.cancelled"><code class="docutils literal notranslate"><span class="pre">Future.cancelled()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.add_done_callback"><code class="docutils literal notranslate"><span class="pre">Future.add_done_callback()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.remove_done_callback"><code class="docutils literal notranslate"><span class="pre">Future.remove_done_callback()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.cancel"><code class="docutils literal notranslate"><span class="pre">Future.cancel()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.exception"><code class="docutils literal notranslate"><span class="pre">Future.exception()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.get_loop"><code class="docutils literal notranslate"><span class="pre">Future.get_loop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -144,7 +176,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -156,14 +188,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -174,14 +213,14 @@
           <div class="body" role="main">
             
   <section id="futures">
-<span id="asyncio-futures"></span><h1>Futures<a class="headerlink" href="#futures" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="asyncio-futures"></span><h1>Futures<a class="headerlink" href="#futures" title="Permalink to this heading">¶</a></h1>
 <p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.11/Lib/asyncio/futures.py">Lib/asyncio/futures.py</a>,
 <a class="reference external" href="https://github.com/python/cpython/tree/3.11/Lib/asyncio/base_futures.py">Lib/asyncio/base_futures.py</a></p>
 <hr class="docutils" />
 <p><em>Future</em> objects are used to bridge <strong>low-level callback-based code</strong>
 with high-level async/await code.</p>
 <section id="future-functions">
-<h2>Future Functions<a class="headerlink" href="#future-functions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Future Functions<a class="headerlink" href="#future-functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="asyncio.isfuture">
 <span class="sig-prename descclassname"><span class="pre">asyncio.</span></span><span class="sig-name descname"><span class="pre">isfuture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#asyncio.isfuture" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -242,7 +281,7 @@ and <em>loop</em> is not specified and there is no running event loop.</p>
 
 </section>
 <section id="future-object">
-<h2>Future Object<a class="headerlink" href="#future-object" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Future Object<a class="headerlink" href="#future-object" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="asyncio.Future">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asyncio.</span></span><span class="sig-name descname"><span class="pre">Future</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#asyncio.Future" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -454,8 +493,28 @@ but <code class="xref py py-func docutils literal notranslate"><span class="pre"
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Futures</a><ul>
-<li><a class="reference internal" href="#future-functions">Future Functions</a></li>
-<li><a class="reference internal" href="#future-object">Future Object</a></li>
+<li><a class="reference internal" href="#future-functions">Future Functions</a><ul>
+<li><a class="reference internal" href="#asyncio.isfuture"><code class="docutils literal notranslate"><span class="pre">isfuture()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.ensure_future"><code class="docutils literal notranslate"><span class="pre">ensure_future()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.wrap_future"><code class="docutils literal notranslate"><span class="pre">wrap_future()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#future-object">Future Object</a><ul>
+<li><a class="reference internal" href="#asyncio.Future"><code class="docutils literal notranslate"><span class="pre">Future</span></code></a><ul>
+<li><a class="reference internal" href="#asyncio.Future.result"><code class="docutils literal notranslate"><span class="pre">Future.result()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.set_result"><code class="docutils literal notranslate"><span class="pre">Future.set_result()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.set_exception"><code class="docutils literal notranslate"><span class="pre">Future.set_exception()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.done"><code class="docutils literal notranslate"><span class="pre">Future.done()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.cancelled"><code class="docutils literal notranslate"><span class="pre">Future.cancelled()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.add_done_callback"><code class="docutils literal notranslate"><span class="pre">Future.add_done_callback()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.remove_done_callback"><code class="docutils literal notranslate"><span class="pre">Future.remove_done_callback()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.cancel"><code class="docutils literal notranslate"><span class="pre">Future.cancel()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.exception"><code class="docutils literal notranslate"><span class="pre">Future.exception()</span></code></a></li>
+<li><a class="reference internal" href="#asyncio.Future.get_loop"><code class="docutils literal notranslate"><span class="pre">Future.get_loop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -483,6 +542,10 @@ but <code class="xref py py-func docutils literal notranslate"><span class="pre"
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -512,7 +575,7 @@ but <code class="xref py py-func docutils literal notranslate"><span class="pre"
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -524,14 +587,21 @@ but <code class="xref py py-func docutils literal notranslate"><span class="pre"
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -550,11 +620,11 @@ but <code class="xref py py-func docutils literal notranslate"><span class="pre"
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

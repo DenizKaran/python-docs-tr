@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="cmath — Mathematical functions for complex numbers" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/cmath.html" />
@@ -17,28 +17,28 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>cmath — Mathematical functions for complex numbers &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cmath — Mathematical functions for complex numbers &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
     <link rel="search" title="Ara" href="../search.html" />
     <link rel="copyright" title="Telif Hakkı" href="../copyright.html" />
     <link rel="next" title="decimal — Decimal fixed point and floating point arithmetic" href="decimal.html" />
-    <link rel="prev" title="math — Mathematical functions" href="math.html" />
+    <link rel="prev" title="math — Matematiksel fonksiyonlar" href="math.html" />
     <link rel="canonical" href="https://docs.python.org/3/library/cmath.html" />
     
       
@@ -52,45 +52,99 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code> — Mathematical functions for complex numbers</a><ul>
-<li><a class="reference internal" href="#conversions-to-and-from-polar-coordinates">Conversions to and from polar coordinates</a></li>
-<li><a class="reference internal" href="#power-and-logarithmic-functions">Power and logarithmic functions</a></li>
-<li><a class="reference internal" href="#trigonometric-functions">Trigonometric functions</a></li>
-<li><a class="reference internal" href="#hyperbolic-functions">Hyperbolic functions</a></li>
-<li><a class="reference internal" href="#classification-functions">Classification functions</a></li>
-<li><a class="reference internal" href="#constants">Constants</a></li>
+<li><a class="reference internal" href="#conversions-to-and-from-polar-coordinates">Conversions to and from polar coordinates</a><ul>
+<li><a class="reference internal" href="#cmath.phase"><code class="docutils literal notranslate"><span class="pre">phase()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.polar"><code class="docutils literal notranslate"><span class="pre">polar()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.rect"><code class="docutils literal notranslate"><span class="pre">rect()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#power-and-logarithmic-functions">Power and logarithmic functions</a><ul>
+<li><a class="reference internal" href="#cmath.exp"><code class="docutils literal notranslate"><span class="pre">exp()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.log"><code class="docutils literal notranslate"><span class="pre">log()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.log10"><code class="docutils literal notranslate"><span class="pre">log10()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.sqrt"><code class="docutils literal notranslate"><span class="pre">sqrt()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trigonometric-functions">Trigonometric functions</a><ul>
+<li><a class="reference internal" href="#cmath.acos"><code class="docutils literal notranslate"><span class="pre">acos()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.asin"><code class="docutils literal notranslate"><span class="pre">asin()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.atan"><code class="docutils literal notranslate"><span class="pre">atan()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.cos"><code class="docutils literal notranslate"><span class="pre">cos()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.sin"><code class="docutils literal notranslate"><span class="pre">sin()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.tan"><code class="docutils literal notranslate"><span class="pre">tan()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hyperbolic-functions">Hyperbolic functions</a><ul>
+<li><a class="reference internal" href="#cmath.acosh"><code class="docutils literal notranslate"><span class="pre">acosh()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.asinh"><code class="docutils literal notranslate"><span class="pre">asinh()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.atanh"><code class="docutils literal notranslate"><span class="pre">atanh()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.cosh"><code class="docutils literal notranslate"><span class="pre">cosh()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.sinh"><code class="docutils literal notranslate"><span class="pre">sinh()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.tanh"><code class="docutils literal notranslate"><span class="pre">tanh()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#classification-functions">Classification functions</a><ul>
+<li><a class="reference internal" href="#cmath.isfinite"><code class="docutils literal notranslate"><span class="pre">isfinite()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.isinf"><code class="docutils literal notranslate"><span class="pre">isinf()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.isnan"><code class="docutils literal notranslate"><span class="pre">isnan()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.isclose"><code class="docutils literal notranslate"><span class="pre">isclose()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#constants">Constants</a><ul>
+<li><a class="reference internal" href="#cmath.pi"><code class="docutils literal notranslate"><span class="pre">pi</span></code></a></li>
+<li><a class="reference internal" href="#cmath.e"><code class="docutils literal notranslate"><span class="pre">e</span></code></a></li>
+<li><a class="reference internal" href="#cmath.tau"><code class="docutils literal notranslate"><span class="pre">tau</span></code></a></li>
+<li><a class="reference internal" href="#cmath.inf"><code class="docutils literal notranslate"><span class="pre">inf</span></code></a></li>
+<li><a class="reference internal" href="#cmath.infj"><code class="docutils literal notranslate"><span class="pre">infj</span></code></a></li>
+<li><a class="reference internal" href="#cmath.nan"><code class="docutils literal notranslate"><span class="pre">nan</span></code></a></li>
+<li><a class="reference internal" href="#cmath.nanj"><code class="docutils literal notranslate"><span class="pre">nanj</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -99,7 +153,7 @@
   <div>
     <h4>Önceki konu</h4>
     <p class="topless"><a href="math.html"
-                          title="önceki bölüm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> — Mathematical functions</a></p>
+                          title="önceki bölüm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> — Matematiksel fonksiyonlar</a></p>
   </div>
   <div>
     <h4>Sonraki konu</h4>
@@ -135,7 +189,7 @@
           <a href="decimal.html" title="decimal — Decimal fixed point and floating point arithmetic"
              accesskey="N">sonraki</a> |</li>
         <li class="right" >
-          <a href="math.html" title="math — Mathematical functions"
+          <a href="math.html" title="math — Matematiksel fonksiyonlar"
              accesskey="P">önceki</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -148,7 +202,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -159,14 +213,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -177,7 +238,7 @@
           <div class="body" role="main">
             
   <section id="module-cmath">
-<span id="cmath-mathematical-functions-for-complex-numbers"></span><h1><a class="reference internal" href="#module-cmath" title="cmath: Mathematical functions for complex numbers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code></a> — Mathematical functions for complex numbers<a class="headerlink" href="#module-cmath" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="cmath-mathematical-functions-for-complex-numbers"></span><h1><a class="reference internal" href="#module-cmath" title="cmath: Mathematical functions for complex numbers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code></a> — Mathematical functions for complex numbers<a class="headerlink" href="#module-cmath" title="Permalink to this heading">¶</a></h1>
 <hr class="docutils" />
 <p>This module provides access to mathematical functions for complex numbers.  The
 functions in this module accept integers, floating-point numbers or complex
@@ -187,14 +248,30 @@ convert the object to a complex or floating-point number, respectively, and
 the function is then applied to the result of the conversion.</p>
 <div class="admonition note">
 <p class="admonition-title">Not</p>
-<p>On platforms with hardware and system-level support for signed
-zeros, functions involving branch cuts are continuous on <em>both</em>
-sides of the branch cut: the sign of the zero distinguishes one
-side of the branch cut from the other.  On platforms that do not
-support signed zeros the continuity is as specified below.</p>
+<p>For functions involving branch cuts, we have the problem of deciding how to
+define those functions on the cut itself. Following Kahan’s “Branch cuts for
+complex elementary functions” paper, as well as Annex G of C99 and later C
+standards, we use the sign of zero to distinguish one side of the branch cut
+from the other: for a branch cut along (a portion of) the real axis we look
+at the sign of the imaginary part, while for a branch cut along the
+imaginary axis we look at the sign of the real part.</p>
+<p>For example, the <a class="reference internal" href="#cmath.sqrt" title="cmath.sqrt"><code class="xref py py-func docutils literal notranslate"><span class="pre">cmath.sqrt()</span></code></a> function has a branch cut along the
+negative real axis. An argument of <code class="docutils literal notranslate"><span class="pre">complex(-2.0,</span> <span class="pre">-0.0)</span></code> is treated as
+though it lies <em>below</em> the branch cut, and so gives a result on the negative
+imaginary axis:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">))</span>
+<span class="go">-1.4142135623730951j</span>
+</pre></div>
+</div>
+<p>But an argument of <code class="docutils literal notranslate"><span class="pre">complex(-2.0,</span> <span class="pre">0.0)</span></code> is treated as though it lies above
+the branch cut:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="go">1.4142135623730951j</span>
+</pre></div>
+</div>
 </div>
 <section id="conversions-to-and-from-polar-coordinates">
-<h2>Conversions to and from polar coordinates<a class="headerlink" href="#conversions-to-and-from-polar-coordinates" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Conversions to and from polar coordinates<a class="headerlink" href="#conversions-to-and-from-polar-coordinates" title="Permalink to this heading">¶</a></h2>
 <p>A Python complex number <code class="docutils literal notranslate"><span class="pre">z</span></code> is stored internally using <em>rectangular</em>
 or <em>Cartesian</em> coordinates.  It is completely determined by its <em>real
 part</em> <code class="docutils literal notranslate"><span class="pre">z.real</span></code> and its <em>imaginary part</em> <code class="docutils literal notranslate"><span class="pre">z.imag</span></code>.  In other
@@ -213,14 +290,11 @@ rectangular coordinates to polar coordinates and back.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="cmath.phase">
 <span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.phase" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
-<dd><p>Return the phase of <em>x</em> (also known as the <em>argument</em> of <em>x</em>), as a
-float.  <code class="docutils literal notranslate"><span class="pre">phase(x)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">math.atan2(x.imag,</span>
-<span class="pre">x.real)</span></code>.  The result lies in the range [-<em>π</em>, <em>π</em>], and the branch
-cut for this operation lies along the negative real axis,
-continuous from above.  On systems with support for signed zeros
-(which includes most systems in current use), this means that the
-sign of the result is the same as the sign of <code class="docutils literal notranslate"><span class="pre">x.imag</span></code>, even when
-<code class="docutils literal notranslate"><span class="pre">x.imag</span></code> is zero:</p>
+<dd><p>Return the phase of <em>x</em> (also known as the <em>argument</em> of <em>x</em>), as a float.
+<code class="docutils literal notranslate"><span class="pre">phase(x)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">math.atan2(x.imag,</span> <span class="pre">x.real)</span></code>.  The result
+lies in the range [-<em>π</em>, <em>π</em>], and the branch cut for this operation lies
+along the negative real axis.  The sign of the result is the same as the
+sign of <code class="docutils literal notranslate"><span class="pre">x.imag</span></code>, even when <code class="docutils literal notranslate"><span class="pre">x.imag</span></code> is zero:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">phase</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
 <span class="go">3.141592653589793</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">phase</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">))</span>
@@ -253,7 +327,7 @@ Equivalent to <code class="docutils literal notranslate"><span class="pre">r</sp
 
 </section>
 <section id="power-and-logarithmic-functions">
-<h2>Power and logarithmic functions<a class="headerlink" href="#power-and-logarithmic-functions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Power and logarithmic functions<a class="headerlink" href="#power-and-logarithmic-functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="cmath.exp">
 <span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.exp" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -265,8 +339,8 @@ logarithms.</p>
 <dt class="sig sig-object py" id="cmath.log">
 <span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cmath.log" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Returns the logarithm of <em>x</em> to the given <em>base</em>. If the <em>base</em> is not
-specified, returns the natural logarithm of <em>x</em>. There is one branch cut, from 0
-along the negative real axis to -∞, continuous from above.</p>
+specified, returns the natural logarithm of <em>x</em>. There is one branch cut,
+from 0 along the negative real axis to -∞.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -284,13 +358,13 @@ along the negative real axis to -∞, continuous from above.</p>
 
 </section>
 <section id="trigonometric-functions">
-<h2>Trigonometric functions<a class="headerlink" href="#trigonometric-functions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Trigonometric functions<a class="headerlink" href="#trigonometric-functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="cmath.acos">
 <span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">acos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.acos" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
-<dd><p>Return the arc cosine of <em>x</em>. There are two branch cuts: One extends right from
-1 along the real axis to ∞, continuous from below. The other extends left from
--1 along the real axis to -∞, continuous from above.</p>
+<dd><p>Return the arc cosine of <em>x</em>. There are two branch cuts: One extends right
+from 1 along the real axis to ∞. The other extends left from -1 along the
+real axis to -∞.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -303,9 +377,8 @@ along the negative real axis to -∞, continuous from above.</p>
 <dt class="sig sig-object py" id="cmath.atan">
 <span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">atan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.atan" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Return the arc tangent of <em>x</em>. There are two branch cuts: One extends from
-<code class="docutils literal notranslate"><span class="pre">1j</span></code> along the imaginary axis to <code class="docutils literal notranslate"><span class="pre">∞j</span></code>, continuous from the right. The
-other extends from <code class="docutils literal notranslate"><span class="pre">-1j</span></code> along the imaginary axis to <code class="docutils literal notranslate"><span class="pre">-∞j</span></code>, continuous
-from the left.</p>
+<code class="docutils literal notranslate"><span class="pre">1j</span></code> along the imaginary axis to <code class="docutils literal notranslate"><span class="pre">∞j</span></code>. The other extends from <code class="docutils literal notranslate"><span class="pre">-1j</span></code>
+along the imaginary axis to <code class="docutils literal notranslate"><span class="pre">-∞j</span></code>.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -328,30 +401,28 @@ from the left.</p>
 
 </section>
 <section id="hyperbolic-functions">
-<h2>Hyperbolic functions<a class="headerlink" href="#hyperbolic-functions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Hyperbolic functions<a class="headerlink" href="#hyperbolic-functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="cmath.acosh">
 <span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">acosh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.acosh" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Return the inverse hyperbolic cosine of <em>x</em>. There is one branch cut,
-extending left from 1 along the real axis to -∞, continuous from above.</p>
+extending left from 1 along the real axis to -∞.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="cmath.asinh">
 <span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">asinh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.asinh" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Return the inverse hyperbolic sine of <em>x</em>. There are two branch cuts:
-One extends from <code class="docutils literal notranslate"><span class="pre">1j</span></code> along the imaginary axis to <code class="docutils literal notranslate"><span class="pre">∞j</span></code>,
-continuous from the right.  The other extends from <code class="docutils literal notranslate"><span class="pre">-1j</span></code> along
-the imaginary axis to <code class="docutils literal notranslate"><span class="pre">-∞j</span></code>, continuous from the left.</p>
+One extends from <code class="docutils literal notranslate"><span class="pre">1j</span></code> along the imaginary axis to <code class="docutils literal notranslate"><span class="pre">∞j</span></code>.  The other
+extends from <code class="docutils literal notranslate"><span class="pre">-1j</span></code> along the imaginary axis to <code class="docutils literal notranslate"><span class="pre">-∞j</span></code>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="cmath.atanh">
 <span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">atanh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.atanh" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Return the inverse hyperbolic tangent of <em>x</em>. There are two branch cuts: One
-extends from <code class="docutils literal notranslate"><span class="pre">1</span></code> along the real axis to <code class="docutils literal notranslate"><span class="pre">∞</span></code>, continuous from below. The
-other extends from <code class="docutils literal notranslate"><span class="pre">-1</span></code> along the real axis to <code class="docutils literal notranslate"><span class="pre">-∞</span></code>, continuous from
-above.</p>
+extends from <code class="docutils literal notranslate"><span class="pre">1</span></code> along the real axis to <code class="docutils literal notranslate"><span class="pre">∞</span></code>. The other extends from
+<code class="docutils literal notranslate"><span class="pre">-1</span></code> along the real axis to <code class="docutils literal notranslate"><span class="pre">-∞</span></code>.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -374,7 +445,7 @@ above.</p>
 
 </section>
 <section id="classification-functions">
-<h2>Classification functions<a class="headerlink" href="#classification-functions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Classification functions<a class="headerlink" href="#classification-functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="cmath.isfinite">
 <span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">isfinite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.isfinite" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -430,7 +501,7 @@ considered close to themselves.</p>
 
 </section>
 <section id="constants">
-<h2>Constants<a class="headerlink" href="#constants" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="cmath.pi">
 <span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">pi</span></span><a class="headerlink" href="#cmath.pi" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -524,12 +595,54 @@ in numerical analysis. Clarendon Press (1987) pp165–211.</p>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code> — Mathematical functions for complex numbers</a><ul>
-<li><a class="reference internal" href="#conversions-to-and-from-polar-coordinates">Conversions to and from polar coordinates</a></li>
-<li><a class="reference internal" href="#power-and-logarithmic-functions">Power and logarithmic functions</a></li>
-<li><a class="reference internal" href="#trigonometric-functions">Trigonometric functions</a></li>
-<li><a class="reference internal" href="#hyperbolic-functions">Hyperbolic functions</a></li>
-<li><a class="reference internal" href="#classification-functions">Classification functions</a></li>
-<li><a class="reference internal" href="#constants">Constants</a></li>
+<li><a class="reference internal" href="#conversions-to-and-from-polar-coordinates">Conversions to and from polar coordinates</a><ul>
+<li><a class="reference internal" href="#cmath.phase"><code class="docutils literal notranslate"><span class="pre">phase()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.polar"><code class="docutils literal notranslate"><span class="pre">polar()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.rect"><code class="docutils literal notranslate"><span class="pre">rect()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#power-and-logarithmic-functions">Power and logarithmic functions</a><ul>
+<li><a class="reference internal" href="#cmath.exp"><code class="docutils literal notranslate"><span class="pre">exp()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.log"><code class="docutils literal notranslate"><span class="pre">log()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.log10"><code class="docutils literal notranslate"><span class="pre">log10()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.sqrt"><code class="docutils literal notranslate"><span class="pre">sqrt()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trigonometric-functions">Trigonometric functions</a><ul>
+<li><a class="reference internal" href="#cmath.acos"><code class="docutils literal notranslate"><span class="pre">acos()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.asin"><code class="docutils literal notranslate"><span class="pre">asin()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.atan"><code class="docutils literal notranslate"><span class="pre">atan()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.cos"><code class="docutils literal notranslate"><span class="pre">cos()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.sin"><code class="docutils literal notranslate"><span class="pre">sin()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.tan"><code class="docutils literal notranslate"><span class="pre">tan()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hyperbolic-functions">Hyperbolic functions</a><ul>
+<li><a class="reference internal" href="#cmath.acosh"><code class="docutils literal notranslate"><span class="pre">acosh()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.asinh"><code class="docutils literal notranslate"><span class="pre">asinh()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.atanh"><code class="docutils literal notranslate"><span class="pre">atanh()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.cosh"><code class="docutils literal notranslate"><span class="pre">cosh()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.sinh"><code class="docutils literal notranslate"><span class="pre">sinh()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.tanh"><code class="docutils literal notranslate"><span class="pre">tanh()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#classification-functions">Classification functions</a><ul>
+<li><a class="reference internal" href="#cmath.isfinite"><code class="docutils literal notranslate"><span class="pre">isfinite()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.isinf"><code class="docutils literal notranslate"><span class="pre">isinf()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.isnan"><code class="docutils literal notranslate"><span class="pre">isnan()</span></code></a></li>
+<li><a class="reference internal" href="#cmath.isclose"><code class="docutils literal notranslate"><span class="pre">isclose()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#constants">Constants</a><ul>
+<li><a class="reference internal" href="#cmath.pi"><code class="docutils literal notranslate"><span class="pre">pi</span></code></a></li>
+<li><a class="reference internal" href="#cmath.e"><code class="docutils literal notranslate"><span class="pre">e</span></code></a></li>
+<li><a class="reference internal" href="#cmath.tau"><code class="docutils literal notranslate"><span class="pre">tau</span></code></a></li>
+<li><a class="reference internal" href="#cmath.inf"><code class="docutils literal notranslate"><span class="pre">inf</span></code></a></li>
+<li><a class="reference internal" href="#cmath.infj"><code class="docutils literal notranslate"><span class="pre">infj</span></code></a></li>
+<li><a class="reference internal" href="#cmath.nan"><code class="docutils literal notranslate"><span class="pre">nan</span></code></a></li>
+<li><a class="reference internal" href="#cmath.nanj"><code class="docutils literal notranslate"><span class="pre">nanj</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -538,7 +651,7 @@ in numerical analysis. Clarendon Press (1987) pp165–211.</p>
   <div>
     <h4>Önceki konu</h4>
     <p class="topless"><a href="math.html"
-                          title="önceki bölüm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> — Mathematical functions</a></p>
+                          title="önceki bölüm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> — Matematiksel fonksiyonlar</a></p>
   </div>
   <div>
     <h4>Sonraki konu</h4>
@@ -557,6 +670,10 @@ in numerical analysis. Clarendon Press (1987) pp165–211.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -573,7 +690,7 @@ in numerical analysis. Clarendon Press (1987) pp165–211.</p>
           <a href="decimal.html" title="decimal — Decimal fixed point and floating point arithmetic"
              >sonraki</a> |</li>
         <li class="right" >
-          <a href="math.html" title="math — Mathematical functions"
+          <a href="math.html" title="math — Matematiksel fonksiyonlar"
              >önceki</a> |</li>
 
           <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
@@ -586,7 +703,7 @@ in numerical analysis. Clarendon Press (1987) pp165–211.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -597,14 +714,21 @@ in numerical analysis. Clarendon Press (1987) pp165–211.</p>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -623,11 +747,11 @@ in numerical analysis. Clarendon Press (1987) pp165–211.</p>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

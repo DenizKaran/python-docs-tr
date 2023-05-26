@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="Introduction" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/c-api/intro.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>Introduction &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,35 +52,47 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
@@ -156,7 +168,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python/C API Referans Kılavuzu</a> &#187;</li>
@@ -166,14 +178,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -184,7 +203,7 @@
           <div class="body" role="main">
             
   <section id="introduction">
-<span id="api-intro"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="api-intro"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h1>
 <p>The Application Programmer’s Interface to Python gives C and C++ programmers
 access to the Python interpreter at a variety of levels.  The API is equally
 usable from C++, but for brevity it is generally referred to as the Python/C
@@ -205,7 +224,7 @@ provide a custom extension as well, so it’s probably a  good idea to become
 familiar with writing an extension before  attempting to embed Python in a real
 application.</p>
 <section id="coding-standards">
-<h2>Coding standards<a class="headerlink" href="#coding-standards" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Coding standards<a class="headerlink" href="#coding-standards" title="Permalink to this heading">¶</a></h2>
 <p>If you’re writing C code for inclusion in CPython, you <strong>must</strong> follow the
 guidelines and standards defined in <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0007/"><strong>PEP 7</strong></a>.  These guidelines apply
 regardless of the version of Python you are contributing to.  Following these
@@ -213,7 +232,7 @@ conventions is not necessary for your own third party extension modules,
 unless you eventually expect to contribute them to Python.</p>
 </section>
 <section id="include-files">
-<span id="api-includes"></span><h2>Include Files<a class="headerlink" href="#include-files" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="api-includes"></span><h2>Include Files<a class="headerlink" href="#include-files" title="Permalink to this heading">¶</a></h2>
 <p>All function, type and macro definitions needed to use the Python/C API are
 included in your code by the following line:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define PY_SSIZE_T_CLEAN</span>
@@ -261,7 +280,7 @@ header files properly declare the entry points to be <code class="docutils liter
 there is no need to do anything special to use the API from C++.</p>
 </section>
 <section id="useful-macros">
-<h2>Useful macros<a class="headerlink" href="#useful-macros" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Useful macros<a class="headerlink" href="#useful-macros" title="Permalink to this heading">¶</a></h2>
 <p>Several useful macros are defined in the Python header files.  Many are
 defined closer to where they are useful (e.g. <a class="reference internal" href="none.html#c.Py_RETURN_NONE" title="Py_RETURN_NONE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_RETURN_NONE</span></code></a>).
 Others of a more general utility are defined here.  This is not necessarily a
@@ -447,7 +466,7 @@ building Python without docstrings, as specified in <span class="target" id="ind
 
 </section>
 <section id="objects-types-and-reference-counts">
-<span id="api-objects"></span><h2>Objects, Types and Reference Counts<a class="headerlink" href="#objects-types-and-reference-counts" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="api-objects"></span><h2>Objects, Types and Reference Counts<a class="headerlink" href="#objects-types-and-reference-counts" title="Permalink to this heading">¶</a></h2>
 <p id="index-8">Most Python/C API functions have one or more arguments as well as a return value
 of type <span class="c-expr sig sig-inline c"><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n">PyObject</span></a><span class="p">*</span></span>.  This type is a pointer to an opaque data type
 representing an arbitrary Python object.  Since all Python object types are
@@ -465,7 +484,7 @@ explained in <a class="reference internal" href="../reference/datamodel.html#typ
 to check whether an object is of that type; for instance, <code class="docutils literal notranslate"><span class="pre">PyList_Check(a)</span></code> is
 true if (and only if) the object pointed to by <em>a</em> is a Python list.</p>
 <section id="reference-counts">
-<span id="api-refcounts"></span><h3>Reference Counts<a class="headerlink" href="#reference-counts" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="api-refcounts"></span><h3>Reference Counts<a class="headerlink" href="#reference-counts" title="Permalink to this heading">¶</a></h3>
 <p>The reference count is important because today’s computers have a  finite (and
 often severely limited) memory size; it counts how many  different places there
 are that have a reference to an object.  Such a  place could be another object,
@@ -515,7 +534,7 @@ These operations always increment the reference count of the object they return.
 This leaves the caller with the responsibility to call <a class="reference internal" href="refcounting.html#c.Py_DECREF" title="Py_DECREF"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_DECREF()</span></code></a> when
 they are done with the result; this soon becomes second nature.</p>
 <section id="reference-count-details">
-<span id="api-refcountdetails"></span><h4>Reference Count Details<a class="headerlink" href="#reference-count-details" title="Bu başlık için kalıcı bağlantı">¶</a></h4>
+<span id="api-refcountdetails"></span><h4>Reference Count Details<a class="headerlink" href="#reference-count-details" title="Permalink to this heading">¶</a></h4>
 <p>The reference count behavior of functions in the Python/C API is best  explained
 in terms of <em>ownership of references</em>.  Ownership pertains to references, never
 to objects (objects are not owned: they are always shared).  “Owning a
@@ -670,7 +689,7 @@ using <a class="reference internal" href="sequence.html#c.PySequence_GetItem" ti
 </section>
 </section>
 <section id="types">
-<span id="api-types"></span><span id="index-14"></span><h3>Types<a class="headerlink" href="#types" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<span id="api-types"></span><span id="index-14"></span><h3>Types<a class="headerlink" href="#types" title="Permalink to this heading">¶</a></h3>
 <p>There are few other data types that play a significant role in  the Python/C
 API; most are simple C types such as <span class="c-expr sig sig-inline c"><span class="kt">int</span></span>,  <span class="c-expr sig sig-inline c"><span class="kt">long</span></span>,
 <span class="c-expr sig sig-inline c"><span class="kt">double</span></span> and <span class="c-expr sig sig-inline c"><span class="kt">char</span><span class="p">*</span></span>.  A few structure types  are used to
@@ -690,7 +709,7 @@ of type <a class="reference internal" href="#c.Py_ssize_t" title="Py_ssize_t"><c
 </section>
 </section>
 <section id="exceptions">
-<span id="api-exceptions"></span><h2>Exceptions<a class="headerlink" href="#exceptions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="api-exceptions"></span><h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading">¶</a></h2>
 <p>The Python programmer only needs to deal with exceptions if specific  error
 handling is required; unhandled exceptions are automatically  propagated to the
 caller, then to the caller’s caller, and so on, until they reach the top-level
@@ -809,7 +828,7 @@ return value is initialized to <code class="docutils literal notranslate"><span 
 the final call made is successful.</p>
 </section>
 <section id="embedding-python">
-<span id="api-embedding"></span><h2>Embedding Python<a class="headerlink" href="#embedding-python" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="api-embedding"></span><h2>Embedding Python<a class="headerlink" href="#embedding-python" title="Permalink to this heading">¶</a></h2>
 <p>The one important task that only embedders (as opposed to extension writers) of
 the Python interpreter have to worry about is the initialization, and possibly
 the finalization, of the Python interpreter.  Most functionality of the
@@ -855,7 +874,7 @@ does <em>not</em> free all memory allocated by the Python interpreter, e.g. memo
 allocated by extension modules currently cannot be released.</p>
 </section>
 <section id="debugging-builds">
-<span id="api-debugging"></span><h2>Debugging Builds<a class="headerlink" href="#debugging-builds" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="api-debugging"></span><h2>Debugging Builds<a class="headerlink" href="#debugging-builds" title="Permalink to this heading">¶</a></h2>
 <p>Python can be built with several macros to enable extra checks of the
 interpreter and extension modules.  These checks tend to add a large amount of
 overhead to the runtime so they are not enabled by default.</p>
@@ -936,6 +955,10 @@ for more detailed information.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -965,7 +988,7 @@ for more detailed information.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Referans Kılavuzu</a> &#187;</li>
@@ -975,14 +998,21 @@ for more detailed information.</p>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -1001,11 +1031,11 @@ for more detailed information.</p>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

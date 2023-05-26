@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="xml.sax.xmlreader — Interface for XML parsers" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/xml.sax.reader.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>xml.sax.xmlreader — Interface for XML parsers &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml.sax.xmlreader — Interface for XML parsers &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,45 +52,114 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.xmlreader</span></code> — Interface for XML parsers</a><ul>
-<li><a class="reference internal" href="#xmlreader-objects">XMLReader Objects</a></li>
-<li><a class="reference internal" href="#incrementalparser-objects">IncrementalParser Objects</a></li>
-<li><a class="reference internal" href="#locator-objects">Locator Objects</a></li>
-<li><a class="reference internal" href="#inputsource-objects">InputSource Objects</a></li>
-<li><a class="reference internal" href="#the-attributes-interface">The <code class="xref py py-class docutils literal notranslate"><span class="pre">Attributes</span></code> Interface</a></li>
-<li><a class="reference internal" href="#the-attributesns-interface">The <code class="xref py py-class docutils literal notranslate"><span class="pre">AttributesNS</span></code> Interface</a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader"><code class="docutils literal notranslate"><span class="pre">XMLReader</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.IncrementalParser"><code class="docutils literal notranslate"><span class="pre">IncrementalParser</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Locator"><code class="docutils literal notranslate"><span class="pre">Locator</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource"><code class="docutils literal notranslate"><span class="pre">InputSource</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesImpl"><code class="docutils literal notranslate"><span class="pre">AttributesImpl</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesNSImpl"><code class="docutils literal notranslate"><span class="pre">AttributesNSImpl</span></code></a></li>
+<li><a class="reference internal" href="#xmlreader-objects">XMLReader Objects</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.parse"><code class="docutils literal notranslate"><span class="pre">XMLReader.parse()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getContentHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.getContentHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setContentHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.setContentHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getDTDHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.getDTDHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setDTDHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.setDTDHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getEntityResolver"><code class="docutils literal notranslate"><span class="pre">XMLReader.getEntityResolver()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setEntityResolver"><code class="docutils literal notranslate"><span class="pre">XMLReader.setEntityResolver()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getErrorHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.getErrorHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setErrorHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.setErrorHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setLocale"><code class="docutils literal notranslate"><span class="pre">XMLReader.setLocale()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getFeature"><code class="docutils literal notranslate"><span class="pre">XMLReader.getFeature()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setFeature"><code class="docutils literal notranslate"><span class="pre">XMLReader.setFeature()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getProperty"><code class="docutils literal notranslate"><span class="pre">XMLReader.getProperty()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setProperty"><code class="docutils literal notranslate"><span class="pre">XMLReader.setProperty()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#incrementalparser-objects">IncrementalParser Objects</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.IncrementalParser.feed"><code class="docutils literal notranslate"><span class="pre">IncrementalParser.feed()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.IncrementalParser.close"><code class="docutils literal notranslate"><span class="pre">IncrementalParser.close()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.IncrementalParser.reset"><code class="docutils literal notranslate"><span class="pre">IncrementalParser.reset()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#locator-objects">Locator Objects</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Locator.getColumnNumber"><code class="docutils literal notranslate"><span class="pre">Locator.getColumnNumber()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Locator.getLineNumber"><code class="docutils literal notranslate"><span class="pre">Locator.getLineNumber()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Locator.getPublicId"><code class="docutils literal notranslate"><span class="pre">Locator.getPublicId()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Locator.getSystemId"><code class="docutils literal notranslate"><span class="pre">Locator.getSystemId()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inputsource-objects">InputSource Objects</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.setPublicId"><code class="docutils literal notranslate"><span class="pre">InputSource.setPublicId()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.getPublicId"><code class="docutils literal notranslate"><span class="pre">InputSource.getPublicId()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.setSystemId"><code class="docutils literal notranslate"><span class="pre">InputSource.setSystemId()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.getSystemId"><code class="docutils literal notranslate"><span class="pre">InputSource.getSystemId()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.setEncoding"><code class="docutils literal notranslate"><span class="pre">InputSource.setEncoding()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.getEncoding"><code class="docutils literal notranslate"><span class="pre">InputSource.getEncoding()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.setByteStream"><code class="docutils literal notranslate"><span class="pre">InputSource.setByteStream()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.getByteStream"><code class="docutils literal notranslate"><span class="pre">InputSource.getByteStream()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.setCharacterStream"><code class="docutils literal notranslate"><span class="pre">InputSource.setCharacterStream()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.getCharacterStream"><code class="docutils literal notranslate"><span class="pre">InputSource.getCharacterStream()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-attributes-interface">The <code class="xref py py-class docutils literal notranslate"><span class="pre">Attributes</span></code> Interface</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Attributes.getLength"><code class="docutils literal notranslate"><span class="pre">Attributes.getLength()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Attributes.getNames"><code class="docutils literal notranslate"><span class="pre">Attributes.getNames()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Attributes.getType"><code class="docutils literal notranslate"><span class="pre">Attributes.getType()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Attributes.getValue"><code class="docutils literal notranslate"><span class="pre">Attributes.getValue()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-attributesns-interface">The <code class="xref py py-class docutils literal notranslate"><span class="pre">AttributesNS</span></code> Interface</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesNS.getValueByQName"><code class="docutils literal notranslate"><span class="pre">AttributesNS.getValueByQName()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesNS.getNameByQName"><code class="docutils literal notranslate"><span class="pre">AttributesNS.getNameByQName()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesNS.getQNameByName"><code class="docutils literal notranslate"><span class="pre">AttributesNS.getQNameByName()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesNS.getQNames"><code class="docutils literal notranslate"><span class="pre">AttributesNS.getQNames()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -148,7 +217,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -159,14 +228,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -177,7 +253,7 @@
           <div class="body" role="main">
             
   <section id="module-xml.sax.xmlreader">
-<span id="xml-sax-xmlreader-interface-for-xml-parsers"></span><h1><a class="reference internal" href="#module-xml.sax.xmlreader" title="xml.sax.xmlreader: Interface which SAX-compliant XML parsers must implement."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.xmlreader</span></code></a> — Interface for XML parsers<a class="headerlink" href="#module-xml.sax.xmlreader" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="xml-sax-xmlreader-interface-for-xml-parsers"></span><h1><a class="reference internal" href="#module-xml.sax.xmlreader" title="xml.sax.xmlreader: Interface which SAX-compliant XML parsers must implement."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.xmlreader</span></code></a> — Interface for XML parsers<a class="headerlink" href="#module-xml.sax.xmlreader" title="Permalink to this heading">¶</a></h1>
 <p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.11/Lib/xml/sax/xmlreader.py">Lib/xml/sax/xmlreader.py</a></p>
 <hr class="docutils" />
 <p>SAX parsers implement the <a class="reference internal" href="#xml.sax.xmlreader.XMLReader" title="xml.sax.xmlreader.XMLReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">XMLReader</span></code></a> interface. They are implemented in
@@ -258,7 +334,7 @@ names as they appear in the original document.  This class implements the
 </dd></dl>
 
 <section id="xmlreader-objects">
-<span id="id1"></span><h2>XMLReader Objects<a class="headerlink" href="#xmlreader-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="id1"></span><h2>XMLReader Objects<a class="headerlink" href="#xmlreader-objects" title="Permalink to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="#xml.sax.xmlreader.XMLReader" title="xml.sax.xmlreader.XMLReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">XMLReader</span></code></a> interface supports the following methods:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xml.sax.xmlreader.XMLReader.parse">
@@ -376,7 +452,7 @@ not supported by the parser, <em>SAXNotSupportedException</em> is raised.</p>
 
 </section>
 <section id="incrementalparser-objects">
-<span id="incremental-parser-objects"></span><h2>IncrementalParser Objects<a class="headerlink" href="#incrementalparser-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="incremental-parser-objects"></span><h2>IncrementalParser Objects<a class="headerlink" href="#incrementalparser-objects" title="Permalink to this heading">¶</a></h2>
 <p>Instances of <a class="reference internal" href="#xml.sax.xmlreader.IncrementalParser" title="xml.sax.xmlreader.IncrementalParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">IncrementalParser</span></code></a> offer the following additional methods:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xml.sax.xmlreader.IncrementalParser.feed">
@@ -402,7 +478,7 @@ close without calling reset are undefined.</p>
 
 </section>
 <section id="locator-objects">
-<span id="id2"></span><h2>Locator Objects<a class="headerlink" href="#locator-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="id2"></span><h2>Locator Objects<a class="headerlink" href="#locator-objects" title="Permalink to this heading">¶</a></h2>
 <p>Instances of <a class="reference internal" href="#xml.sax.xmlreader.Locator" title="xml.sax.xmlreader.Locator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Locator</span></code></a> provide these methods:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xml.sax.xmlreader.Locator.getColumnNumber">
@@ -430,7 +506,7 @@ close without calling reset are undefined.</p>
 
 </section>
 <section id="inputsource-objects">
-<span id="input-source-objects"></span><h2>InputSource Objects<a class="headerlink" href="#inputsource-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="input-source-objects"></span><h2>InputSource Objects<a class="headerlink" href="#inputsource-objects" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="xml.sax.xmlreader.InputSource.setPublicId">
 <span class="sig-prename descclassname"><span class="pre">InputSource.</span></span><span class="sig-name descname"><span class="pre">setPublicId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xml.sax.xmlreader.InputSource.setPublicId" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -505,7 +581,7 @@ stream and will not attempt to open a URI connection to the system identifier.</
 
 </section>
 <section id="the-attributes-interface">
-<span id="attributes-objects"></span><h2>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Attributes</span></code> Interface<a class="headerlink" href="#the-attributes-interface" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="attributes-objects"></span><h2>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Attributes</span></code> Interface<a class="headerlink" href="#the-attributes-interface" title="Permalink to this heading">¶</a></h2>
 <p><code class="xref py py-class docutils literal notranslate"><span class="pre">Attributes</span></code> objects implement a portion of the <a class="reference internal" href="../glossary.html#term-mapping"><span class="xref std std-term">mapping protocol</span></a>, including the methods <code class="xref py py-meth docutils literal notranslate"><span class="pre">copy()</span></code>,
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">get()</span></code>, <a class="reference internal" href="../reference/datamodel.html#object.__contains__" title="object.__contains__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__contains__()</span></code></a>,
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">items()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">keys()</span></code>,
@@ -537,7 +613,7 @@ are also provided:</p>
 
 </section>
 <section id="the-attributesns-interface">
-<span id="attributes-ns-objects"></span><h2>The <code class="xref py py-class docutils literal notranslate"><span class="pre">AttributesNS</span></code> Interface<a class="headerlink" href="#the-attributesns-interface" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="attributes-ns-objects"></span><h2>The <code class="xref py py-class docutils literal notranslate"><span class="pre">AttributesNS</span></code> Interface<a class="headerlink" href="#the-attributesns-interface" title="Permalink to this heading">¶</a></h2>
 <p>This interface is a subtype of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Attributes</span></code> interface (see section
 <a class="reference internal" href="#attributes-objects"><span class="std std-ref">The Attributes Interface</span></a>).  All methods supported by that interface are also
 available on <code class="xref py py-class docutils literal notranslate"><span class="pre">AttributesNS</span></code> objects.</p>
@@ -580,12 +656,69 @@ available on <code class="xref py py-class docutils literal notranslate"><span c
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax.xmlreader</span></code> — Interface for XML parsers</a><ul>
-<li><a class="reference internal" href="#xmlreader-objects">XMLReader Objects</a></li>
-<li><a class="reference internal" href="#incrementalparser-objects">IncrementalParser Objects</a></li>
-<li><a class="reference internal" href="#locator-objects">Locator Objects</a></li>
-<li><a class="reference internal" href="#inputsource-objects">InputSource Objects</a></li>
-<li><a class="reference internal" href="#the-attributes-interface">The <code class="xref py py-class docutils literal notranslate"><span class="pre">Attributes</span></code> Interface</a></li>
-<li><a class="reference internal" href="#the-attributesns-interface">The <code class="xref py py-class docutils literal notranslate"><span class="pre">AttributesNS</span></code> Interface</a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader"><code class="docutils literal notranslate"><span class="pre">XMLReader</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.IncrementalParser"><code class="docutils literal notranslate"><span class="pre">IncrementalParser</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Locator"><code class="docutils literal notranslate"><span class="pre">Locator</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource"><code class="docutils literal notranslate"><span class="pre">InputSource</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesImpl"><code class="docutils literal notranslate"><span class="pre">AttributesImpl</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesNSImpl"><code class="docutils literal notranslate"><span class="pre">AttributesNSImpl</span></code></a></li>
+<li><a class="reference internal" href="#xmlreader-objects">XMLReader Objects</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.parse"><code class="docutils literal notranslate"><span class="pre">XMLReader.parse()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getContentHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.getContentHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setContentHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.setContentHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getDTDHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.getDTDHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setDTDHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.setDTDHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getEntityResolver"><code class="docutils literal notranslate"><span class="pre">XMLReader.getEntityResolver()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setEntityResolver"><code class="docutils literal notranslate"><span class="pre">XMLReader.setEntityResolver()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getErrorHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.getErrorHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setErrorHandler"><code class="docutils literal notranslate"><span class="pre">XMLReader.setErrorHandler()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setLocale"><code class="docutils literal notranslate"><span class="pre">XMLReader.setLocale()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getFeature"><code class="docutils literal notranslate"><span class="pre">XMLReader.getFeature()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setFeature"><code class="docutils literal notranslate"><span class="pre">XMLReader.setFeature()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.getProperty"><code class="docutils literal notranslate"><span class="pre">XMLReader.getProperty()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.XMLReader.setProperty"><code class="docutils literal notranslate"><span class="pre">XMLReader.setProperty()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#incrementalparser-objects">IncrementalParser Objects</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.IncrementalParser.feed"><code class="docutils literal notranslate"><span class="pre">IncrementalParser.feed()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.IncrementalParser.close"><code class="docutils literal notranslate"><span class="pre">IncrementalParser.close()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.IncrementalParser.reset"><code class="docutils literal notranslate"><span class="pre">IncrementalParser.reset()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#locator-objects">Locator Objects</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Locator.getColumnNumber"><code class="docutils literal notranslate"><span class="pre">Locator.getColumnNumber()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Locator.getLineNumber"><code class="docutils literal notranslate"><span class="pre">Locator.getLineNumber()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Locator.getPublicId"><code class="docutils literal notranslate"><span class="pre">Locator.getPublicId()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Locator.getSystemId"><code class="docutils literal notranslate"><span class="pre">Locator.getSystemId()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inputsource-objects">InputSource Objects</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.setPublicId"><code class="docutils literal notranslate"><span class="pre">InputSource.setPublicId()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.getPublicId"><code class="docutils literal notranslate"><span class="pre">InputSource.getPublicId()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.setSystemId"><code class="docutils literal notranslate"><span class="pre">InputSource.setSystemId()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.getSystemId"><code class="docutils literal notranslate"><span class="pre">InputSource.getSystemId()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.setEncoding"><code class="docutils literal notranslate"><span class="pre">InputSource.setEncoding()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.getEncoding"><code class="docutils literal notranslate"><span class="pre">InputSource.getEncoding()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.setByteStream"><code class="docutils literal notranslate"><span class="pre">InputSource.setByteStream()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.getByteStream"><code class="docutils literal notranslate"><span class="pre">InputSource.getByteStream()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.setCharacterStream"><code class="docutils literal notranslate"><span class="pre">InputSource.setCharacterStream()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.InputSource.getCharacterStream"><code class="docutils literal notranslate"><span class="pre">InputSource.getCharacterStream()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-attributes-interface">The <code class="xref py py-class docutils literal notranslate"><span class="pre">Attributes</span></code> Interface</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Attributes.getLength"><code class="docutils literal notranslate"><span class="pre">Attributes.getLength()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Attributes.getNames"><code class="docutils literal notranslate"><span class="pre">Attributes.getNames()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Attributes.getType"><code class="docutils literal notranslate"><span class="pre">Attributes.getType()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.Attributes.getValue"><code class="docutils literal notranslate"><span class="pre">Attributes.getValue()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-attributesns-interface">The <code class="xref py py-class docutils literal notranslate"><span class="pre">AttributesNS</span></code> Interface</a><ul>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesNS.getValueByQName"><code class="docutils literal notranslate"><span class="pre">AttributesNS.getValueByQName()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesNS.getNameByQName"><code class="docutils literal notranslate"><span class="pre">AttributesNS.getNameByQName()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesNS.getQNameByName"><code class="docutils literal notranslate"><span class="pre">AttributesNS.getQNameByName()</span></code></a></li>
+<li><a class="reference internal" href="#xml.sax.xmlreader.AttributesNS.getQNames"><code class="docutils literal notranslate"><span class="pre">AttributesNS.getQNames()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -613,6 +746,10 @@ available on <code class="xref py py-class docutils literal notranslate"><span c
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -642,7 +779,7 @@ available on <code class="xref py py-class docutils literal notranslate"><span c
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -653,14 +790,21 @@ available on <code class="xref py py-class docutils literal notranslate"><span c
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -679,11 +823,11 @@ available on <code class="xref py py-class docutils literal notranslate"><span c
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="unicodedata — Unicode Database" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/unicodedata.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>unicodedata — Unicode Database &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unicodedata — Unicode Database &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,35 +52,71 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">İçindekiler</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unicodedata</span></code> — Unicode Database</a><ul>
+<li><a class="reference internal" href="#unicodedata.lookup"><code class="docutils literal notranslate"><span class="pre">lookup()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.name"><code class="docutils literal notranslate"><span class="pre">name()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.decimal"><code class="docutils literal notranslate"><span class="pre">decimal()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.digit"><code class="docutils literal notranslate"><span class="pre">digit()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.numeric"><code class="docutils literal notranslate"><span class="pre">numeric()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.category"><code class="docutils literal notranslate"><span class="pre">category()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.bidirectional"><code class="docutils literal notranslate"><span class="pre">bidirectional()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.combining"><code class="docutils literal notranslate"><span class="pre">combining()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.east_asian_width"><code class="docutils literal notranslate"><span class="pre">east_asian_width()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.mirrored"><code class="docutils literal notranslate"><span class="pre">mirrored()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.decomposition"><code class="docutils literal notranslate"><span class="pre">decomposition()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.normalize"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.is_normalized"><code class="docutils literal notranslate"><span class="pre">is_normalized()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.unidata_version"><code class="docutils literal notranslate"><span class="pre">unidata_version</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.ucd_3_2_0"><code class="docutils literal notranslate"><span class="pre">ucd_3_2_0</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div>
     <h4>Önceki konu</h4>
     <p class="topless"><a href="textwrap.html"
@@ -133,7 +169,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -144,14 +180,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -162,7 +205,7 @@
           <div class="body" role="main">
             
   <section id="module-unicodedata">
-<span id="unicodedata-unicode-database"></span><h1><a class="reference internal" href="#module-unicodedata" title="unicodedata: Access the Unicode Database."><code class="xref py py-mod docutils literal notranslate"><span class="pre">unicodedata</span></code></a> — Unicode Database<a class="headerlink" href="#module-unicodedata" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="unicodedata-unicode-database"></span><h1><a class="reference internal" href="#module-unicodedata" title="unicodedata: Access the Unicode Database."><code class="xref py py-mod docutils literal notranslate"><span class="pre">unicodedata</span></code></a> — Unicode Database<a class="headerlink" href="#module-unicodedata" title="Permalink to this heading">¶</a></h1>
 <hr class="docutils" id="index-0" />
 <p>This module provides access to the Unicode Character Database (UCD) which
 defines character properties for all Unicode characters. The data contained in
@@ -176,7 +219,7 @@ following functions:</p>
 <dd><p>Look up character by name.  If a character with the given name is found, return
 the corresponding character.  If not found, <a class="reference internal" href="exceptions.html#KeyError" title="KeyError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyError</span></code></a> is raised.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">3.3 sürümünde değişti: </span>Support for name aliases <a class="footnote-reference brackets" href="#id3" id="id1">1</a> and named sequences <a class="footnote-reference brackets" href="#id4" id="id2">2</a> has been added.</p>
+<p><span class="versionmodified changed">3.3 sürümünde değişti: </span>Support for name aliases <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> and named sequences <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> has been added.</p>
 </div>
 </dd></dl>
 
@@ -329,14 +372,16 @@ specific version of the Unicode database (such as IDNA).</p>
 </pre></div>
 </div>
 <p class="rubric">Footnotes</p>
-<dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p><a class="reference external" href="https://www.unicode.org/Public/14.0.0/ucd/NameAliases.txt">https://www.unicode.org/Public/14.0.0/ucd/NameAliases.txt</a></p>
-</dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p><a class="reference external" href="https://www.unicode.org/Public/14.0.0/ucd/NamedSequences.txt">https://www.unicode.org/Public/14.0.0/ucd/NamedSequences.txt</a></p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.unicode.org/Public/14.0.0/ucd/NameAliases.txt">https://www.unicode.org/Public/14.0.0/ucd/NameAliases.txt</a></p>
+</aside>
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.unicode.org/Public/14.0.0/ucd/NamedSequences.txt">https://www.unicode.org/Public/14.0.0/ucd/NamedSequences.txt</a></p>
+</aside>
+</aside>
 </section>
 
 
@@ -346,6 +391,30 @@ specific version of the Unicode database (such as IDNA).</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../contents.html">İçindekiler</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unicodedata</span></code> — Unicode Database</a><ul>
+<li><a class="reference internal" href="#unicodedata.lookup"><code class="docutils literal notranslate"><span class="pre">lookup()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.name"><code class="docutils literal notranslate"><span class="pre">name()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.decimal"><code class="docutils literal notranslate"><span class="pre">decimal()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.digit"><code class="docutils literal notranslate"><span class="pre">digit()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.numeric"><code class="docutils literal notranslate"><span class="pre">numeric()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.category"><code class="docutils literal notranslate"><span class="pre">category()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.bidirectional"><code class="docutils literal notranslate"><span class="pre">bidirectional()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.combining"><code class="docutils literal notranslate"><span class="pre">combining()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.east_asian_width"><code class="docutils literal notranslate"><span class="pre">east_asian_width()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.mirrored"><code class="docutils literal notranslate"><span class="pre">mirrored()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.decomposition"><code class="docutils literal notranslate"><span class="pre">decomposition()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.normalize"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.is_normalized"><code class="docutils literal notranslate"><span class="pre">is_normalized()</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.unidata_version"><code class="docutils literal notranslate"><span class="pre">unidata_version</span></code></a></li>
+<li><a class="reference internal" href="#unicodedata.ucd_3_2_0"><code class="docutils literal notranslate"><span class="pre">ucd_3_2_0</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div>
     <h4>Önceki konu</h4>
     <p class="topless"><a href="textwrap.html"
@@ -368,6 +437,10 @@ specific version of the Unicode database (such as IDNA).</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -397,7 +470,7 @@ specific version of the Unicode database (such as IDNA).</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -408,14 +481,21 @@ specific version of the Unicode database (such as IDNA).</p>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -434,11 +514,11 @@ specific version of the Unicode database (such as IDNA).</p>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

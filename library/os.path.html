@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="os.path — Common pathname manipulations" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/os.path.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>os.path — Common pathname manipulations &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>os.path — Common pathname manipulations &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,35 +52,86 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">İçindekiler</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os.path</span></code> — Common pathname manipulations</a><ul>
+<li><a class="reference internal" href="#os.path.abspath"><code class="docutils literal notranslate"><span class="pre">abspath()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.basename"><code class="docutils literal notranslate"><span class="pre">basename()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.commonpath"><code class="docutils literal notranslate"><span class="pre">commonpath()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.commonprefix"><code class="docutils literal notranslate"><span class="pre">commonprefix()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.dirname"><code class="docutils literal notranslate"><span class="pre">dirname()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.exists"><code class="docutils literal notranslate"><span class="pre">exists()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.lexists"><code class="docutils literal notranslate"><span class="pre">lexists()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.expanduser"><code class="docutils literal notranslate"><span class="pre">expanduser()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.expandvars"><code class="docutils literal notranslate"><span class="pre">expandvars()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.getatime"><code class="docutils literal notranslate"><span class="pre">getatime()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.getmtime"><code class="docutils literal notranslate"><span class="pre">getmtime()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.getctime"><code class="docutils literal notranslate"><span class="pre">getctime()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.getsize"><code class="docutils literal notranslate"><span class="pre">getsize()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.isabs"><code class="docutils literal notranslate"><span class="pre">isabs()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.isfile"><code class="docutils literal notranslate"><span class="pre">isfile()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.isdir"><code class="docutils literal notranslate"><span class="pre">isdir()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.islink"><code class="docutils literal notranslate"><span class="pre">islink()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.ismount"><code class="docutils literal notranslate"><span class="pre">ismount()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.join"><code class="docutils literal notranslate"><span class="pre">join()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.normcase"><code class="docutils literal notranslate"><span class="pre">normcase()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.normpath"><code class="docutils literal notranslate"><span class="pre">normpath()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.realpath"><code class="docutils literal notranslate"><span class="pre">realpath()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.relpath"><code class="docutils literal notranslate"><span class="pre">relpath()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.samefile"><code class="docutils literal notranslate"><span class="pre">samefile()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.sameopenfile"><code class="docutils literal notranslate"><span class="pre">sameopenfile()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.samestat"><code class="docutils literal notranslate"><span class="pre">samestat()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.split"><code class="docutils literal notranslate"><span class="pre">split()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.splitdrive"><code class="docutils literal notranslate"><span class="pre">splitdrive()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.splitext"><code class="docutils literal notranslate"><span class="pre">splitext()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.supports_unicode_filenames"><code class="docutils literal notranslate"><span class="pre">supports_unicode_filenames</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div>
     <h4>Önceki konu</h4>
     <p class="topless"><a href="pathlib.html"
@@ -133,7 +184,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -144,14 +195,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -162,7 +220,7 @@
           <div class="body" role="main">
             
   <section id="module-os.path">
-<span id="os-path-common-pathname-manipulations"></span><h1><a class="reference internal" href="#module-os.path" title="os.path: Operations on pathnames."><code class="xref py py-mod docutils literal notranslate"><span class="pre">os.path</span></code></a> — Common pathname manipulations<a class="headerlink" href="#module-os.path" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="os-path-common-pathname-manipulations"></span><h1><a class="reference internal" href="#module-os.path" title="os.path: Operations on pathnames."><code class="xref py py-mod docutils literal notranslate"><span class="pre">os.path</span></code></a> — Common pathname manipulations<a class="headerlink" href="#module-os.path" title="Permalink to this heading">¶</a></h1>
 <p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.11/Lib/posixpath.py">Lib/posixpath.py</a> (for POSIX) and
 <a class="reference external" href="https://github.com/python/cpython/tree/3.11/Lib/ntpath.py">Lib/ntpath.py</a> (for Windows).</p>
 <hr class="docutils" id="index-0" />
@@ -237,7 +295,9 @@ empty string (<code class="docutils literal notranslate"><span class="pre">''</s
 and relative pathnames, the <em>paths</em> are on the different drives or
 if <em>paths</em> is empty.  Unlike <a class="reference internal" href="#os.path.commonprefix" title="os.path.commonprefix"><code class="xref py py-func docutils literal notranslate"><span class="pre">commonprefix()</span></code></a>, this returns a
 valid path.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.5 sürümünde geldi.</span></p>
 </div>
@@ -547,7 +607,9 @@ filesystem is not accessed to confirm the existence or nature of <em>path</em> o
 <em>start</em>.  On Windows, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised when <em>path</em> and <em>start</em>
 are on different drives.</p>
 <p><em>start</em> defaults to <a class="reference internal" href="os.html#os.curdir" title="os.curdir"><code class="xref py py-attr docutils literal notranslate"><span class="pre">os.curdir</span></code></a>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.6 sürümünde değişti: </span>Accepts a <a class="reference internal" href="../glossary.html#term-path-like-object"><span class="xref std std-term">path-like object</span></a>.</p>
 </div>
@@ -559,7 +621,9 @@ are on different drives.</p>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if both pathname arguments refer to the same file or directory.
 This is determined by the device number and i-node number and raises an
 exception if an <a class="reference internal" href="os.html#os.stat" title="os.stat"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.stat()</span></code></a> call on either pathname fails.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.2 sürümünde değişti: </span>Added Windows support.</p>
 </div>
@@ -575,7 +639,9 @@ exception if an <a class="reference internal" href="os.html#os.stat" title="os.s
 <dt class="sig sig-object py" id="os.path.sameopenfile">
 <span class="sig-prename descclassname"><span class="pre">os.path.</span></span><span class="sig-name descname"><span class="pre">sameopenfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fp2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#os.path.sameopenfile" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the file descriptors <em>fp1</em> and <em>fp2</em> refer to the same file.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.2 sürümünde değişti: </span>Added Windows support.</p>
 </div>
@@ -591,7 +657,9 @@ exception if an <a class="reference internal" href="os.html#os.stat" title="os.s
 These structures may have been returned by <a class="reference internal" href="os.html#os.fstat" title="os.fstat"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.fstat()</span></code></a>,
 <a class="reference internal" href="os.html#os.lstat" title="os.lstat"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.lstat()</span></code></a>, or <a class="reference internal" href="os.html#os.stat" title="os.stat"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.stat()</span></code></a>.  This function implements the
 underlying comparison used by <a class="reference internal" href="#os.path.samefile" title="os.path.samefile"><code class="xref py py-func docutils literal notranslate"><span class="pre">samefile()</span></code></a> and <a class="reference internal" href="#os.path.sameopenfile" title="os.path.sameopenfile"><code class="xref py py-func docutils literal notranslate"><span class="pre">sameopenfile()</span></code></a>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.4 sürümünde değişti: </span>Added Windows support.</p>
 </div>
@@ -691,6 +759,45 @@ imposed by the file system).</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <div>
+    <h3><a href="../contents.html">İçindekiler</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">os.path</span></code> — Common pathname manipulations</a><ul>
+<li><a class="reference internal" href="#os.path.abspath"><code class="docutils literal notranslate"><span class="pre">abspath()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.basename"><code class="docutils literal notranslate"><span class="pre">basename()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.commonpath"><code class="docutils literal notranslate"><span class="pre">commonpath()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.commonprefix"><code class="docutils literal notranslate"><span class="pre">commonprefix()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.dirname"><code class="docutils literal notranslate"><span class="pre">dirname()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.exists"><code class="docutils literal notranslate"><span class="pre">exists()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.lexists"><code class="docutils literal notranslate"><span class="pre">lexists()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.expanduser"><code class="docutils literal notranslate"><span class="pre">expanduser()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.expandvars"><code class="docutils literal notranslate"><span class="pre">expandvars()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.getatime"><code class="docutils literal notranslate"><span class="pre">getatime()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.getmtime"><code class="docutils literal notranslate"><span class="pre">getmtime()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.getctime"><code class="docutils literal notranslate"><span class="pre">getctime()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.getsize"><code class="docutils literal notranslate"><span class="pre">getsize()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.isabs"><code class="docutils literal notranslate"><span class="pre">isabs()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.isfile"><code class="docutils literal notranslate"><span class="pre">isfile()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.isdir"><code class="docutils literal notranslate"><span class="pre">isdir()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.islink"><code class="docutils literal notranslate"><span class="pre">islink()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.ismount"><code class="docutils literal notranslate"><span class="pre">ismount()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.join"><code class="docutils literal notranslate"><span class="pre">join()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.normcase"><code class="docutils literal notranslate"><span class="pre">normcase()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.normpath"><code class="docutils literal notranslate"><span class="pre">normpath()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.realpath"><code class="docutils literal notranslate"><span class="pre">realpath()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.relpath"><code class="docutils literal notranslate"><span class="pre">relpath()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.samefile"><code class="docutils literal notranslate"><span class="pre">samefile()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.sameopenfile"><code class="docutils literal notranslate"><span class="pre">sameopenfile()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.samestat"><code class="docutils literal notranslate"><span class="pre">samestat()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.split"><code class="docutils literal notranslate"><span class="pre">split()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.splitdrive"><code class="docutils literal notranslate"><span class="pre">splitdrive()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.splitext"><code class="docutils literal notranslate"><span class="pre">splitext()</span></code></a></li>
+<li><a class="reference internal" href="#os.path.supports_unicode_filenames"><code class="docutils literal notranslate"><span class="pre">supports_unicode_filenames</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
     <h4>Önceki konu</h4>
     <p class="topless"><a href="pathlib.html"
                           title="önceki bölüm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pathlib</span></code> — Object-oriented filesystem paths</a></p>
@@ -712,6 +819,10 @@ imposed by the file system).</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -741,7 +852,7 @@ imposed by the file system).</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -752,14 +863,21 @@ imposed by the file system).</p>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -778,11 +896,11 @@ imposed by the file system).</p>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

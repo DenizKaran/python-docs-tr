@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="select — Waiting for I/O completion" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/select.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>select — Waiting for I/O completion &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select — Waiting for I/O completion &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,44 +52,104 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">select</span></code> — Waiting for I/O completion</a><ul>
-<li><a class="reference internal" href="#dev-poll-polling-objects"><code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code> Polling Objects</a></li>
-<li><a class="reference internal" href="#edge-and-level-trigger-polling-epoll-objects">Edge and Level Trigger Polling (epoll) Objects</a></li>
-<li><a class="reference internal" href="#polling-objects">Polling Objects</a></li>
-<li><a class="reference internal" href="#kqueue-objects">Kqueue Objects</a></li>
-<li><a class="reference internal" href="#kevent-objects">Kevent Objects</a></li>
+<li><a class="reference internal" href="#select.error"><code class="docutils literal notranslate"><span class="pre">error</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll"><code class="docutils literal notranslate"><span class="pre">devpoll()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll"><code class="docutils literal notranslate"><span class="pre">epoll()</span></code></a></li>
+<li><a class="reference internal" href="#select.poll"><code class="docutils literal notranslate"><span class="pre">poll()</span></code></a></li>
+<li><a class="reference internal" href="#select.kqueue"><code class="docutils literal notranslate"><span class="pre">kqueue()</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent"><code class="docutils literal notranslate"><span class="pre">kevent()</span></code></a></li>
+<li><a class="reference internal" href="#select.select"><code class="docutils literal notranslate"><span class="pre">select()</span></code></a></li>
+<li><a class="reference internal" href="#select.PIPE_BUF"><code class="docutils literal notranslate"><span class="pre">PIPE_BUF</span></code></a></li>
+<li><a class="reference internal" href="#dev-poll-polling-objects"><code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code> Polling Objects</a><ul>
+<li><a class="reference internal" href="#select.devpoll.close"><code class="docutils literal notranslate"><span class="pre">devpoll.close()</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.closed"><code class="docutils literal notranslate"><span class="pre">devpoll.closed</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.fileno"><code class="docutils literal notranslate"><span class="pre">devpoll.fileno()</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.register"><code class="docutils literal notranslate"><span class="pre">devpoll.register()</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.modify"><code class="docutils literal notranslate"><span class="pre">devpoll.modify()</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.unregister"><code class="docutils literal notranslate"><span class="pre">devpoll.unregister()</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.poll"><code class="docutils literal notranslate"><span class="pre">devpoll.poll()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edge-and-level-trigger-polling-epoll-objects">Edge and Level Trigger Polling (epoll) Objects</a><ul>
+<li><a class="reference internal" href="#select.epoll.close"><code class="docutils literal notranslate"><span class="pre">epoll.close()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.closed"><code class="docutils literal notranslate"><span class="pre">epoll.closed</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.fileno"><code class="docutils literal notranslate"><span class="pre">epoll.fileno()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.fromfd"><code class="docutils literal notranslate"><span class="pre">epoll.fromfd()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.register"><code class="docutils literal notranslate"><span class="pre">epoll.register()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.modify"><code class="docutils literal notranslate"><span class="pre">epoll.modify()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.unregister"><code class="docutils literal notranslate"><span class="pre">epoll.unregister()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.poll"><code class="docutils literal notranslate"><span class="pre">epoll.poll()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#polling-objects">Polling Objects</a><ul>
+<li><a class="reference internal" href="#select.poll.register"><code class="docutils literal notranslate"><span class="pre">poll.register()</span></code></a></li>
+<li><a class="reference internal" href="#select.poll.modify"><code class="docutils literal notranslate"><span class="pre">poll.modify()</span></code></a></li>
+<li><a class="reference internal" href="#select.poll.unregister"><code class="docutils literal notranslate"><span class="pre">poll.unregister()</span></code></a></li>
+<li><a class="reference internal" href="#select.poll.poll"><code class="docutils literal notranslate"><span class="pre">poll.poll()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kqueue-objects">Kqueue Objects</a><ul>
+<li><a class="reference internal" href="#select.kqueue.close"><code class="docutils literal notranslate"><span class="pre">kqueue.close()</span></code></a></li>
+<li><a class="reference internal" href="#select.kqueue.closed"><code class="docutils literal notranslate"><span class="pre">kqueue.closed</span></code></a></li>
+<li><a class="reference internal" href="#select.kqueue.fileno"><code class="docutils literal notranslate"><span class="pre">kqueue.fileno()</span></code></a></li>
+<li><a class="reference internal" href="#select.kqueue.fromfd"><code class="docutils literal notranslate"><span class="pre">kqueue.fromfd()</span></code></a></li>
+<li><a class="reference internal" href="#select.kqueue.control"><code class="docutils literal notranslate"><span class="pre">kqueue.control()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kevent-objects">Kevent Objects</a><ul>
+<li><a class="reference internal" href="#select.kevent.ident"><code class="docutils literal notranslate"><span class="pre">kevent.ident</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent.filter"><code class="docutils literal notranslate"><span class="pre">kevent.filter</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent.flags"><code class="docutils literal notranslate"><span class="pre">kevent.flags</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent.fflags"><code class="docutils literal notranslate"><span class="pre">kevent.fflags</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent.data"><code class="docutils literal notranslate"><span class="pre">kevent.data</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent.udata"><code class="docutils literal notranslate"><span class="pre">kevent.udata</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -147,7 +207,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -158,14 +218,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -176,7 +243,7 @@
           <div class="body" role="main">
             
   <section id="module-select">
-<span id="select-waiting-for-i-o-completion"></span><h1><a class="reference internal" href="#module-select" title="select: Wait for I/O completion on multiple streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">select</span></code></a> — Waiting for I/O completion<a class="headerlink" href="#module-select" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="select-waiting-for-i-o-completion"></span><h1><a class="reference internal" href="#module-select" title="select: Wait for I/O completion on multiple streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">select</span></code></a> — Waiting for I/O completion<a class="headerlink" href="#module-select" title="Permalink to this heading">¶</a></h1>
 <hr class="docutils" />
 <p>This module provides access to the <code class="xref c c-func docutils literal notranslate"><span class="pre">select()</span></code> and <code class="xref c c-func docutils literal notranslate"><span class="pre">poll()</span></code> functions
 available in most operating systems, <code class="xref c c-func docutils literal notranslate"><span class="pre">devpoll()</span></code> available on
@@ -193,10 +260,12 @@ multiplexing, built upon the <a class="reference internal" href="#module-select"
 encouraged to use the <a class="reference internal" href="selectors.html#module-selectors" title="selectors: High-level I/O multiplexing."><code class="xref py py-mod docutils literal notranslate"><span class="pre">selectors</span></code></a> module instead, unless they want
 precise control over the OS-level primitives used.</p>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not Emscripten, not WASI.<p>This module does not work or is not available on WebAssembly platforms
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not Emscripten, not WASI.</p>
+<p>This module does not work or is not available on WebAssembly platforms
 <code class="docutils literal notranslate"><span class="pre">wasm32-emscripten</span></code> and <code class="docutils literal notranslate"><span class="pre">wasm32-wasi</span></code>. See
 <a class="reference internal" href="intro.html#wasm-availability"><span class="std std-ref">WebAssembly platforms</span></a> for more information.</p>
-</p>
+</div>
 <p>The module defines the following:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="select.error">
@@ -229,7 +298,7 @@ incomplete list of active file descriptors.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="select.epoll">
-<span class="sig-prename descclassname"><span class="pre">select.</span></span><span class="sig-name descname"><span class="pre">epoll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizehint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.epoll" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">select.</span></span><span class="sig-name descname"><span class="pre">epoll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizehint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.epoll" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>(Only supported on Linux 2.5.44 and newer.) Return an edge polling object,
 which can be used as Edge or Level Triggered interface for I/O
 events.</p>
@@ -337,14 +406,16 @@ when the pipe has been reported as ready for writing by <a class="reference inte
 <a class="reference internal" href="#select.poll" title="select.poll"><code class="xref py py-func docutils literal notranslate"><span class="pre">poll()</span></code></a> or another interface in this module.  This doesn’t apply
 to other kind of file-like objects such as sockets.</p>
 <p>This value is guaranteed by POSIX to be at least 512.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.2 sürümünde geldi.</span></p>
 </div>
 </dd></dl>
 
 <section id="dev-poll-polling-objects">
-<span id="devpoll-objects"></span><h2><code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code> Polling Objects<a class="headerlink" href="#dev-poll-polling-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="devpoll-objects"></span><h2><code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code> Polling Objects<a class="headerlink" href="#dev-poll-polling-objects" title="Permalink to this heading">¶</a></h2>
 <p>Solaris and derivatives have <code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code>. While <code class="xref c c-func docutils literal notranslate"><span class="pre">select()</span></code> is
 O(highest file descriptor) and <code class="xref c c-func docutils literal notranslate"><span class="pre">poll()</span></code> is O(number of file
 descriptors), <code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code> is O(active file descriptors).</p>
@@ -439,15 +510,11 @@ a signal, except if the signal handler raises an exception (see
 
 </section>
 <section id="edge-and-level-trigger-polling-epoll-objects">
-<span id="epoll-objects"></span><h2>Edge and Level Trigger Polling (epoll) Objects<a class="headerlink" href="#edge-and-level-trigger-polling-epoll-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="epoll-objects"></span><h2>Edge and Level Trigger Polling (epoll) Objects<a class="headerlink" href="#edge-and-level-trigger-polling-epoll-objects" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p><a class="reference external" href="https://linux.die.net/man/4/epoll">https://linux.die.net/man/4/epoll</a></p>
 <p><em>eventmask</em></p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 65%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Constant</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -556,7 +623,7 @@ or later.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="select.epoll.poll">
-<span class="sig-prename descclassname"><span class="pre">epoll.</span></span><span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxevents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.epoll.poll" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">epoll.</span></span><span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxevents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.epoll.poll" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Wait for events. timeout in seconds (float)</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.5 sürümünde değişti: </span>The function is now retried with a recomputed timeout when interrupted by
@@ -568,7 +635,7 @@ a signal, except if the signal handler raises an exception (see
 
 </section>
 <section id="polling-objects">
-<span id="poll-objects"></span><h2>Polling Objects<a class="headerlink" href="#polling-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="poll-objects"></span><h2>Polling Objects<a class="headerlink" href="#polling-objects" title="Permalink to this heading">¶</a></h2>
 <p>The <code class="xref c c-func docutils literal notranslate"><span class="pre">poll()</span></code> system call, supported on most Unix systems, provides better
 scalability for network servers that service many, many clients at the same
 time. <code class="xref c c-func docutils literal notranslate"><span class="pre">poll()</span></code> scales better because the system call only requires listing
@@ -589,10 +656,6 @@ check for, and can be a combination of the constants <code class="xref py py-con
 <code class="xref py py-const docutils literal notranslate"><span class="pre">POLLPRI</span></code>, and <code class="xref py py-const docutils literal notranslate"><span class="pre">POLLOUT</span></code>, described in the table below.  If not
 specified, the default value used will check for all 3 types of events.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 69%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Constant</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -669,7 +732,7 @@ a signal, except if the signal handler raises an exception (see
 
 </section>
 <section id="kqueue-objects">
-<span id="id1"></span><h2>Kqueue Objects<a class="headerlink" href="#kqueue-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="id1"></span><h2>Kqueue Objects<a class="headerlink" href="#kqueue-objects" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="select.kqueue.close">
 <span class="sig-prename descclassname"><span class="pre">kqueue.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#select.kqueue.close" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -714,7 +777,7 @@ a signal, except if the signal handler raises an exception (see
 
 </section>
 <section id="kevent-objects">
-<span id="id2"></span><h2>Kevent Objects<a class="headerlink" href="#kevent-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="id2"></span><h2>Kevent Objects<a class="headerlink" href="#kevent-objects" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://www.freebsd.org/cgi/man.cgi?query=kqueue&amp;sektion=2">https://www.freebsd.org/cgi/man.cgi?query=kqueue&amp;sektion=2</a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="select.kevent.ident">
@@ -730,10 +793,6 @@ stores the integer internally.</p>
 <span class="sig-prename descclassname"><span class="pre">kevent.</span></span><span class="sig-name descname"><span class="pre">filter</span></span><a class="headerlink" href="#select.kevent.filter" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Name of the kernel filter.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Constant</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -778,10 +837,6 @@ delivered to the process</p></td>
 <span class="sig-prename descclassname"><span class="pre">kevent.</span></span><span class="sig-name descname"><span class="pre">flags</span></span><a class="headerlink" href="#select.kevent.flags" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Filter action.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Constant</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -828,10 +883,6 @@ delivered to the process</p></td>
 <dd><p>Filter specific flags.</p>
 <p><code class="xref py py-const docutils literal notranslate"><span class="pre">KQ_FILTER_READ</span></code> and  <code class="xref py py-const docutils literal notranslate"><span class="pre">KQ_FILTER_WRITE</span></code> filter flags:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Constant</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -845,10 +896,6 @@ delivered to the process</p></td>
 </table>
 <p><code class="xref py py-const docutils literal notranslate"><span class="pre">KQ_FILTER_VNODE</span></code> filter flags:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Constant</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -880,10 +927,6 @@ delivered to the process</p></td>
 </table>
 <p><code class="xref py py-const docutils literal notranslate"><span class="pre">KQ_FILTER_PROC</span></code> filter flags:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Constant</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -919,10 +962,6 @@ delivered to the process</p></td>
 </table>
 <p><code class="xref py py-const docutils literal notranslate"><span class="pre">KQ_FILTER_NETDEV</span></code> filter flags (not available on macOS):</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Constant</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -968,11 +1007,59 @@ delivered to the process</p></td>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">select</span></code> — Waiting for I/O completion</a><ul>
-<li><a class="reference internal" href="#dev-poll-polling-objects"><code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code> Polling Objects</a></li>
-<li><a class="reference internal" href="#edge-and-level-trigger-polling-epoll-objects">Edge and Level Trigger Polling (epoll) Objects</a></li>
-<li><a class="reference internal" href="#polling-objects">Polling Objects</a></li>
-<li><a class="reference internal" href="#kqueue-objects">Kqueue Objects</a></li>
-<li><a class="reference internal" href="#kevent-objects">Kevent Objects</a></li>
+<li><a class="reference internal" href="#select.error"><code class="docutils literal notranslate"><span class="pre">error</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll"><code class="docutils literal notranslate"><span class="pre">devpoll()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll"><code class="docutils literal notranslate"><span class="pre">epoll()</span></code></a></li>
+<li><a class="reference internal" href="#select.poll"><code class="docutils literal notranslate"><span class="pre">poll()</span></code></a></li>
+<li><a class="reference internal" href="#select.kqueue"><code class="docutils literal notranslate"><span class="pre">kqueue()</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent"><code class="docutils literal notranslate"><span class="pre">kevent()</span></code></a></li>
+<li><a class="reference internal" href="#select.select"><code class="docutils literal notranslate"><span class="pre">select()</span></code></a></li>
+<li><a class="reference internal" href="#select.PIPE_BUF"><code class="docutils literal notranslate"><span class="pre">PIPE_BUF</span></code></a></li>
+<li><a class="reference internal" href="#dev-poll-polling-objects"><code class="docutils literal notranslate"><span class="pre">/dev/poll</span></code> Polling Objects</a><ul>
+<li><a class="reference internal" href="#select.devpoll.close"><code class="docutils literal notranslate"><span class="pre">devpoll.close()</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.closed"><code class="docutils literal notranslate"><span class="pre">devpoll.closed</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.fileno"><code class="docutils literal notranslate"><span class="pre">devpoll.fileno()</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.register"><code class="docutils literal notranslate"><span class="pre">devpoll.register()</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.modify"><code class="docutils literal notranslate"><span class="pre">devpoll.modify()</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.unregister"><code class="docutils literal notranslate"><span class="pre">devpoll.unregister()</span></code></a></li>
+<li><a class="reference internal" href="#select.devpoll.poll"><code class="docutils literal notranslate"><span class="pre">devpoll.poll()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edge-and-level-trigger-polling-epoll-objects">Edge and Level Trigger Polling (epoll) Objects</a><ul>
+<li><a class="reference internal" href="#select.epoll.close"><code class="docutils literal notranslate"><span class="pre">epoll.close()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.closed"><code class="docutils literal notranslate"><span class="pre">epoll.closed</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.fileno"><code class="docutils literal notranslate"><span class="pre">epoll.fileno()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.fromfd"><code class="docutils literal notranslate"><span class="pre">epoll.fromfd()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.register"><code class="docutils literal notranslate"><span class="pre">epoll.register()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.modify"><code class="docutils literal notranslate"><span class="pre">epoll.modify()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.unregister"><code class="docutils literal notranslate"><span class="pre">epoll.unregister()</span></code></a></li>
+<li><a class="reference internal" href="#select.epoll.poll"><code class="docutils literal notranslate"><span class="pre">epoll.poll()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#polling-objects">Polling Objects</a><ul>
+<li><a class="reference internal" href="#select.poll.register"><code class="docutils literal notranslate"><span class="pre">poll.register()</span></code></a></li>
+<li><a class="reference internal" href="#select.poll.modify"><code class="docutils literal notranslate"><span class="pre">poll.modify()</span></code></a></li>
+<li><a class="reference internal" href="#select.poll.unregister"><code class="docutils literal notranslate"><span class="pre">poll.unregister()</span></code></a></li>
+<li><a class="reference internal" href="#select.poll.poll"><code class="docutils literal notranslate"><span class="pre">poll.poll()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kqueue-objects">Kqueue Objects</a><ul>
+<li><a class="reference internal" href="#select.kqueue.close"><code class="docutils literal notranslate"><span class="pre">kqueue.close()</span></code></a></li>
+<li><a class="reference internal" href="#select.kqueue.closed"><code class="docutils literal notranslate"><span class="pre">kqueue.closed</span></code></a></li>
+<li><a class="reference internal" href="#select.kqueue.fileno"><code class="docutils literal notranslate"><span class="pre">kqueue.fileno()</span></code></a></li>
+<li><a class="reference internal" href="#select.kqueue.fromfd"><code class="docutils literal notranslate"><span class="pre">kqueue.fromfd()</span></code></a></li>
+<li><a class="reference internal" href="#select.kqueue.control"><code class="docutils literal notranslate"><span class="pre">kqueue.control()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kevent-objects">Kevent Objects</a><ul>
+<li><a class="reference internal" href="#select.kevent.ident"><code class="docutils literal notranslate"><span class="pre">kevent.ident</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent.filter"><code class="docutils literal notranslate"><span class="pre">kevent.filter</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent.flags"><code class="docutils literal notranslate"><span class="pre">kevent.flags</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent.fflags"><code class="docutils literal notranslate"><span class="pre">kevent.fflags</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent.data"><code class="docutils literal notranslate"><span class="pre">kevent.data</span></code></a></li>
+<li><a class="reference internal" href="#select.kevent.udata"><code class="docutils literal notranslate"><span class="pre">kevent.udata</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1000,6 +1087,10 @@ delivered to the process</p></td>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -1029,7 +1120,7 @@ delivered to the process</p></td>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -1040,14 +1131,21 @@ delivered to the process</p></td>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -1066,11 +1164,11 @@ delivered to the process</p></td>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

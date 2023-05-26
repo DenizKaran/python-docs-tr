@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="C API Stability" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/c-api/stable.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>C API Stability &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C API Stability &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,35 +52,47 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
@@ -149,7 +161,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python/C API Referans Kılavuzu</a> &#187;</li>
@@ -159,14 +171,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -177,7 +196,7 @@
           <div class="body" role="main">
             
   <section id="c-api-stability">
-<span id="stable"></span><h1>C API Stability<a class="headerlink" href="#c-api-stability" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="stable"></span><h1>C API Stability<a class="headerlink" href="#c-api-stability" title="Permalink to this heading">¶</a></h1>
 <p>Python’s C API is covered by the Backwards Compatibility Policy, <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0387/"><strong>PEP 387</strong></a>.
 While the C API will change with every minor release (e.g. from 3.9 to 3.10),
 most changes will be source-compatible, typically by only adding new API.
@@ -191,7 +210,7 @@ but will need to be compiled separately for 3.9.x and 3.10.x.</p>
 <p>Names prefixed by an underscore, such as <code class="docutils literal notranslate"><span class="pre">_Py_InternalState</span></code>,
 are private API that can change without notice even in patch releases.</p>
 <section id="stable-application-binary-interface">
-<h2>Stable Application Binary Interface<a class="headerlink" href="#stable-application-binary-interface" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Stable Application Binary Interface<a class="headerlink" href="#stable-application-binary-interface" title="Permalink to this heading">¶</a></h2>
 <p>Python 3.2 introduced the <em>Limited API</em>, a subset of Python’s C API.
 Extensions that only use the Limited API can be
 compiled once and work with multiple versions of Python.
@@ -233,7 +252,7 @@ versions of Python.</p>
 library, not solely as macros. This makes them usable from languages that don’t
 use the C preprocessor.</p>
 <section id="limited-api-scope-and-performance">
-<h3>Limited API Scope and Performance<a class="headerlink" href="#limited-api-scope-and-performance" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Limited API Scope and Performance<a class="headerlink" href="#limited-api-scope-and-performance" title="Permalink to this heading">¶</a></h3>
 <p>The goal for the Limited API is to allow everything that is possible with the
 full C API, but possibly with a performance penalty.</p>
 <p>For example, while <a class="reference internal" href="list.html#c.PyList_GetItem" title="PyList_GetItem"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyList_GetItem()</span></code></a> is available, its “unsafe” macro
@@ -252,7 +271,7 @@ distributed where a version-specific one is not available – for example,
 for prereleases of an upcoming Python version.</p>
 </section>
 <section id="limited-api-caveats">
-<h3>Limited API Caveats<a class="headerlink" href="#limited-api-caveats" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Limited API Caveats<a class="headerlink" href="#limited-api-caveats" title="Permalink to this heading">¶</a></h3>
 <p>Note that compiling with <code class="docutils literal notranslate"><span class="pre">Py_LIMITED_API</span></code> is <em>not</em> a complete guarantee that
 code conforms to the Limited API or the Stable ABI. <code class="docutils literal notranslate"><span class="pre">Py_LIMITED_API</span></code> only
 covers definitions, but an API also includes other issues, such as expected
@@ -279,7 +298,7 @@ provided that the Stable ABI stays stable.</p>
 </section>
 </section>
 <section id="platform-considerations">
-<span id="stable-abi-platform"></span><h2>Platform Considerations<a class="headerlink" href="#platform-considerations" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="stable-abi-platform"></span><h2>Platform Considerations<a class="headerlink" href="#platform-considerations" title="Permalink to this heading">¶</a></h2>
 <p>ABI stability depends not only on Python, but also on the compiler used,
 lower-level libraries and compiler options. For the purposes of the Stable ABI,
 these details define a “platform”. They usually depend on the OS
@@ -291,7 +310,7 @@ This is the case with Windows and macOS releases from <code class="docutils lite
 third-party distributors.</p>
 </section>
 <section id="contents-of-limited-api">
-<span id="stable-abi-list"></span><h2>Contents of Limited API<a class="headerlink" href="#contents-of-limited-api" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="stable-abi-list"></span><h2>Contents of Limited API<a class="headerlink" href="#contents-of-limited-api" title="Permalink to this heading">¶</a></h2>
 <p>Currently, the Limited API includes the following items:</p>
 <p><ul class="simple">
 <li><p><a class="reference internal" href="iter.html#c.PyAIter_Check" title="PyAIter_Check"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyAIter_Check()</span></code></a></p></li>
@@ -1230,6 +1249,10 @@ third-party distributors.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -1259,7 +1282,7 @@ third-party distributors.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Referans Kılavuzu</a> &#187;</li>
@@ -1269,14 +1292,21 @@ third-party distributors.</p>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -1295,11 +1325,11 @@ third-party distributors.</p>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

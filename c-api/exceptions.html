@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="Exception Handling" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/c-api/exceptions.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>Exception Handling &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception Handling &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,35 +52,47 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
@@ -153,7 +165,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python/C API Referans Kılavuzu</a> &#187;</li>
@@ -163,14 +175,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -181,7 +200,7 @@
           <div class="body" role="main">
             
   <section id="exception-handling">
-<span id="exceptionhandling"></span><h1>Exception Handling<a class="headerlink" href="#exception-handling" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="exceptionhandling"></span><h1>Exception Handling<a class="headerlink" href="#exception-handling" title="Permalink to this heading">¶</a></h1>
 <p>The functions described in this chapter will let you handle and raise Python
 exceptions.  It is important to understand some of the basics of Python
 exception handling.  It works somewhat like the POSIX <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> variable:
@@ -213,7 +232,7 @@ therefore still propagating), while the latter returns an exception after
 it is caught (and has therefore stopped propagating).</p>
 </div>
 <section id="printing-and-clearing">
-<h2>Printing and clearing<a class="headerlink" href="#printing-and-clearing" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Printing and clearing<a class="headerlink" href="#printing-and-clearing" title="Permalink to this heading">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_Clear">
 <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_Clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_Clear" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
@@ -258,7 +277,7 @@ the repr of <em>obj</em> will be printed in the warning message.</p>
 
 </section>
 <section id="raising-exceptions">
-<h2>Raising exceptions<a class="headerlink" href="#raising-exceptions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Raising exceptions<a class="headerlink" href="#raising-exceptions" title="Permalink to this heading">¶</a></h2>
 <p>These functions help you set the current thread’s error indicator.
 For convenience, some of these functions will always return a
 <code class="docutils literal notranslate"><span class="pre">NULL</span></code> pointer for use in a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
@@ -375,7 +394,9 @@ then it constructs a tuple object whose first item is the <em>ierr</em> value an
 second item is the corresponding error message (gotten from
 <code class="xref c c-func docutils literal notranslate"><span class="pre">FormatMessage()</span></code>), and then calls <code class="docutils literal notranslate"><span class="pre">PyErr_SetObject(PyExc_WindowsError,</span>
 <span class="pre">object)</span></code>. This function always returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
-<p class="availability"><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+</div>
 </dd></dl>
 
 <dl class="c function">
@@ -383,7 +404,9 @@ second item is the corresponding error message (gotten from
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_SetExcFromWindowsErr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">ierr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_SetExcFromWindowsErr" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
 <dd><em class="refcount">Return value: Always NULL.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> on Windows since version 3.7.</em><p>Similar to <a class="reference internal" href="#c.PyErr_SetFromWindowsErr" title="PyErr_SetFromWindowsErr"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_SetFromWindowsErr()</span></code></a>, with an additional parameter
 specifying the exception type to be raised.</p>
-<p class="availability"><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+</div>
 </dd></dl>
 
 <dl class="c function">
@@ -392,7 +415,9 @@ specifying the exception type to be raised.</p>
 <dd><em class="refcount">Return value: Always NULL.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> on Windows since version 3.7.</em><p>Similar to <code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_SetFromWindowsErrWithFilenameObject()</span></code>, but the
 filename is given as a C string.  <em>filename</em> is decoded from the filesystem
 encoding (<a class="reference internal" href="../library/os.html#os.fsdecode" title="os.fsdecode"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.fsdecode()</span></code></a>).</p>
-<p class="availability"><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+</div>
 </dd></dl>
 
 <dl class="c function">
@@ -400,7 +425,9 @@ encoding (<a class="reference internal" href="../library/os.html#os.fsdecode" ti
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_SetExcFromWindowsErrWithFilenameObject</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">ierr</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_SetExcFromWindowsErrWithFilenameObject" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
 <dd><em class="refcount">Return value: Always NULL.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> on Windows since version 3.7.</em><p>Similar to <code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_SetFromWindowsErrWithFilenameObject()</span></code>, with an
 additional parameter specifying the exception type to be raised.</p>
-<p class="availability"><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+</div>
 </dd></dl>
 
 <dl class="c function">
@@ -408,7 +435,9 @@ additional parameter specifying the exception type to be raised.</p>
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_SetExcFromWindowsErrWithFilenameObjects</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">ierr</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">filename</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">filename2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_SetExcFromWindowsErrWithFilenameObjects" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
 <dd><em class="refcount">Return value: Always NULL.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> on Windows since version 3.7.</em><p>Similar to <a class="reference internal" href="#c.PyErr_SetExcFromWindowsErrWithFilenameObject" title="PyErr_SetExcFromWindowsErrWithFilenameObject"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_SetExcFromWindowsErrWithFilenameObject()</span></code></a>,
 but accepts a second filename object.</p>
-<p class="availability"><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.4 sürümünde geldi.</span></p>
 </div>
@@ -419,7 +448,9 @@ but accepts a second filename object.</p>
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_SetExcFromWindowsErrWithFilename</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">type</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">ierr</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_SetExcFromWindowsErrWithFilename" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
 <dd><em class="refcount">Return value: Always NULL.</em><em class="stableabi"> Part of the <a class="reference internal" href="stable.html#stable"><span class="std std-ref">Stable ABI</span></a> on Windows since version 3.7.</em><p>Similar to <a class="reference internal" href="#c.PyErr_SetFromWindowsErrWithFilename" title="PyErr_SetFromWindowsErrWithFilename"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyErr_SetFromWindowsErrWithFilename()</span></code></a>, with an additional
 parameter specifying the exception type to be raised.</p>
-<p class="availability"><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="../library/intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+</div>
 </dd></dl>
 
 <dl class="c function">
@@ -484,7 +515,7 @@ use.</p>
 
 </section>
 <section id="issuing-warnings">
-<h2>Issuing warnings<a class="headerlink" href="#issuing-warnings" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Issuing warnings<a class="headerlink" href="#issuing-warnings" title="Permalink to this heading">¶</a></h2>
 <p>Use these functions to issue warnings from C code.  They mirror similar
 functions exported by the Python <a class="reference internal" href="../library/warnings.html#module-warnings" title="warnings: Issue warning messages and control their disposition."><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code></a> module.  They normally
 print a warning message to <em>sys.stderr</em>; however, it is
@@ -560,7 +591,7 @@ an ASCII-encoded string.</p>
 
 </section>
 <section id="querying-the-error-indicator">
-<h2>Querying the error indicator<a class="headerlink" href="#querying-the-error-indicator" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Querying the error indicator<a class="headerlink" href="#querying-the-error-indicator" title="Permalink to this heading">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_Occurred">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_Occurred</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_Occurred" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
@@ -749,7 +780,7 @@ references of all three arguments.</p>
 
 </section>
 <section id="signal-handling">
-<h2>Signal Handling<a class="headerlink" href="#signal-handling" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Signal Handling<a class="headerlink" href="#signal-handling" title="Permalink to this heading">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_CheckSignals">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_CheckSignals</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_CheckSignals" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
@@ -828,7 +859,7 @@ only be called from the main thread.</p>
 
 </section>
 <section id="exception-classes">
-<h2>Exception Classes<a class="headerlink" href="#exception-classes" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Exception Classes<a class="headerlink" href="#exception-classes" title="Permalink to this heading">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyErr_NewException">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyErr_NewException</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">base</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">dict</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyErr_NewException" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
@@ -857,7 +888,7 @@ docstring for the exception class.</p>
 
 </section>
 <section id="exception-objects">
-<h2>Exception Objects<a class="headerlink" href="#exception-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Exception Objects<a class="headerlink" href="#exception-objects" title="Permalink to this heading">¶</a></h2>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyException_GetTraceback">
 <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PyException_GetTraceback</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ex</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyException_GetTraceback" title="Bu tanım için kalıcı bağlantı">¶</a><br /></dt>
@@ -909,7 +940,7 @@ instance or <a class="reference internal" href="../library/constants.html#None" 
 
 </section>
 <section id="unicode-exception-objects">
-<span id="unicodeexceptions"></span><h2>Unicode Exception Objects<a class="headerlink" href="#unicode-exception-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="unicodeexceptions"></span><h2>Unicode Exception Objects<a class="headerlink" href="#unicode-exception-objects" title="Permalink to this heading">¶</a></h2>
 <p>The following functions are used to create and modify Unicode exceptions from C.</p>
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyUnicodeDecodeError_Create">
@@ -1006,7 +1037,7 @@ on success, <code class="docutils literal notranslate"><span class="pre">-1</spa
 
 </section>
 <section id="recursion-control">
-<span id="recursion"></span><h2>Recursion Control<a class="headerlink" href="#recursion-control" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="recursion"></span><h2>Recursion Control<a class="headerlink" href="#recursion-control" title="Permalink to this heading">¶</a></h2>
 <p>These two functions provide a way to perform safe recursive calls at the C
 level, both in the core and in extension modules.  They are needed if the
 recursive code does not necessarily invoke Python code (which tracks its
@@ -1072,17 +1103,12 @@ invocation of <a class="reference internal" href="#c.Py_ReprEnter" title="Py_Rep
 
 </section>
 <section id="standard-exceptions">
-<span id="standardexceptions"></span><h2>Standard Exceptions<a class="headerlink" href="#standard-exceptions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="standardexceptions"></span><h2>Standard Exceptions<a class="headerlink" href="#standard-exceptions" title="Permalink to this heading">¶</a></h2>
 <p>All standard Python exceptions are available as global variables whose names are
 <code class="docutils literal notranslate"><span class="pre">PyExc_</span></code> followed by the Python exception name.  These have the type
 <span class="c-expr sig sig-inline c"><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n">PyObject</span></a><span class="p">*</span></span>; they are all class objects.  For completeness, here are all
 the variables:</p>
 <table class="docutils align-default" id="index-4">
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 39%" />
-<col style="width: 12%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>C Name</p></th>
 <th class="head"><p>Python Name</p></th>
@@ -1092,15 +1118,15 @@ the variables:</p>
 <tbody>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_BaseException</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#BaseException" title="BaseException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BaseException</span></code></a></p></td>
-<td><p><a class="footnote-reference brackets" href="#id7" id="id1">1</a></p></td>
+<td><p><a class="footnote-reference brackets" href="#id7" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_Exception</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#Exception" title="Exception"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a></p></td>
-<td><p><a class="footnote-reference brackets" href="#id7" id="id2">1</a></p></td>
+<td><p><a class="footnote-reference brackets" href="#id7" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ArithmeticError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#ArithmeticError" title="ArithmeticError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ArithmeticError</span></code></a></p></td>
-<td><p><a class="footnote-reference brackets" href="#id7" id="id3">1</a></p></td>
+<td><p><a class="footnote-reference brackets" href="#id7" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_AssertionError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#AssertionError" title="AssertionError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code></a></p></td>
@@ -1192,7 +1218,7 @@ the variables:</p>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_LookupError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#LookupError" title="LookupError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">LookupError</span></code></a></p></td>
-<td><p><a class="footnote-reference brackets" href="#id7" id="id4">1</a></p></td>
+<td><p><a class="footnote-reference brackets" href="#id7" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_MemoryError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#MemoryError" title="MemoryError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MemoryError</span></code></a></p></td>
@@ -1216,7 +1242,7 @@ the variables:</p>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_OSError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a></p></td>
-<td><p><a class="footnote-reference brackets" href="#id7" id="id5">1</a></p></td>
+<td><p><a class="footnote-reference brackets" href="#id7" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_OverflowError</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a></p></td>
@@ -1322,10 +1348,6 @@ and <code class="xref c c-data docutils literal notranslate"><span class="pre">P
 </div>
 <p>These are compatibility aliases to <code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_OSError</span></code>:</p>
 <table class="docutils align-default" id="index-6">
-<colgroup>
-<col style="width: 79%" />
-<col style="width: 21%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>C Name</p></th>
 <th class="head"><p>Notes</p></th>
@@ -1339,7 +1361,7 @@ and <code class="xref c c-data docutils literal notranslate"><span class="pre">P
 <td></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_WindowsError</span></code></p></td>
-<td><p><a class="footnote-reference brackets" href="#id8" id="id6">2</a></p></td>
+<td><p><a class="footnote-reference brackets" href="#id8" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1347,28 +1369,26 @@ and <code class="xref c c-data docutils literal notranslate"><span class="pre">P
 <p><span class="versionmodified changed">3.3 sürümünde değişti: </span>These aliases used to be separate exception types.</p>
 </div>
 <p>Notes:</p>
-<dl class="footnote brackets">
-<dt class="label" id="id7"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>,<a href="#id5">5</a>)</span></dt>
-<dd><p>This is a base class for other standard exceptions.</p>
-</dd>
-<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id6">2</a></span></dt>
-<dd><p>Only defined on Windows; protect code that uses this by testing that the
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id7" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>)</span>
+<p>This is a base class for other standard exceptions.</p>
+</aside>
+<aside class="footnote brackets" id="id8" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">2</a><span class="fn-bracket">]</span></span>
+<p>Only defined on Windows; protect code that uses this by testing that the
 preprocessor macro <code class="docutils literal notranslate"><span class="pre">MS_WINDOWS</span></code> is defined.</p>
-</dd>
-</dl>
+</aside>
+</aside>
 </section>
 <section id="standard-warning-categories">
-<span id="standardwarningcategories"></span><h2>Standard Warning Categories<a class="headerlink" href="#standard-warning-categories" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="standardwarningcategories"></span><h2>Standard Warning Categories<a class="headerlink" href="#standard-warning-categories" title="Permalink to this heading">¶</a></h2>
 <p>All standard Python warning categories are available as global variables whose
 names are <code class="docutils literal notranslate"><span class="pre">PyExc_</span></code> followed by the Python exception name. These have the type
 <span class="c-expr sig sig-inline c"><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n">PyObject</span></a><span class="p">*</span></span>; they are all class objects. For completeness, here are all
 the variables:</p>
 <table class="docutils align-default" id="index-7">
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 39%" />
-<col style="width: 12%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>C Name</p></th>
 <th class="head"><p>Python Name</p></th>
@@ -1378,7 +1398,7 @@ the variables:</p>
 <tbody>
 <tr class="row-even"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_Warning</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#Warning" title="Warning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Warning</span></code></a></p></td>
-<td><p><a class="footnote-reference brackets" href="#id10" id="id9">3</a></p></td>
+<td><p><a class="footnote-reference brackets" href="#id10" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_BytesWarning</span></code></p></td>
 <td><p><a class="reference internal" href="../library/exceptions.html#BytesWarning" title="BytesWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">BytesWarning</span></code></a></p></td>
@@ -1426,11 +1446,12 @@ the variables:</p>
 <p><span class="versionmodified added">3.2 sürümünde geldi: </span><code class="xref c c-data docutils literal notranslate"><span class="pre">PyExc_ResourceWarning</span></code>.</p>
 </div>
 <p>Notes:</p>
-<dl class="footnote brackets">
-<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id9">3</a></span></dt>
-<dd><p>This is a base class for other standard warning categories.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id10" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">3</a><span class="fn-bracket">]</span></span>
+<p>This is a base class for other standard warning categories.</p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -1483,6 +1504,10 @@ the variables:</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -1512,7 +1537,7 @@ the variables:</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API Referans Kılavuzu</a> &#187;</li>
@@ -1522,14 +1547,21 @@ the variables:</p>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -1548,11 +1580,11 @@ the variables:</p>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

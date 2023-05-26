@@ -6,21 +6,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dizin &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dizin &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="_static/pygments_dark.css" />
     
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/translations.js"></script>
     
     <script src="_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="about.html" />
     <link rel="index" title="Dizin" href="genindex.html" />
@@ -39,35 +39,47 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="_static/py.svg" />
+<link rel="stylesheet" href="_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="_static/py.svg" />
             <script type="text/javascript" src="_static/copybutton.js"></script>
-            <script type="text/javascript" src="_static/menu.js"></script> 
+            <script type="text/javascript" src="_static/menu.js"></script>
+            <script type="text/javascript" src="_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
         </nav>
     </div>
 </div>
@@ -93,7 +105,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="index.html">3.11.1 Documentation</a> &#187;
+      <a href="index.html">3.11.2 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">Dizin</a></li>
@@ -102,14 +114,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -4414,7 +4433,7 @@
 </li>
         <li><a href="whatsnew/3.2.html#index-0">PEP 392</a>
 </li>
-        <li><a href="c-api/unicode.html#index-0">PEP 393</a>, <a href="c-api/unicode.html#index-2">[1]</a>, <a href="library/codecs.html#index-5">[2]</a>, <a href="library/sys.html#index-19">[3]</a>, <a href="whatsnew/3.10.html#index-38">[4]</a>, <a href="whatsnew/3.3.html#index-30">[5]</a>, <a href="whatsnew/3.3.html#index-32">[6]</a>, <a href="whatsnew/3.3.html#index-33">[7]</a>, <a href="whatsnew/3.3.html#index-34">[8]</a>, <a href="whatsnew/3.3.html#index-38">[9]</a>, <a href="whatsnew/3.3.html#index-6">[10]</a>, <a href="whatsnew/3.3.html#index-7">[11]</a>, <a href="whatsnew/3.3.html#index-8">[12]</a>, <a href="whatsnew/3.9.html#index-25">[13]</a>, <a href="whatsnew/3.9.html#index-26">[14]</a>, <a href="whatsnew/changelog.html#index-52">[15]</a>
+        <li><a href="c-api/unicode.html#index-0">PEP 393</a>, <a href="c-api/unicode.html#index-2">[1]</a>, <a href="library/codecs.html#index-5">[2]</a>, <a href="library/sys.html#index-19">[3]</a>, <a href="whatsnew/3.10.html#index-38">[4]</a>, <a href="whatsnew/3.3.html#index-30">[5]</a>, <a href="whatsnew/3.3.html#index-32">[6]</a>, <a href="whatsnew/3.3.html#index-33">[7]</a>, <a href="whatsnew/3.3.html#index-34">[8]</a>, <a href="whatsnew/3.3.html#index-38">[9]</a>, <a href="whatsnew/3.3.html#index-6">[10]</a>, <a href="whatsnew/3.3.html#index-7">[11]</a>, <a href="whatsnew/3.3.html#index-8">[12]</a>, <a href="whatsnew/3.9.html#index-81">[13]</a>, <a href="whatsnew/3.9.html#index-82">[14]</a>, <a href="whatsnew/changelog.html#index-52">[15]</a>
 </li>
         <li><a href="using/windows.html#index-19">PEP 397</a>, <a href="whatsnew/3.3.html#index-9">[1]</a>, <a href="whatsnew/3.5.html#index-22">[2]</a>
 </li>
@@ -4456,7 +4475,7 @@
 </li>
         <li><a href="whatsnew/3.5.html#index-29">PEP 441</a>, <a href="whatsnew/3.5.html#index-30">[1]</a>
 </li>
-        <li><a href="c-api/typeobj.html#index-5">PEP 442</a>, <a href="extending/newtypes.html#index-2">[1]</a>, <a href="library/gc.html#index-0">[2]</a>, <a href="whatsnew/3.4.html#index-15">[3]</a>, <a href="whatsnew/3.4.html#index-16">[4]</a>, <a href="whatsnew/3.4.html#index-45">[5]</a>, <a href="whatsnew/3.4.html#index-46">[6]</a>, <a href="whatsnew/3.9.html#index-20">[7]</a>, <a href="whatsnew/changelog.html#index-165">[8]</a>
+        <li><a href="c-api/typeobj.html#index-5">PEP 442</a>, <a href="extending/newtypes.html#index-2">[1]</a>, <a href="library/gc.html#index-0">[2]</a>, <a href="whatsnew/3.4.html#index-15">[3]</a>, <a href="whatsnew/3.4.html#index-16">[4]</a>, <a href="whatsnew/3.4.html#index-45">[5]</a>, <a href="whatsnew/3.4.html#index-46">[6]</a>, <a href="whatsnew/3.9.html#index-76">[7]</a>, <a href="whatsnew/changelog.html#index-165">[8]</a>
 </li>
         <li><a href="glossary.html#index-95">PEP 443</a>, <a href="whatsnew/3.4.html#index-11">[1]</a>, <a href="whatsnew/3.4.html#index-36">[2]</a>
 </li>
@@ -4486,7 +4505,7 @@
 </li>
         <li><a href="whatsnew/3.5.html#index-13">PEP 471</a>, <a href="whatsnew/3.5.html#index-14">[1]</a>, <a href="whatsnew/changelog.html#index-256">[2]</a>
 </li>
-        <li><a href="library/exceptions.html#index-7">PEP 475</a>, <a href="library/functions.html#index-20">[1]</a>, <a href="library/os.html#index-22">[2]</a>, <a href="library/os.html#index-24">[3]</a>, <a href="library/os.html#index-25">[4]</a>, <a href="library/os.html#index-44">[5]</a>, <a href="library/select.html#index-3">[6]</a>, <a href="library/select.html#index-4">[7]</a>, <a href="library/select.html#index-5">[8]</a>, <a href="library/select.html#index-6">[9]</a>, <a href="library/select.html#index-7">[10]</a>, <a href="library/selectors.html#index-0">[11]</a>, <a href="library/signal.html#index-0">[12]</a>, <a href="library/signal.html#index-1">[13]</a>, <a href="library/socket.html#index-10">[14]</a>, <a href="library/socket.html#index-11">[15]</a>, <a href="library/socket.html#index-12">[16]</a>, <a href="library/socket.html#index-13">[17]</a>, <a href="library/socket.html#index-4">[18]</a>, <a href="library/socket.html#index-5">[19]</a>, <a href="library/socket.html#index-7">[20]</a>, <a href="library/socket.html#index-8">[21]</a>, <a href="library/socket.html#index-9">[22]</a>, <a href="library/time.html#index-8">[23]</a>, <a href="whatsnew/3.5.html#index-15">[24]</a>, <a href="whatsnew/3.5.html#index-16">[25]</a>, <a href="whatsnew/3.5.html#index-51">[26]</a>, <a href="whatsnew/changelog.html#index-198">[27]</a>, <a href="whatsnew/changelog.html#index-255">[28]</a>
+        <li><a href="library/exceptions.html#index-7">PEP 475</a>, <a href="library/functions.html#index-20">[1]</a>, <a href="library/os.html#index-22">[2]</a>, <a href="library/os.html#index-24">[3]</a>, <a href="library/os.html#index-25">[4]</a>, <a href="library/os.html#index-44">[5]</a>, <a href="library/select.html#index-3">[6]</a>, <a href="library/select.html#index-4">[7]</a>, <a href="library/select.html#index-5">[8]</a>, <a href="library/select.html#index-6">[9]</a>, <a href="library/select.html#index-7">[10]</a>, <a href="library/selectors.html#index-0">[11]</a>, <a href="library/signal.html#index-0">[12]</a>, <a href="library/signal.html#index-1">[13]</a>, <a href="library/socket.html#index-10">[14]</a>, <a href="library/socket.html#index-11">[15]</a>, <a href="library/socket.html#index-12">[16]</a>, <a href="library/socket.html#index-13">[17]</a>, <a href="library/socket.html#index-4">[18]</a>, <a href="library/socket.html#index-5">[19]</a>, <a href="library/socket.html#index-7">[20]</a>, <a href="library/socket.html#index-8">[21]</a>, <a href="library/socket.html#index-9">[22]</a>, <a href="library/time.html#index-35">[23]</a>, <a href="whatsnew/3.5.html#index-15">[24]</a>, <a href="whatsnew/3.5.html#index-16">[25]</a>, <a href="whatsnew/3.5.html#index-51">[26]</a>, <a href="whatsnew/changelog.html#index-198">[27]</a>, <a href="whatsnew/changelog.html#index-255">[28]</a>
 </li>
         <li><a href="whatsnew/2.7.html#index-25">PEP 476</a>
 </li>
@@ -4502,7 +4521,7 @@
 </li>
         <li><a href="whatsnew/3.11.html#index-16">PEP 484#annotating-instance-and-class-methods</a>
 </li>
-        <li><a href="library/cmath.html#index-0">PEP 485</a>, <a href="library/math.html#index-0">[1]</a>, <a href="whatsnew/3.5.html#index-19">[2]</a>, <a href="whatsnew/3.5.html#index-20">[3]</a>, <a href="whatsnew/changelog.html#index-252">[4]</a>
+        <li><a href="library/cmath.html#index-0">PEP 485</a>, <a href="library/math.html#index-2">[1]</a>, <a href="whatsnew/3.5.html#index-19">[2]</a>, <a href="whatsnew/3.5.html#index-20">[3]</a>, <a href="whatsnew/changelog.html#index-252">[4]</a>
 </li>
         <li><a href="whatsnew/3.5.html#index-21">PEP 486</a>, <a href="whatsnew/3.5.html#index-23">[1]</a>, <a href="whatsnew/changelog.html#index-257">[2]</a>
 </li>
@@ -4536,7 +4555,7 @@
 </li>
         <li><a href="whatsnew/3.6.html#index-23">PEP 520</a>
 </li>
-        <li><a href="c-api/init.html#index-40">PEP 523</a>, <a href="c-api/init.html#index-41">[1]</a>, <a href="whatsnew/3.11.html#index-37">[2]</a>, <a href="whatsnew/3.6.html#index-25">[3]</a>, <a href="whatsnew/3.6.html#index-26">[4]</a>, <a href="whatsnew/3.9.html#index-24">[5]</a>, <a href="whatsnew/changelog.html#index-209">[6]</a>, <a href="whatsnew/changelog.html#index-214">[7]</a>, <a href="whatsnew/changelog.html#index-222">[8]</a>
+        <li><a href="c-api/init.html#index-40">PEP 523</a>, <a href="c-api/init.html#index-41">[1]</a>, <a href="whatsnew/3.11.html#index-37">[2]</a>, <a href="whatsnew/3.6.html#index-25">[3]</a>, <a href="whatsnew/3.6.html#index-26">[4]</a>, <a href="whatsnew/3.9.html#index-80">[5]</a>, <a href="whatsnew/changelog.html#index-209">[6]</a>, <a href="whatsnew/changelog.html#index-214">[7]</a>, <a href="whatsnew/changelog.html#index-222">[8]</a>
 </li>
         <li><a href="library/os.html#index-53">PEP 524</a>, <a href="whatsnew/3.6.html#index-1">[1]</a>, <a href="whatsnew/3.6.html#index-31">[2]</a>, <a href="whatsnew/3.6.html#index-32">[3]</a>, <a href="whatsnew/changelog.html#index-224">[4]</a>, <a href="whatsnew/changelog.html#index-225">[5]</a>
 </li>
@@ -4584,27 +4603,27 @@
 </li>
         <li><a href="faq/design.html#index-0">PEP 572</a>, <a href="reference/compound_stmts.html#index-24">[1]</a>, <a href="reference/expressions.html#index-21">[2]</a>, <a href="reference/expressions.html#index-87">[3]</a>, <a href="whatsnew/3.8.html#index-50">[4]</a>, <a href="whatsnew/3.8.html#index-74">[5]</a>, <a href="whatsnew/changelog.html#index-149">[6]</a>, <a href="whatsnew/changelog.html#index-162">[7]</a>, <a href="whatsnew/changelog.html#index-172">[8]</a>
 </li>
-        <li><a href="howto/clinic.html#index-1">PEP 573</a>, <a href="whatsnew/3.9.html#index-23">[1]</a>, <a href="whatsnew/3.9.html#index-6">[2]</a>, <a href="whatsnew/changelog.html#index-115">[3]</a>, <a href="whatsnew/changelog.html#index-120">[4]</a>
+        <li><a href="howto/clinic.html#index-5">PEP 573</a>, <a href="whatsnew/3.9.html#index-62">[1]</a>, <a href="whatsnew/3.9.html#index-79">[2]</a>, <a href="whatsnew/changelog.html#index-115">[3]</a>, <a href="whatsnew/changelog.html#index-120">[4]</a>
 </li>
         <li><a href="library/pickle.html#index-4">PEP 574</a>, <a href="library/pickle.html#index-8">[1]</a>, <a href="whatsnew/3.8.html#index-59">[2]</a>
 </li>
         <li><a href="c-api/sys.html#index-0">PEP 578</a>, <a href="library/audit_events.html#index-1">[1]</a>, <a href="library/sys.html#index-1">[2]</a>, <a href="whatsnew/3.8.html#index-54">[3]</a>
 </li>
-        <li><a href="library/collections.html#index-0">PEP 584</a>, <a href="library/collections.html#index-1">[1]</a>, <a href="library/collections.html#index-3">[2]</a>, <a href="library/os.html#index-6">[3]</a>, <a href="library/os.html#index-7">[4]</a>, <a href="library/types.html#index-4">[5]</a>, <a href="library/weakref.html#index-0">[6]</a>, <a href="library/weakref.html#index-1">[7]</a>, <a href="whatsnew/3.9.html#index-1">[8]</a>, <a href="whatsnew/3.9.html#index-11">[9]</a>, <a href="whatsnew/changelog.html#index-130">[10]</a>, <a href="whatsnew/changelog.html#index-131">[11]</a>, <a href="whatsnew/changelog.html#index-132">[12]</a>, <a href="whatsnew/changelog.html#index-144">[13]</a>, <a href="whatsnew/changelog.html#index-145">[14]</a>, <a href="whatsnew/changelog.html#index-146">[15]</a>, <a href="whatsnew/changelog.html#index-147">[16]</a>
+        <li><a href="library/collections.html#index-0">PEP 584</a>, <a href="library/collections.html#index-1">[1]</a>, <a href="library/collections.html#index-3">[2]</a>, <a href="library/os.html#index-6">[3]</a>, <a href="library/os.html#index-7">[4]</a>, <a href="library/types.html#index-4">[5]</a>, <a href="library/weakref.html#index-0">[6]</a>, <a href="library/weakref.html#index-1">[7]</a>, <a href="whatsnew/3.9.html#index-57">[8]</a>, <a href="whatsnew/3.9.html#index-67">[9]</a>, <a href="whatsnew/changelog.html#index-130">[10]</a>, <a href="whatsnew/changelog.html#index-131">[11]</a>, <a href="whatsnew/changelog.html#index-132">[12]</a>, <a href="whatsnew/changelog.html#index-144">[13]</a>, <a href="whatsnew/changelog.html#index-145">[14]</a>, <a href="whatsnew/changelog.html#index-146">[15]</a>, <a href="whatsnew/changelog.html#index-147">[16]</a>
 </li>
-        <li><a href="glossary.html#index-98">PEP 585</a>, <a href="library/collections.abc.html#index-0">[1]</a>, <a href="library/stdtypes.html#index-71">[2]</a>, <a href="library/typing.html#index-26">[3]</a>, <a href="library/typing.html#index-30">[4]</a>, <a href="library/typing.html#index-31">[5]</a>, <a href="library/typing.html#index-35">[6]</a>, <a href="library/typing.html#index-50">[7]</a>, <a href="library/typing.html#index-51">[8]</a>, <a href="library/typing.html#index-52">[9]</a>, <a href="library/typing.html#index-53">[10]</a>, <a href="library/typing.html#index-54">[11]</a>, <a href="library/typing.html#index-55">[12]</a>, <a href="library/typing.html#index-56">[13]</a>, <a href="library/typing.html#index-57">[14]</a>, <a href="library/typing.html#index-58">[15]</a>, <a href="library/typing.html#index-59">[16]</a>, <a href="library/typing.html#index-6">[17]</a>, <a href="library/typing.html#index-60">[18]</a>, <a href="library/typing.html#index-61">[19]</a>, <a href="library/typing.html#index-62">[20]</a>, <a href="library/typing.html#index-63">[21]</a>, <a href="library/typing.html#index-64">[22]</a>, <a href="library/typing.html#index-65">[23]</a>, <a href="library/typing.html#index-66">[24]</a>, <a href="library/typing.html#index-67">[25]</a>, <a href="library/typing.html#index-68">[26]</a>, <a href="library/typing.html#index-69">[27]</a>, <a href="library/typing.html#index-70">[28]</a>, <a href="library/typing.html#index-71">[29]</a>, <a href="library/typing.html#index-72">[30]</a>, <a href="library/typing.html#index-73">[31]</a>, <a href="library/typing.html#index-74">[32]</a>, <a href="library/typing.html#index-75">[33]</a>, <a href="library/typing.html#index-76">[34]</a>, <a href="library/typing.html#index-77">[35]</a>, <a href="library/typing.html#index-78">[36]</a>, <a href="library/typing.html#index-79">[37]</a>, <a href="library/typing.html#index-80">[38]</a>, <a href="library/typing.html#index-81">[39]</a>, <a href="library/typing.html#index-82">[40]</a>, <a href="library/typing.html#index-83">[41]</a>, <a href="library/typing.html#index-89">[42]</a>, <a href="library/typing.html#index-91">[43]</a>, <a href="whatsnew/3.9.html#index-13">[44]</a>, <a href="whatsnew/3.9.html#index-2">[45]</a>, <a href="whatsnew/changelog.html#index-37">[46]</a>, <a href="whatsnew/changelog.html#index-41">[47]</a>
+        <li><a href="glossary.html#index-98">PEP 585</a>, <a href="library/collections.abc.html#index-0">[1]</a>, <a href="library/stdtypes.html#index-71">[2]</a>, <a href="library/typing.html#index-26">[3]</a>, <a href="library/typing.html#index-30">[4]</a>, <a href="library/typing.html#index-31">[5]</a>, <a href="library/typing.html#index-35">[6]</a>, <a href="library/typing.html#index-50">[7]</a>, <a href="library/typing.html#index-51">[8]</a>, <a href="library/typing.html#index-52">[9]</a>, <a href="library/typing.html#index-53">[10]</a>, <a href="library/typing.html#index-54">[11]</a>, <a href="library/typing.html#index-55">[12]</a>, <a href="library/typing.html#index-56">[13]</a>, <a href="library/typing.html#index-57">[14]</a>, <a href="library/typing.html#index-58">[15]</a>, <a href="library/typing.html#index-59">[16]</a>, <a href="library/typing.html#index-6">[17]</a>, <a href="library/typing.html#index-60">[18]</a>, <a href="library/typing.html#index-61">[19]</a>, <a href="library/typing.html#index-62">[20]</a>, <a href="library/typing.html#index-63">[21]</a>, <a href="library/typing.html#index-64">[22]</a>, <a href="library/typing.html#index-65">[23]</a>, <a href="library/typing.html#index-66">[24]</a>, <a href="library/typing.html#index-67">[25]</a>, <a href="library/typing.html#index-68">[26]</a>, <a href="library/typing.html#index-69">[27]</a>, <a href="library/typing.html#index-70">[28]</a>, <a href="library/typing.html#index-71">[29]</a>, <a href="library/typing.html#index-72">[30]</a>, <a href="library/typing.html#index-73">[31]</a>, <a href="library/typing.html#index-74">[32]</a>, <a href="library/typing.html#index-75">[33]</a>, <a href="library/typing.html#index-76">[34]</a>, <a href="library/typing.html#index-77">[35]</a>, <a href="library/typing.html#index-78">[36]</a>, <a href="library/typing.html#index-79">[37]</a>, <a href="library/typing.html#index-80">[38]</a>, <a href="library/typing.html#index-81">[39]</a>, <a href="library/typing.html#index-82">[40]</a>, <a href="library/typing.html#index-83">[41]</a>, <a href="library/typing.html#index-89">[42]</a>, <a href="library/typing.html#index-91">[43]</a>, <a href="whatsnew/3.9.html#index-58">[44]</a>, <a href="whatsnew/3.9.html#index-69">[45]</a>, <a href="whatsnew/changelog.html#index-37">[46]</a>, <a href="whatsnew/changelog.html#index-41">[47]</a>
 </li>
-        <li><a href="library/typing.html#index-36">PEP 586</a>, <a href="library/typing.html#index-7">[1]</a>, <a href="whatsnew/3.10.html#index-31">[2]</a>, <a href="whatsnew/3.8.html#index-66">[3]</a>, <a href="whatsnew/3.9.html#index-27">[4]</a>
+        <li><a href="library/typing.html#index-36">PEP 586</a>, <a href="library/typing.html#index-7">[1]</a>, <a href="whatsnew/3.10.html#index-31">[2]</a>, <a href="whatsnew/3.8.html#index-66">[3]</a>, <a href="whatsnew/3.9.html#index-83">[4]</a>
 </li>
         <li><a href="c-api/init_config.html#index-0">PEP 587</a>, <a href="whatsnew/3.11.html#index-39">[1]</a>, <a href="whatsnew/3.8.html#index-55">[2]</a>, <a href="whatsnew/3.8.html#index-56">[3]</a>, <a href="whatsnew/changelog.html#index-161">[4]</a>, <a href="whatsnew/changelog.html#index-166">[5]</a>, <a href="whatsnew/changelog.html#index-51">[6]</a>
 </li>
         <li><a href="library/typing.html#index-48">PEP 589</a>, <a href="library/typing.html#index-8">[1]</a>, <a href="whatsnew/3.8.html#index-65">[2]</a>
 </li>
-        <li><a href="c-api/call.html#index-0">PEP 590</a>, <a href="whatsnew/3.10.html#index-33">[1]</a>, <a href="whatsnew/3.11.html#index-38">[2]</a>, <a href="whatsnew/3.8.html#index-57">[3]</a>, <a href="whatsnew/3.9.html#index-18">[4]</a>, <a href="whatsnew/3.9.html#index-8">[5]</a>, <a href="whatsnew/changelog.html#index-121">[6]</a>, <a href="whatsnew/changelog.html#index-128">[7]</a>, <a href="whatsnew/changelog.html#index-137">[8]</a>, <a href="whatsnew/changelog.html#index-138">[9]</a>, <a href="whatsnew/changelog.html#index-140">[10]</a>, <a href="whatsnew/changelog.html#index-167">[11]</a>, <a href="whatsnew/changelog.html#index-23">[12]</a>, <a href="whatsnew/changelog.html#index-33">[13]</a>, <a href="whatsnew/changelog.html#index-39">[14]</a>, <a href="whatsnew/changelog.html#index-45">[15]</a>, <a href="whatsnew/changelog.html#index-60">[16]</a>, <a href="whatsnew/changelog.html#index-61">[17]</a>, <a href="whatsnew/changelog.html#index-94">[18]</a>, <a href="whatsnew/changelog.html#index-95">[19]</a>
+        <li><a href="c-api/call.html#index-0">PEP 590</a>, <a href="whatsnew/3.10.html#index-33">[1]</a>, <a href="whatsnew/3.11.html#index-38">[2]</a>, <a href="whatsnew/3.8.html#index-57">[3]</a>, <a href="whatsnew/3.9.html#index-64">[4]</a>, <a href="whatsnew/3.9.html#index-74">[5]</a>, <a href="whatsnew/changelog.html#index-121">[6]</a>, <a href="whatsnew/changelog.html#index-128">[7]</a>, <a href="whatsnew/changelog.html#index-137">[8]</a>, <a href="whatsnew/changelog.html#index-138">[9]</a>, <a href="whatsnew/changelog.html#index-140">[10]</a>, <a href="whatsnew/changelog.html#index-167">[11]</a>, <a href="whatsnew/changelog.html#index-23">[12]</a>, <a href="whatsnew/changelog.html#index-33">[13]</a>, <a href="whatsnew/changelog.html#index-39">[14]</a>, <a href="whatsnew/changelog.html#index-45">[15]</a>, <a href="whatsnew/changelog.html#index-60">[16]</a>, <a href="whatsnew/changelog.html#index-61">[17]</a>, <a href="whatsnew/changelog.html#index-94">[18]</a>, <a href="whatsnew/changelog.html#index-95">[19]</a>
 </li>
         <li><a href="library/typing.html#index-38">PEP 591</a>, <a href="library/typing.html#index-86">[1]</a>, <a href="library/typing.html#index-9">[2]</a>, <a href="whatsnew/3.8.html#index-67">[3]</a>
 </li>
-        <li><a href="library/typing.html#index-10">PEP 593</a>, <a href="library/typing.html#index-40">[1]</a>, <a href="library/typing.html#index-88">[2]</a>, <a href="whatsnew/3.9.html#index-17">[3]</a>, <a href="whatsnew/3.9.html#index-5">[4]</a>, <a href="whatsnew/changelog.html#index-155">[5]</a>
+        <li><a href="library/typing.html#index-10">PEP 593</a>, <a href="library/typing.html#index-40">[1]</a>, <a href="library/typing.html#index-88">[2]</a>, <a href="whatsnew/3.9.html#index-61">[3]</a>, <a href="whatsnew/3.9.html#index-73">[4]</a>, <a href="whatsnew/changelog.html#index-155">[5]</a>
 </li>
         <li><a href="library/nntplib.html#index-1">PEP 594</a>, <a href="whatsnew/3.11.html#index-2">[1]</a>, <a href="whatsnew/3.11.html#index-31">[2]</a>, <a href="whatsnew/changelog.html#index-13">[3]</a>, <a href="whatsnew/changelog.html#index-24">[4]</a>, <a href="whatsnew/changelog.html#index-25">[5]</a>, <a href="whatsnew/changelog.html#index-29">[6]</a>
 </li>
@@ -4650,13 +4669,13 @@
 </li>
         <li><a href="library/xdrlib.html#index-1">PEP 594#xdrlib</a>
 </li>
-        <li><a href="whatsnew/3.9.html#index-0">PEP 596</a>
+        <li><a href="whatsnew/3.9.html#index-56">PEP 596</a>
 </li>
         <li><a href="library/io.html#index-2">PEP 597</a>, <a href="whatsnew/3.10.html#index-13">[1]</a>, <a href="whatsnew/changelog.html#index-62">[2]</a>
 </li>
         <li><a href="faq/general.html#index-0">PEP 6</a>
 </li>
-        <li><a href="faq/general.html#index-1">PEP 602</a>, <a href="whatsnew/3.9.html#index-10">[1]</a>
+        <li><a href="faq/general.html#index-1">PEP 602</a>, <a href="whatsnew/3.9.html#index-66">[1]</a>
 </li>
         <li><a href="howto/annotations.html#index-0">PEP 604</a>, <a href="library/stdtypes.html#index-72">[1]</a>, <a href="library/typing.html#index-11">[2]</a>, <a href="whatsnew/3.10.html#index-20">[3]</a>, <a href="whatsnew/3.10.html#index-5">[4]</a>, <a href="whatsnew/changelog.html#index-113">[5]</a>, <a href="whatsnew/changelog.html#index-72">[6]</a>
 </li>
@@ -4664,13 +4683,13 @@
 </li>
         <li><a href="library/typing.html#index-13">PEP 613</a>, <a href="library/typing.html#index-29">[1]</a>, <a href="whatsnew/3.10.html#index-24">[2]</a>, <a href="whatsnew/3.10.html#index-7">[3]</a>, <a href="whatsnew/changelog.html#index-92">[4]</a>
 </li>
-        <li><a href="reference/compound_stmts.html#index-30">PEP 614</a>, <a href="reference/compound_stmts.html#index-42">[1]</a>, <a href="whatsnew/3.9.html#index-15">[2]</a>, <a href="whatsnew/3.9.html#index-3">[3]</a>, <a href="whatsnew/changelog.html#index-142">[4]</a>
+        <li><a href="reference/compound_stmts.html#index-30">PEP 614</a>, <a href="reference/compound_stmts.html#index-42">[1]</a>, <a href="whatsnew/3.9.html#index-59">[2]</a>, <a href="whatsnew/3.9.html#index-71">[3]</a>, <a href="whatsnew/changelog.html#index-142">[4]</a>
 </li>
-        <li><a href="library/zoneinfo.html#index-0">PEP 615</a>, <a href="whatsnew/3.9.html#index-16">[1]</a>, <a href="whatsnew/3.9.html#index-9">[2]</a>, <a href="whatsnew/changelog.html#index-119">[3]</a>
+        <li><a href="library/zoneinfo.html#index-0">PEP 615</a>, <a href="whatsnew/3.9.html#index-65">[1]</a>, <a href="whatsnew/3.9.html#index-72">[2]</a>, <a href="whatsnew/changelog.html#index-119">[3]</a>
 </li>
-        <li><a href="whatsnew/3.9.html#index-12">PEP 616</a>, <a href="whatsnew/3.9.html#index-4">[1]</a>, <a href="whatsnew/changelog.html#index-127">[2]</a>
+        <li><a href="whatsnew/3.9.html#index-60">PEP 616</a>, <a href="whatsnew/3.9.html#index-68">[1]</a>, <a href="whatsnew/changelog.html#index-127">[2]</a>
 </li>
-        <li><a href="library/2to3.html#index-0">PEP 617</a>, <a href="reference/grammar.html#index-0">[1]</a>, <a href="whatsnew/3.10.html#index-14">[2]</a>, <a href="whatsnew/3.11.html#index-32">[3]</a>, <a href="whatsnew/3.9.html#index-14">[4]</a>, <a href="whatsnew/3.9.html#index-19">[5]</a>, <a href="whatsnew/3.9.html#index-7">[6]</a>, <a href="whatsnew/changelog.html#index-129">[7]</a>, <a href="whatsnew/changelog.html#index-46">[8]</a>
+        <li><a href="library/2to3.html#index-0">PEP 617</a>, <a href="reference/grammar.html#index-0">[1]</a>, <a href="whatsnew/3.10.html#index-14">[2]</a>, <a href="whatsnew/3.11.html#index-32">[3]</a>, <a href="whatsnew/3.9.html#index-63">[4]</a>, <a href="whatsnew/3.9.html#index-70">[5]</a>, <a href="whatsnew/3.9.html#index-75">[6]</a>, <a href="whatsnew/changelog.html#index-129">[7]</a>, <a href="whatsnew/changelog.html#index-46">[8]</a>
 </li>
         <li><a href="whatsnew/3.10.html#index-26">PEP 618</a>, <a href="whatsnew/3.10.html#index-3">[1]</a>, <a href="whatsnew/changelog.html#index-107">[2]</a>
 </li>
@@ -4730,7 +4749,7 @@
 </li>
         <li><a href="c-api/intro.html#index-0">PEP 7</a>, <a href="c-api/intro.html#index-6">[1]</a>, <a href="c-api/intro.html#index-7">[2]</a>, <a href="whatsnew/3.6.html#index-34">[3]</a>
 </li>
-        <li><a href="faq/programming.html#index-0">PEP 8</a>, <a href="faq/programming.html#index-2">[1]</a>, <a href="faq/windows.html#index-0">[2]</a>, <a href="howto/clinic.html#index-0">[3]</a>, <a href="library/functions.html#index-21">[4]</a>, <a href="reference/expressions.html#index-79">[5]</a>, <a href="tutorial/controlflow.html#index-18">[6]</a>, <a href="using/editors.html#index-0">[7]</a>, <a href="whatsnew/3.0.html#index-21">[8]</a>, <a href="whatsnew/changelog.html#index-197">[9]</a>, <a href="whatsnew/changelog.html#index-259">[10]</a>
+        <li><a href="faq/programming.html#index-0">PEP 8</a>, <a href="faq/programming.html#index-2">[1]</a>, <a href="faq/windows.html#index-0">[2]</a>, <a href="howto/clinic.html#index-4">[3]</a>, <a href="library/functions.html#index-21">[4]</a>, <a href="reference/expressions.html#index-79">[5]</a>, <a href="tutorial/controlflow.html#index-18">[6]</a>, <a href="using/editors.html#index-0">[7]</a>, <a href="whatsnew/3.0.html#index-21">[8]</a>, <a href="whatsnew/changelog.html#index-197">[9]</a>, <a href="whatsnew/changelog.html#index-259">[10]</a>
 </li>
       </ul></li>
       <li><a href="distributing/index.html#index-1">Python Package Index (PyPI)</a>
@@ -4774,7 +4793,7 @@
 </li>
       <li><a href="library/sys.html#index-3">PYTHONBREAKPOINT</a>, <a href="library/sys.html#index-4">[1]</a>, <a href="library/sys.html#index-5">[2]</a>, <a href="whatsnew/3.7.html#index-12">[3]</a>
 </li>
-      <li><a href="library/functions.html#index-23">PYTHONCASEOK</a>, <a href="whatsnew/2.1.html#index-11">[1]</a>, <a href="whatsnew/3.9.html#index-21">[2]</a>, <a href="whatsnew/changelog.html#index-148">[3]</a>
+      <li><a href="library/functions.html#index-23">PYTHONCASEOK</a>, <a href="whatsnew/2.1.html#index-11">[1]</a>, <a href="whatsnew/3.9.html#index-77">[2]</a>, <a href="whatsnew/changelog.html#index-148">[3]</a>
 </li>
       <li><a href="c-api/init_config.html#index-34">PYTHONCOERCECLOCALE</a>, <a href="library/os.html#index-4">[1]</a>, <a href="using/configure.html#index-0">[2]</a>, <a href="whatsnew/3.7.html#index-4">[3]</a>
 </li>
@@ -5445,6 +5464,10 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -5468,7 +5491,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="index.html">3.11.1 Documentation</a> &#187;
+      <a href="index.html">3.11.2 Documentation</a> &#187;
     </li>
 
         <li class="nav-item nav-item-this"><a href="">Dizin</a></li>
@@ -5477,14 +5500,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -5503,11 +5533,11 @@
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="Socket Programming HOWTO" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/howto/sockets.html" />
@@ -17,27 +17,27 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>Socket Programming HOWTO &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Programming HOWTO &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
     <link rel="search" title="Ara" href="../search.html" />
     <link rel="copyright" title="Telif Hakkı" href="../copyright.html" />
-    <link rel="next" title="Sorting HOW TO" href="sorting.html" />
+    <link rel="next" title="Sıralama NASIL YAPILIR" href="sorting.html" />
     <link rel="prev" title="Regular Expression HOWTO" href="regex.html" />
     <link rel="canonical" href="https://docs.python.org/3/howto/sockets.html" />
     
@@ -52,35 +52,47 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
@@ -115,7 +127,7 @@
   <div>
     <h4>Sonraki konu</h4>
     <p class="topless"><a href="sorting.html"
-                          title="sonraki bölüm">Sorting HOW TO</a></p>
+                          title="sonraki bölüm">Sıralama NASIL YAPILIR</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>Bu Sayfa</h3>
@@ -143,7 +155,7 @@
           <a href="../py-modindex.html" title="Python Modül Dizini"
              >modülleri</a> |</li>
         <li class="right" >
-          <a href="sorting.html" title="Sorting HOW TO"
+          <a href="sorting.html" title="Sıralama NASIL YAPILIR"
              accesskey="N">sonraki</a> |</li>
         <li class="right" >
           <a href="regex.html" title="Regular Expression HOWTO"
@@ -159,7 +171,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python NASIL’ları</a> &#187;</li>
@@ -169,14 +181,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -187,22 +206,22 @@
           <div class="body" role="main">
             
   <section id="socket-programming-howto">
-<span id="socket-howto"></span><h1>Socket Programming HOWTO<a class="headerlink" href="#socket-programming-howto" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="socket-howto"></span><h1>Socket Programming HOWTO<a class="headerlink" href="#socket-programming-howto" title="Permalink to this heading">¶</a></h1>
 <dl class="field-list simple">
-<dt class="field-odd">Author</dt>
+<dt class="field-odd">Author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Gordon McMillan</p>
 </dd>
 </dl>
-<div class="topic">
+<aside class="topic">
 <p class="topic-title">Abstract</p>
 <p>Sockets are used nearly everywhere, but are one of the most severely
 misunderstood technologies around. This is a 10,000 foot overview of sockets.
 It’s not really a tutorial - you’ll still have work to do in getting things
 operational. It doesn’t cover the fine points (and there are a lot of them), but
 I hope it will give you enough background to begin using them decently.</p>
-</div>
+</aside>
 <section id="sockets">
-<h2>Sockets<a class="headerlink" href="#sockets" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Sockets<a class="headerlink" href="#sockets" title="Permalink to this heading">¶</a></h2>
 <p>I’m only going to talk about INET (i.e. IPv4) sockets, but they account for at least 99% of
 the sockets in use. And I’ll only talk about STREAM (i.e. TCP) sockets - unless you really
 know what you’re doing (in which case this HOWTO isn’t for you!), you’ll get
@@ -218,7 +237,7 @@ distinction between a “client” socket - an endpoint of a conversation, and a
 application (your browser, for example) uses “client” sockets exclusively; the
 web server it’s talking to uses both “server” sockets and “client” sockets.</p>
 <section id="history">
-<h3>History<a class="headerlink" href="#history" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h3>
 <p>Of the various forms of <abbr title="Inter Process Communication">IPC</abbr>,
 sockets are by far the most popular.  On any given platform, there are
 likely to be other forms of IPC that are faster, but for
@@ -230,7 +249,7 @@ with INET makes talking to arbitrary machines around the world unbelievably easy
 </section>
 </section>
 <section id="creating-a-socket">
-<h2>Creating a Socket<a class="headerlink" href="#creating-a-socket" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Creating a Socket<a class="headerlink" href="#creating-a-socket" title="Permalink to this heading">¶</a></h2>
 <p>Roughly speaking, when you clicked on the link that brought you to this page,
 your browser did something like the following:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an INET, STREAMing socket</span>
@@ -290,7 +309,7 @@ go back to listening for more connections. The two “clients” are free to cha
 up - they are using some dynamically allocated port which will be recycled when
 the conversation ends.</p>
 <section id="ipc">
-<h3>IPC<a class="headerlink" href="#ipc" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>IPC<a class="headerlink" href="#ipc" title="Permalink to this heading">¶</a></h3>
 <p>If you need fast IPC between two processes on one machine, you should look into
 pipes or shared memory.  If you do decide to use AF_INET sockets, bind the
 “server” socket to <code class="docutils literal notranslate"><span class="pre">'localhost'</span></code>. On most platforms, this will take a
@@ -303,7 +322,7 @@ API.</p>
 </section>
 </section>
 <section id="using-a-socket">
-<h2>Using a Socket<a class="headerlink" href="#using-a-socket" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Using a Socket<a class="headerlink" href="#using-a-socket" title="Permalink to this heading">¶</a></h2>
 <p>The first thing to note, is that the web browser’s “client” socket and the web
 server’s “client” socket are identical beasts. That is, this is a “peer to peer”
 conversation. Or to put it another way, <em>as the designer, you will have to
@@ -408,7 +427,7 @@ get bit by it!</p>
 competitive position), these enhancements are left as an exercise for the
 reader. Lets move on to cleaning up.</p>
 <section id="binary-data">
-<h3>Binary Data<a class="headerlink" href="#binary-data" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Binary Data<a class="headerlink" href="#binary-data" title="Permalink to this heading">¶</a></h3>
 <p>It is perfectly possible to send binary data over a socket. The major problem is
 that not all machines use the same formats for binary data. For example,
 <a class="reference external" href="https://en.wikipedia.org/wiki/Endianness#Networking">network byte order</a>
@@ -430,7 +449,7 @@ Decisions, decisions.</p>
 </section>
 </section>
 <section id="disconnecting">
-<h2>Disconnecting<a class="headerlink" href="#disconnecting" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Disconnecting<a class="headerlink" href="#disconnecting" title="Permalink to this heading">¶</a></h2>
 <p>Strictly speaking, you’re supposed to use <code class="docutils literal notranslate"><span class="pre">shutdown</span></code> on a socket before you
 <code class="docutils literal notranslate"><span class="pre">close</span></code> it.  The <code class="docutils literal notranslate"><span class="pre">shutdown</span></code> is an advisory to the socket at the other end.
 Depending on the argument you pass it, it can mean “I’m not going to send
@@ -450,7 +469,7 @@ relying on this is a very bad habit. If your socket just disappears without
 doing a <code class="docutils literal notranslate"><span class="pre">close</span></code>, the socket at the other end may hang indefinitely, thinking
 you’re just being slow. <em>Please</em> <code class="docutils literal notranslate"><span class="pre">close</span></code> your sockets when you’re done.</p>
 <section id="when-sockets-die">
-<h3>When Sockets Die<a class="headerlink" href="#when-sockets-die" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>When Sockets Die<a class="headerlink" href="#when-sockets-die" title="Permalink to this heading">¶</a></h3>
 <p>Probably the worst thing about using blocking sockets is what happens when the
 other side comes down hard (without doing a <code class="docutils literal notranslate"><span class="pre">close</span></code>). Your socket is likely to
 hang. TCP is a reliable protocol, and it will wait a long, long time
@@ -465,7 +484,7 @@ process is likely to be screwed up.</p>
 </section>
 </section>
 <section id="non-blocking-sockets">
-<h2>Non-blocking Sockets<a class="headerlink" href="#non-blocking-sockets" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Non-blocking Sockets<a class="headerlink" href="#non-blocking-sockets" title="Permalink to this heading">¶</a></h2>
 <p>If you’ve understood the preceding, you already know most of what you need to
 know about the mechanics of using sockets. You’ll still use the same calls, in
 much the same ways. It’s just that, if you do it right, your app will be almost
@@ -568,7 +587,7 @@ very, very well) with my sockets.</p>
   <div>
     <h4>Sonraki konu</h4>
     <p class="topless"><a href="sorting.html"
-                          title="sonraki bölüm">Sorting HOW TO</a></p>
+                          title="sonraki bölüm">Sıralama NASIL YAPILIR</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>Bu Sayfa</h3>
@@ -582,6 +601,10 @@ very, very well) with my sockets.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -595,7 +618,7 @@ very, very well) with my sockets.</p>
           <a href="../py-modindex.html" title="Python Modül Dizini"
              >modülleri</a> |</li>
         <li class="right" >
-          <a href="sorting.html" title="Sorting HOW TO"
+          <a href="sorting.html" title="Sıralama NASIL YAPILIR"
              >sonraki</a> |</li>
         <li class="right" >
           <a href="regex.html" title="Regular Expression HOWTO"
@@ -611,7 +634,7 @@ very, very well) with my sockets.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python NASIL’ları</a> &#187;</li>
@@ -621,14 +644,21 @@ very, very well) with my sockets.</p>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -647,11 +677,11 @@ very, very well) with my sockets.</p>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

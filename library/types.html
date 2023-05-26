@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="types — Dynamic type creation and names for built-in types" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/types.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>types — Dynamic type creation and names for built-in types &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>types — Dynamic type creation and names for built-in types &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,43 +52,111 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> — Dynamic type creation and names for built-in types</a><ul>
-<li><a class="reference internal" href="#dynamic-type-creation">Dynamic Type Creation</a></li>
-<li><a class="reference internal" href="#standard-interpreter-types">Standard Interpreter Types</a></li>
-<li><a class="reference internal" href="#additional-utility-classes-and-functions">Additional Utility Classes and Functions</a></li>
-<li><a class="reference internal" href="#coroutine-utility-functions">Coroutine Utility Functions</a></li>
+<li><a class="reference internal" href="#dynamic-type-creation">Dynamic Type Creation</a><ul>
+<li><a class="reference internal" href="#types.new_class"><code class="docutils literal notranslate"><span class="pre">new_class()</span></code></a></li>
+<li><a class="reference internal" href="#types.prepare_class"><code class="docutils literal notranslate"><span class="pre">prepare_class()</span></code></a></li>
+<li><a class="reference internal" href="#types.resolve_bases"><code class="docutils literal notranslate"><span class="pre">resolve_bases()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#standard-interpreter-types">Standard Interpreter Types</a><ul>
+<li><a class="reference internal" href="#types.NoneType"><code class="docutils literal notranslate"><span class="pre">NoneType</span></code></a></li>
+<li><a class="reference internal" href="#types.FunctionType"><code class="docutils literal notranslate"><span class="pre">FunctionType</span></code></a></li>
+<li><a class="reference internal" href="#types.LambdaType"><code class="docutils literal notranslate"><span class="pre">LambdaType</span></code></a></li>
+<li><a class="reference internal" href="#types.GeneratorType"><code class="docutils literal notranslate"><span class="pre">GeneratorType</span></code></a></li>
+<li><a class="reference internal" href="#types.CoroutineType"><code class="docutils literal notranslate"><span class="pre">CoroutineType</span></code></a></li>
+<li><a class="reference internal" href="#types.AsyncGeneratorType"><code class="docutils literal notranslate"><span class="pre">AsyncGeneratorType</span></code></a></li>
+<li><a class="reference internal" href="#types.CodeType"><code class="docutils literal notranslate"><span class="pre">CodeType</span></code></a><ul>
+<li><a class="reference internal" href="#types.CodeType.replace"><code class="docutils literal notranslate"><span class="pre">CodeType.replace()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#types.CellType"><code class="docutils literal notranslate"><span class="pre">CellType</span></code></a></li>
+<li><a class="reference internal" href="#types.MethodType"><code class="docutils literal notranslate"><span class="pre">MethodType</span></code></a></li>
+<li><a class="reference internal" href="#types.BuiltinFunctionType"><code class="docutils literal notranslate"><span class="pre">BuiltinFunctionType</span></code></a></li>
+<li><a class="reference internal" href="#types.BuiltinMethodType"><code class="docutils literal notranslate"><span class="pre">BuiltinMethodType</span></code></a></li>
+<li><a class="reference internal" href="#types.WrapperDescriptorType"><code class="docutils literal notranslate"><span class="pre">WrapperDescriptorType</span></code></a></li>
+<li><a class="reference internal" href="#types.MethodWrapperType"><code class="docutils literal notranslate"><span class="pre">MethodWrapperType</span></code></a></li>
+<li><a class="reference internal" href="#types.NotImplementedType"><code class="docutils literal notranslate"><span class="pre">NotImplementedType</span></code></a></li>
+<li><a class="reference internal" href="#types.MethodDescriptorType"><code class="docutils literal notranslate"><span class="pre">MethodDescriptorType</span></code></a></li>
+<li><a class="reference internal" href="#types.ClassMethodDescriptorType"><code class="docutils literal notranslate"><span class="pre">ClassMethodDescriptorType</span></code></a></li>
+<li><a class="reference internal" href="#types.ModuleType"><code class="docutils literal notranslate"><span class="pre">ModuleType</span></code></a><ul>
+<li><a class="reference internal" href="#types.ModuleType.__doc__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__doc__</span></code></a></li>
+<li><a class="reference internal" href="#types.ModuleType.__loader__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__loader__</span></code></a></li>
+<li><a class="reference internal" href="#types.ModuleType.__name__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__name__</span></code></a></li>
+<li><a class="reference internal" href="#types.ModuleType.__package__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__package__</span></code></a></li>
+<li><a class="reference internal" href="#types.ModuleType.__spec__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__spec__</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#types.EllipsisType"><code class="docutils literal notranslate"><span class="pre">EllipsisType</span></code></a></li>
+<li><a class="reference internal" href="#types.GenericAlias"><code class="docutils literal notranslate"><span class="pre">GenericAlias</span></code></a></li>
+<li><a class="reference internal" href="#types.UnionType"><code class="docutils literal notranslate"><span class="pre">UnionType</span></code></a></li>
+<li><a class="reference internal" href="#types.TracebackType"><code class="docutils literal notranslate"><span class="pre">TracebackType</span></code></a></li>
+<li><a class="reference internal" href="#types.FrameType"><code class="docutils literal notranslate"><span class="pre">FrameType</span></code></a></li>
+<li><a class="reference internal" href="#types.GetSetDescriptorType"><code class="docutils literal notranslate"><span class="pre">GetSetDescriptorType</span></code></a></li>
+<li><a class="reference internal" href="#types.MemberDescriptorType"><code class="docutils literal notranslate"><span class="pre">MemberDescriptorType</span></code></a></li>
+<li><a class="reference internal" href="#types.MappingProxyType"><code class="docutils literal notranslate"><span class="pre">MappingProxyType</span></code></a><ul>
+<li><a class="reference internal" href="#types.MappingProxyType.copy"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.copy()</span></code></a></li>
+<li><a class="reference internal" href="#types.MappingProxyType.get"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.get()</span></code></a></li>
+<li><a class="reference internal" href="#types.MappingProxyType.items"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.items()</span></code></a></li>
+<li><a class="reference internal" href="#types.MappingProxyType.keys"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.keys()</span></code></a></li>
+<li><a class="reference internal" href="#types.MappingProxyType.values"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.values()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#additional-utility-classes-and-functions">Additional Utility Classes and Functions</a><ul>
+<li><a class="reference internal" href="#types.SimpleNamespace"><code class="docutils literal notranslate"><span class="pre">SimpleNamespace</span></code></a></li>
+<li><a class="reference internal" href="#types.DynamicClassAttribute"><code class="docutils literal notranslate"><span class="pre">DynamicClassAttribute()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#coroutine-utility-functions">Coroutine Utility Functions</a><ul>
+<li><a class="reference internal" href="#types.coroutine"><code class="docutils literal notranslate"><span class="pre">coroutine()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -146,7 +214,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -157,14 +225,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -175,7 +250,7 @@
           <div class="body" role="main">
             
   <section id="module-types">
-<span id="types-dynamic-type-creation-and-names-for-built-in-types"></span><h1><a class="reference internal" href="#module-types" title="types: Names for built-in types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a> — Dynamic type creation and names for built-in types<a class="headerlink" href="#module-types" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="types-dynamic-type-creation-and-names-for-built-in-types"></span><h1><a class="reference internal" href="#module-types" title="types: Names for built-in types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a> — Dynamic type creation and names for built-in types<a class="headerlink" href="#module-types" title="Permalink to this heading">¶</a></h1>
 <p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.11/Lib/types.py">Lib/types.py</a></p>
 <hr class="docutils" />
 <p>This module defines utility functions to assist in dynamic creation of
@@ -186,7 +261,7 @@ Python interpreter, but not exposed as builtins like <a class="reference interna
 <p>Finally, it provides some additional type-related utility classes and functions
 that are not fundamental enough to be builtins.</p>
 <section id="dynamic-type-creation">
-<h2>Dynamic Type Creation<a class="headerlink" href="#dynamic-type-creation" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Dynamic Type Creation<a class="headerlink" href="#dynamic-type-creation" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="types.new_class">
 <span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">new_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exec_body</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.new_class" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -256,7 +331,7 @@ the return tuple unchanged.</p>
 </div>
 </section>
 <section id="standard-interpreter-types">
-<h2>Standard Interpreter Types<a class="headerlink" href="#standard-interpreter-types" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Standard Interpreter Types<a class="headerlink" href="#standard-interpreter-types" title="Permalink to this heading">¶</a></h2>
 <p>This module provides names for many of the types that are required to
 implement a Python interpreter. It deliberately avoids including some of
 the types that arise only incidentally during processing such as the
@@ -527,7 +602,7 @@ length 1) of types which parameterize <code class="docutils literal notranslate"
 <dl class="py class">
 <dt class="sig sig-object py" id="types.TracebackType">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">TracebackType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_next</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_lasti</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_lineno</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.TracebackType" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
-<dd><p>The type of traceback objects such as found in <code class="docutils literal notranslate"><span class="pre">sys.exc_info()[2]</span></code>.</p>
+<dd><p>The type of traceback objects such as found in <code class="docutils literal notranslate"><span class="pre">sys.exception().__traceback__</span></code>.</p>
 <p>See <a class="reference internal" href="../reference/datamodel.html#traceback-objects"><span class="std std-ref">the language reference</span></a> for details of the
 available attributes and operations, and guidance on creating tracebacks
 dynamically.</p>
@@ -650,7 +725,7 @@ pairs).</p>
 
 </section>
 <section id="additional-utility-classes-and-functions">
-<h2>Additional Utility Classes and Functions<a class="headerlink" href="#additional-utility-classes-and-functions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Additional Utility Classes and Functions<a class="headerlink" href="#additional-utility-classes-and-functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="types.SimpleNamespace">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">SimpleNamespace</span></span><a class="headerlink" href="#types.SimpleNamespace" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -703,7 +778,7 @@ attributes on the class with the same name (see <a class="reference internal" hr
 
 </section>
 <section id="coroutine-utility-functions">
-<h2>Coroutine Utility Functions<a class="headerlink" href="#coroutine-utility-functions" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Coroutine Utility Functions<a class="headerlink" href="#coroutine-utility-functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="types.coroutine">
 <span class="sig-prename descclassname"><span class="pre">types.</span></span><span class="sig-name descname"><span class="pre">coroutine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen_func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#types.coroutine" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -712,7 +787,7 @@ attributes on the class with the same name (see <a class="reference internal" hr
 The generator-based coroutine is still a <a class="reference internal" href="../glossary.html#term-generator-iterator"><span class="xref std std-term">generator iterator</span></a>,
 but is also considered to be a <a class="reference internal" href="../glossary.html#term-coroutine"><span class="xref std std-term">coroutine</span></a> object and is
 <a class="reference internal" href="../glossary.html#term-awaitable"><span class="xref std std-term">awaitable</span></a>.  However, it may not necessarily implement
-the <code class="xref py py-meth docutils literal notranslate"><span class="pre">__await__()</span></code> method.</p>
+the <a class="reference internal" href="../reference/datamodel.html#object.__await__" title="object.__await__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__await__()</span></code></a> method.</p>
 <p>If <em>gen_func</em> is a generator function, it will be modified in-place.</p>
 <p>If <em>gen_func</em> is not a generator function, it will be wrapped. If it
 returns an instance of <a class="reference internal" href="collections.abc.html#collections.abc.Generator" title="collections.abc.Generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Generator</span></code></a>, the instance
@@ -737,10 +812,66 @@ of objects will be returned as is.</p>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code> — Dynamic type creation and names for built-in types</a><ul>
-<li><a class="reference internal" href="#dynamic-type-creation">Dynamic Type Creation</a></li>
-<li><a class="reference internal" href="#standard-interpreter-types">Standard Interpreter Types</a></li>
-<li><a class="reference internal" href="#additional-utility-classes-and-functions">Additional Utility Classes and Functions</a></li>
-<li><a class="reference internal" href="#coroutine-utility-functions">Coroutine Utility Functions</a></li>
+<li><a class="reference internal" href="#dynamic-type-creation">Dynamic Type Creation</a><ul>
+<li><a class="reference internal" href="#types.new_class"><code class="docutils literal notranslate"><span class="pre">new_class()</span></code></a></li>
+<li><a class="reference internal" href="#types.prepare_class"><code class="docutils literal notranslate"><span class="pre">prepare_class()</span></code></a></li>
+<li><a class="reference internal" href="#types.resolve_bases"><code class="docutils literal notranslate"><span class="pre">resolve_bases()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#standard-interpreter-types">Standard Interpreter Types</a><ul>
+<li><a class="reference internal" href="#types.NoneType"><code class="docutils literal notranslate"><span class="pre">NoneType</span></code></a></li>
+<li><a class="reference internal" href="#types.FunctionType"><code class="docutils literal notranslate"><span class="pre">FunctionType</span></code></a></li>
+<li><a class="reference internal" href="#types.LambdaType"><code class="docutils literal notranslate"><span class="pre">LambdaType</span></code></a></li>
+<li><a class="reference internal" href="#types.GeneratorType"><code class="docutils literal notranslate"><span class="pre">GeneratorType</span></code></a></li>
+<li><a class="reference internal" href="#types.CoroutineType"><code class="docutils literal notranslate"><span class="pre">CoroutineType</span></code></a></li>
+<li><a class="reference internal" href="#types.AsyncGeneratorType"><code class="docutils literal notranslate"><span class="pre">AsyncGeneratorType</span></code></a></li>
+<li><a class="reference internal" href="#types.CodeType"><code class="docutils literal notranslate"><span class="pre">CodeType</span></code></a><ul>
+<li><a class="reference internal" href="#types.CodeType.replace"><code class="docutils literal notranslate"><span class="pre">CodeType.replace()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#types.CellType"><code class="docutils literal notranslate"><span class="pre">CellType</span></code></a></li>
+<li><a class="reference internal" href="#types.MethodType"><code class="docutils literal notranslate"><span class="pre">MethodType</span></code></a></li>
+<li><a class="reference internal" href="#types.BuiltinFunctionType"><code class="docutils literal notranslate"><span class="pre">BuiltinFunctionType</span></code></a></li>
+<li><a class="reference internal" href="#types.BuiltinMethodType"><code class="docutils literal notranslate"><span class="pre">BuiltinMethodType</span></code></a></li>
+<li><a class="reference internal" href="#types.WrapperDescriptorType"><code class="docutils literal notranslate"><span class="pre">WrapperDescriptorType</span></code></a></li>
+<li><a class="reference internal" href="#types.MethodWrapperType"><code class="docutils literal notranslate"><span class="pre">MethodWrapperType</span></code></a></li>
+<li><a class="reference internal" href="#types.NotImplementedType"><code class="docutils literal notranslate"><span class="pre">NotImplementedType</span></code></a></li>
+<li><a class="reference internal" href="#types.MethodDescriptorType"><code class="docutils literal notranslate"><span class="pre">MethodDescriptorType</span></code></a></li>
+<li><a class="reference internal" href="#types.ClassMethodDescriptorType"><code class="docutils literal notranslate"><span class="pre">ClassMethodDescriptorType</span></code></a></li>
+<li><a class="reference internal" href="#types.ModuleType"><code class="docutils literal notranslate"><span class="pre">ModuleType</span></code></a><ul>
+<li><a class="reference internal" href="#types.ModuleType.__doc__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__doc__</span></code></a></li>
+<li><a class="reference internal" href="#types.ModuleType.__loader__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__loader__</span></code></a></li>
+<li><a class="reference internal" href="#types.ModuleType.__name__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__name__</span></code></a></li>
+<li><a class="reference internal" href="#types.ModuleType.__package__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__package__</span></code></a></li>
+<li><a class="reference internal" href="#types.ModuleType.__spec__"><code class="docutils literal notranslate"><span class="pre">ModuleType.__spec__</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#types.EllipsisType"><code class="docutils literal notranslate"><span class="pre">EllipsisType</span></code></a></li>
+<li><a class="reference internal" href="#types.GenericAlias"><code class="docutils literal notranslate"><span class="pre">GenericAlias</span></code></a></li>
+<li><a class="reference internal" href="#types.UnionType"><code class="docutils literal notranslate"><span class="pre">UnionType</span></code></a></li>
+<li><a class="reference internal" href="#types.TracebackType"><code class="docutils literal notranslate"><span class="pre">TracebackType</span></code></a></li>
+<li><a class="reference internal" href="#types.FrameType"><code class="docutils literal notranslate"><span class="pre">FrameType</span></code></a></li>
+<li><a class="reference internal" href="#types.GetSetDescriptorType"><code class="docutils literal notranslate"><span class="pre">GetSetDescriptorType</span></code></a></li>
+<li><a class="reference internal" href="#types.MemberDescriptorType"><code class="docutils literal notranslate"><span class="pre">MemberDescriptorType</span></code></a></li>
+<li><a class="reference internal" href="#types.MappingProxyType"><code class="docutils literal notranslate"><span class="pre">MappingProxyType</span></code></a><ul>
+<li><a class="reference internal" href="#types.MappingProxyType.copy"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.copy()</span></code></a></li>
+<li><a class="reference internal" href="#types.MappingProxyType.get"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.get()</span></code></a></li>
+<li><a class="reference internal" href="#types.MappingProxyType.items"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.items()</span></code></a></li>
+<li><a class="reference internal" href="#types.MappingProxyType.keys"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.keys()</span></code></a></li>
+<li><a class="reference internal" href="#types.MappingProxyType.values"><code class="docutils literal notranslate"><span class="pre">MappingProxyType.values()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#additional-utility-classes-and-functions">Additional Utility Classes and Functions</a><ul>
+<li><a class="reference internal" href="#types.SimpleNamespace"><code class="docutils literal notranslate"><span class="pre">SimpleNamespace</span></code></a></li>
+<li><a class="reference internal" href="#types.DynamicClassAttribute"><code class="docutils literal notranslate"><span class="pre">DynamicClassAttribute()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#coroutine-utility-functions">Coroutine Utility Functions</a><ul>
+<li><a class="reference internal" href="#types.coroutine"><code class="docutils literal notranslate"><span class="pre">coroutine()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -768,6 +899,10 @@ of objects will be returned as is.</p>
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -797,7 +932,7 @@ of objects will be returned as is.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -808,14 +943,21 @@ of objects will be returned as is.</p>
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -834,11 +976,11 @@ of objects will be returned as is.</p>
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>

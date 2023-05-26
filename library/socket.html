@@ -4,7 +4,7 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta property="og:title" content="socket — Low-level networking interface" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.python.org/3/library/socket.html" />
@@ -17,21 +17,21 @@
 <meta property="og:image:height" content="200">
 <meta name="theme-color" content="#3776ab">
 
-    <title>socket — Low-level networking interface &#8212; Python 3.11.1 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socket — Low-level networking interface &#8212; Python 3.11.2 belgelendirmesi</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?2022.1" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?digest=845a48175c3935ba0d7ff16b8ed0072d62fd099f" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/translations.js"></script>
     
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Python 3.11.1 belgelendirmesi içinde ara"
+          title="Python 3.11.2 belgelendirmesi içinde ara"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="Bu belgeler hakkında" href="../about.html" />
     <link rel="index" title="Dizin" href="../genindex.html" />
@@ -52,51 +52,194 @@
         }
       }
     </style>
-<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
             <script type="text/javascript" src="../_static/copybutton.js"></script>
-            <script type="text/javascript" src="../_static/menu.js"></script> 
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
 
   </head>
 <body>
 <div class="mobile-nav">
     <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
            aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
-    <label for="menuToggler" class="toggler__label">
-        <span></span>
-    </label>
     <nav class="nav-content" role="navigation">
-         <a href="https://www.python.org/" class="nav-logo">
-             <img src="../_static/py.svg" alt="Logo"/>
-         </a>
-        <div class="version_switcher_placeholder"></div>
-        <form role="search" class="search" action="../search.html" method="get">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                <path fill-rule="nonzero"
-                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
-            </svg>
-            <input type="text" name="q" aria-label="Hızlı Arama"/>
-            <input type="submit" value="Git"/>
-        </form>
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Logo"/>
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
+                <input type="submit" value="Git"/>
+            </form>
+        </span>
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
   <div>
     <h3><a href="../contents.html">İçindekiler</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">socket</span></code> — Low-level networking interface</a><ul>
 <li><a class="reference internal" href="#socket-families">Socket families</a></li>
 <li><a class="reference internal" href="#module-contents">Module contents</a><ul>
-<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
-<li><a class="reference internal" href="#constants">Constants</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li><a class="reference internal" href="#socket.error"><code class="docutils literal notranslate"><span class="pre">error</span></code></a></li>
+<li><a class="reference internal" href="#socket.herror"><code class="docutils literal notranslate"><span class="pre">herror</span></code></a></li>
+<li><a class="reference internal" href="#socket.gaierror"><code class="docutils literal notranslate"><span class="pre">gaierror</span></code></a></li>
+<li><a class="reference internal" href="#socket.timeout"><code class="docutils literal notranslate"><span class="pre">timeout</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#constants">Constants</a><ul>
+<li><a class="reference internal" href="#socket.AF_UNIX"><code class="docutils literal notranslate"><span class="pre">AF_UNIX</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_INET"><code class="docutils literal notranslate"><span class="pre">AF_INET</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_INET6"><code class="docutils literal notranslate"><span class="pre">AF_INET6</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_STREAM"><code class="docutils literal notranslate"><span class="pre">SOCK_STREAM</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_DGRAM"><code class="docutils literal notranslate"><span class="pre">SOCK_DGRAM</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_RAW"><code class="docutils literal notranslate"><span class="pre">SOCK_RAW</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_RDM"><code class="docutils literal notranslate"><span class="pre">SOCK_RDM</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_SEQPACKET"><code class="docutils literal notranslate"><span class="pre">SOCK_SEQPACKET</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_CLOEXEC"><code class="docutils literal notranslate"><span class="pre">SOCK_CLOEXEC</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">SOCK_NONBLOCK</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOMAXCONN"><code class="docutils literal notranslate"><span class="pre">SOMAXCONN</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_CAN"><code class="docutils literal notranslate"><span class="pre">AF_CAN</span></code></a></li>
+<li><a class="reference internal" href="#socket.PF_CAN"><code class="docutils literal notranslate"><span class="pre">PF_CAN</span></code></a></li>
+<li><a class="reference internal" href="#socket.CAN_BCM"><code class="docutils literal notranslate"><span class="pre">CAN_BCM</span></code></a></li>
+<li><a class="reference internal" href="#socket.CAN_RAW_FD_FRAMES"><code class="docutils literal notranslate"><span class="pre">CAN_RAW_FD_FRAMES</span></code></a></li>
+<li><a class="reference internal" href="#socket.CAN_RAW_JOIN_FILTERS"><code class="docutils literal notranslate"><span class="pre">CAN_RAW_JOIN_FILTERS</span></code></a></li>
+<li><a class="reference internal" href="#socket.CAN_ISOTP"><code class="docutils literal notranslate"><span class="pre">CAN_ISOTP</span></code></a></li>
+<li><a class="reference internal" href="#socket.CAN_J1939"><code class="docutils literal notranslate"><span class="pre">CAN_J1939</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_PACKET"><code class="docutils literal notranslate"><span class="pre">AF_PACKET</span></code></a></li>
+<li><a class="reference internal" href="#socket.PF_PACKET"><code class="docutils literal notranslate"><span class="pre">PF_PACKET</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_RDS"><code class="docutils literal notranslate"><span class="pre">AF_RDS</span></code></a></li>
+<li><a class="reference internal" href="#socket.PF_RDS"><code class="docutils literal notranslate"><span class="pre">PF_RDS</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOL_RDS"><code class="docutils literal notranslate"><span class="pre">SOL_RDS</span></code></a></li>
+<li><a class="reference internal" href="#socket.SIO_RCVALL"><code class="docutils literal notranslate"><span class="pre">SIO_RCVALL</span></code></a></li>
+<li><a class="reference internal" href="#socket.SIO_KEEPALIVE_VALS"><code class="docutils literal notranslate"><span class="pre">SIO_KEEPALIVE_VALS</span></code></a></li>
+<li><a class="reference internal" href="#socket.SIO_LOOPBACK_FAST_PATH"><code class="docutils literal notranslate"><span class="pre">SIO_LOOPBACK_FAST_PATH</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_ALG"><code class="docutils literal notranslate"><span class="pre">AF_ALG</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOL_ALG"><code class="docutils literal notranslate"><span class="pre">SOL_ALG</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_VSOCK"><code class="docutils literal notranslate"><span class="pre">AF_VSOCK</span></code></a></li>
+<li><a class="reference internal" href="#socket.IOCTL_VM_SOCKETS_GET_LOCAL_CID"><code class="docutils literal notranslate"><span class="pre">IOCTL_VM_SOCKETS_GET_LOCAL_CID</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_LINK"><code class="docutils literal notranslate"><span class="pre">AF_LINK</span></code></a></li>
+<li><a class="reference internal" href="#socket.has_ipv6"><code class="docutils literal notranslate"><span class="pre">has_ipv6</span></code></a></li>
+<li><a class="reference internal" href="#socket.BDADDR_ANY"><code class="docutils literal notranslate"><span class="pre">BDADDR_ANY</span></code></a></li>
+<li><a class="reference internal" href="#socket.BDADDR_LOCAL"><code class="docutils literal notranslate"><span class="pre">BDADDR_LOCAL</span></code></a></li>
+<li><a class="reference internal" href="#socket.HCI_FILTER"><code class="docutils literal notranslate"><span class="pre">HCI_FILTER</span></code></a></li>
+<li><a class="reference internal" href="#socket.HCI_TIME_STAMP"><code class="docutils literal notranslate"><span class="pre">HCI_TIME_STAMP</span></code></a></li>
+<li><a class="reference internal" href="#socket.HCI_DATA_DIR"><code class="docutils literal notranslate"><span class="pre">HCI_DATA_DIR</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_QIPCRTR"><code class="docutils literal notranslate"><span class="pre">AF_QIPCRTR</span></code></a></li>
+<li><a class="reference internal" href="#socket.SCM_CREDS2"><code class="docutils literal notranslate"><span class="pre">SCM_CREDS2</span></code></a></li>
+<li><a class="reference internal" href="#socket.LOCAL_CREDS"><code class="docutils literal notranslate"><span class="pre">LOCAL_CREDS</span></code></a></li>
+<li><a class="reference internal" href="#socket.LOCAL_CREDS_PERSISTENT"><code class="docutils literal notranslate"><span class="pre">LOCAL_CREDS_PERSISTENT</span></code></a></li>
+<li><a class="reference internal" href="#socket.SO_INCOMING_CPU"><code class="docutils literal notranslate"><span class="pre">SO_INCOMING_CPU</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#functions">Functions</a><ul>
-<li><a class="reference internal" href="#creating-sockets">Creating sockets</a></li>
-<li><a class="reference internal" href="#other-functions">Other functions</a></li>
+<li><a class="reference internal" href="#creating-sockets">Creating sockets</a><ul>
+<li><a class="reference internal" href="#socket.socket"><code class="docutils literal notranslate"><span class="pre">socket</span></code></a></li>
+<li><a class="reference internal" href="#socket.socketpair"><code class="docutils literal notranslate"><span class="pre">socketpair()</span></code></a></li>
+<li><a class="reference internal" href="#socket.create_connection"><code class="docutils literal notranslate"><span class="pre">create_connection()</span></code></a></li>
+<li><a class="reference internal" href="#socket.create_server"><code class="docutils literal notranslate"><span class="pre">create_server()</span></code></a></li>
+<li><a class="reference internal" href="#socket.has_dualstack_ipv6"><code class="docutils literal notranslate"><span class="pre">has_dualstack_ipv6()</span></code></a></li>
+<li><a class="reference internal" href="#socket.fromfd"><code class="docutils literal notranslate"><span class="pre">fromfd()</span></code></a></li>
+<li><a class="reference internal" href="#socket.fromshare"><code class="docutils literal notranslate"><span class="pre">fromshare()</span></code></a></li>
+<li><a class="reference internal" href="#socket.SocketType"><code class="docutils literal notranslate"><span class="pre">SocketType</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-functions">Other functions</a><ul>
+<li><a class="reference internal" href="#socket.close"><code class="docutils literal notranslate"><span class="pre">close()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getaddrinfo"><code class="docutils literal notranslate"><span class="pre">getaddrinfo()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getfqdn"><code class="docutils literal notranslate"><span class="pre">getfqdn()</span></code></a></li>
+<li><a class="reference internal" href="#socket.gethostbyname"><code class="docutils literal notranslate"><span class="pre">gethostbyname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.gethostbyname_ex"><code class="docutils literal notranslate"><span class="pre">gethostbyname_ex()</span></code></a></li>
+<li><a class="reference internal" href="#socket.gethostname"><code class="docutils literal notranslate"><span class="pre">gethostname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.gethostbyaddr"><code class="docutils literal notranslate"><span class="pre">gethostbyaddr()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getnameinfo"><code class="docutils literal notranslate"><span class="pre">getnameinfo()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getprotobyname"><code class="docutils literal notranslate"><span class="pre">getprotobyname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getservbyname"><code class="docutils literal notranslate"><span class="pre">getservbyname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getservbyport"><code class="docutils literal notranslate"><span class="pre">getservbyport()</span></code></a></li>
+<li><a class="reference internal" href="#socket.ntohl"><code class="docutils literal notranslate"><span class="pre">ntohl()</span></code></a></li>
+<li><a class="reference internal" href="#socket.ntohs"><code class="docutils literal notranslate"><span class="pre">ntohs()</span></code></a></li>
+<li><a class="reference internal" href="#socket.htonl"><code class="docutils literal notranslate"><span class="pre">htonl()</span></code></a></li>
+<li><a class="reference internal" href="#socket.htons"><code class="docutils literal notranslate"><span class="pre">htons()</span></code></a></li>
+<li><a class="reference internal" href="#socket.inet_aton"><code class="docutils literal notranslate"><span class="pre">inet_aton()</span></code></a></li>
+<li><a class="reference internal" href="#socket.inet_ntoa"><code class="docutils literal notranslate"><span class="pre">inet_ntoa()</span></code></a></li>
+<li><a class="reference internal" href="#socket.inet_pton"><code class="docutils literal notranslate"><span class="pre">inet_pton()</span></code></a></li>
+<li><a class="reference internal" href="#socket.inet_ntop"><code class="docutils literal notranslate"><span class="pre">inet_ntop()</span></code></a></li>
+<li><a class="reference internal" href="#socket.CMSG_LEN"><code class="docutils literal notranslate"><span class="pre">CMSG_LEN()</span></code></a></li>
+<li><a class="reference internal" href="#socket.CMSG_SPACE"><code class="docutils literal notranslate"><span class="pre">CMSG_SPACE()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getdefaulttimeout"><code class="docutils literal notranslate"><span class="pre">getdefaulttimeout()</span></code></a></li>
+<li><a class="reference internal" href="#socket.setdefaulttimeout"><code class="docutils literal notranslate"><span class="pre">setdefaulttimeout()</span></code></a></li>
+<li><a class="reference internal" href="#socket.sethostname"><code class="docutils literal notranslate"><span class="pre">sethostname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.if_nameindex"><code class="docutils literal notranslate"><span class="pre">if_nameindex()</span></code></a></li>
+<li><a class="reference internal" href="#socket.if_nametoindex"><code class="docutils literal notranslate"><span class="pre">if_nametoindex()</span></code></a></li>
+<li><a class="reference internal" href="#socket.if_indextoname"><code class="docutils literal notranslate"><span class="pre">if_indextoname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.send_fds"><code class="docutils literal notranslate"><span class="pre">send_fds()</span></code></a></li>
+<li><a class="reference internal" href="#socket.recv_fds"><code class="docutils literal notranslate"><span class="pre">recv_fds()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#socket-objects">Socket Objects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#socket-objects">Socket Objects</a><ul>
+<li><a class="reference internal" href="#socket.socket.accept"><code class="docutils literal notranslate"><span class="pre">socket.accept()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.bind"><code class="docutils literal notranslate"><span class="pre">socket.bind()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.close"><code class="docutils literal notranslate"><span class="pre">socket.close()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.connect"><code class="docutils literal notranslate"><span class="pre">socket.connect()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.connect_ex"><code class="docutils literal notranslate"><span class="pre">socket.connect_ex()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.detach"><code class="docutils literal notranslate"><span class="pre">socket.detach()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.dup"><code class="docutils literal notranslate"><span class="pre">socket.dup()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.fileno"><code class="docutils literal notranslate"><span class="pre">socket.fileno()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.get_inheritable"><code class="docutils literal notranslate"><span class="pre">socket.get_inheritable()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.getpeername"><code class="docutils literal notranslate"><span class="pre">socket.getpeername()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.getsockname"><code class="docutils literal notranslate"><span class="pre">socket.getsockname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.getsockopt"><code class="docutils literal notranslate"><span class="pre">socket.getsockopt()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.getblocking"><code class="docutils literal notranslate"><span class="pre">socket.getblocking()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.gettimeout"><code class="docutils literal notranslate"><span class="pre">socket.gettimeout()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.ioctl"><code class="docutils literal notranslate"><span class="pre">socket.ioctl()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.listen"><code class="docutils literal notranslate"><span class="pre">socket.listen()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.makefile"><code class="docutils literal notranslate"><span class="pre">socket.makefile()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recv"><code class="docutils literal notranslate"><span class="pre">socket.recv()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recvfrom"><code class="docutils literal notranslate"><span class="pre">socket.recvfrom()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recvmsg"><code class="docutils literal notranslate"><span class="pre">socket.recvmsg()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recvmsg_into"><code class="docutils literal notranslate"><span class="pre">socket.recvmsg_into()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recvfrom_into"><code class="docutils literal notranslate"><span class="pre">socket.recvfrom_into()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recv_into"><code class="docutils literal notranslate"><span class="pre">socket.recv_into()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.send"><code class="docutils literal notranslate"><span class="pre">socket.send()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.sendall"><code class="docutils literal notranslate"><span class="pre">socket.sendall()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.sendto"><code class="docutils literal notranslate"><span class="pre">socket.sendto()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.sendmsg"><code class="docutils literal notranslate"><span class="pre">socket.sendmsg()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.sendmsg_afalg"><code class="docutils literal notranslate"><span class="pre">socket.sendmsg_afalg()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.sendfile"><code class="docutils literal notranslate"><span class="pre">socket.sendfile()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.set_inheritable"><code class="docutils literal notranslate"><span class="pre">socket.set_inheritable()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.setblocking"><code class="docutils literal notranslate"><span class="pre">socket.setblocking()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.settimeout"><code class="docutils literal notranslate"><span class="pre">socket.settimeout()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.setsockopt"><code class="docutils literal notranslate"><span class="pre">socket.setsockopt()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.shutdown"><code class="docutils literal notranslate"><span class="pre">socket.shutdown()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.share"><code class="docutils literal notranslate"><span class="pre">socket.share()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.family"><code class="docutils literal notranslate"><span class="pre">socket.family</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.type"><code class="docutils literal notranslate"><span class="pre">socket.type</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.proto"><code class="docutils literal notranslate"><span class="pre">socket.proto</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#notes-on-socket-timeouts">Notes on socket timeouts</a><ul>
 <li><a class="reference internal" href="#timeouts-and-the-connect-method">Timeouts and the <code class="docutils literal notranslate"><span class="pre">connect</span></code> method</a></li>
 <li><a class="reference internal" href="#timeouts-and-the-accept-method">Timeouts and the <code class="docutils literal notranslate"><span class="pre">accept</span></code> method</a></li>
@@ -160,7 +303,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -171,14 +314,21 @@
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>    
@@ -189,7 +339,7 @@
           <div class="body" role="main">
             
   <section id="module-socket">
-<span id="socket-low-level-networking-interface"></span><h1><a class="reference internal" href="#module-socket" title="socket: Low-level networking interface."><code class="xref py py-mod docutils literal notranslate"><span class="pre">socket</span></code></a> — Low-level networking interface<a class="headerlink" href="#module-socket" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
+<span id="socket-low-level-networking-interface"></span><h1><a class="reference internal" href="#module-socket" title="socket: Low-level networking interface."><code class="xref py py-mod docutils literal notranslate"><span class="pre">socket</span></code></a> — Low-level networking interface<a class="headerlink" href="#module-socket" title="Permalink to this heading">¶</a></h1>
 <p><strong>Source code:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.11/Lib/socket.py">Lib/socket.py</a></p>
 <hr class="docutils" />
 <p>This module provides access to the BSD <em>socket</em> interface. It is available on
@@ -199,10 +349,12 @@ all modern Unix systems, Windows, MacOS, and probably additional platforms.</p>
 <p>Some behavior may be platform dependent, since calls are made to the operating
 system socket APIs.</p>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not Emscripten, not WASI.<p>This module does not work or is not available on WebAssembly platforms
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not Emscripten, not WASI.</p>
+<p>This module does not work or is not available on WebAssembly platforms
 <code class="docutils literal notranslate"><span class="pre">wasm32-emscripten</span></code> and <code class="docutils literal notranslate"><span class="pre">wasm32-wasi</span></code>. See
 <a class="reference internal" href="intro.html#wasm-availability"><span class="std std-ref">WebAssembly platforms</span></a> for more information.</p>
-</p>
+</div>
 <p id="index-0">The Python interface is a straightforward transliteration of the Unix system
 call and library interface for sockets to Python’s object-oriented style: the
 <code class="xref py py-func docutils literal notranslate"><span class="pre">socket()</span></code> function returns a <em class="dfn">socket object</em> whose methods implement
@@ -220,7 +372,7 @@ is implicit on send operations.</p>
 </dl>
 </div>
 <section id="socket-families">
-<h2>Socket families<a class="headerlink" href="#socket-families" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Socket families<a class="headerlink" href="#socket-families" title="Permalink to this heading">¶</a></h2>
 <p>Depending on the system and the build options, various socket families
 are supported by this module.</p>
 <p>The address format required by a particular socket object is automatically
@@ -345,8 +497,10 @@ elements <code class="docutils literal notranslate"><span class="pre">(type,</sp
 <code class="docutils literal notranslate"><span class="pre">sha256</span></code>, <code class="docutils literal notranslate"><span class="pre">hmac(sha256)</span></code>, <code class="docutils literal notranslate"><span class="pre">cbc(aes)</span></code> or <code class="docutils literal notranslate"><span class="pre">drbg_nopr_ctr_aes256</span></code>.</p></li>
 <li><p><em>feat</em> and <em>mask</em> are unsigned 32bit integers.</p></li>
 </ul>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.38.<p>Some algorithm types require more recent Kernels.</p>
-</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.38.</p>
+<p>Some algorithm types require more recent Kernels.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.6 sürümünde geldi.</span></p>
 </div>
@@ -354,8 +508,10 @@ elements <code class="docutils literal notranslate"><span class="pre">(type,</sp
 <li><p><a class="reference internal" href="#socket.AF_VSOCK" title="socket.AF_VSOCK"><code class="xref py py-const docutils literal notranslate"><span class="pre">AF_VSOCK</span></code></a> allows communication between virtual machines and
 their hosts. The sockets are represented as a <code class="docutils literal notranslate"><span class="pre">(CID,</span> <span class="pre">port)</span></code> tuple
 where the context ID or CID and port are integers.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 3.9<p>See <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/vsock(7)">vsock(7)</a></em></p>
-</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 3.9</p>
+<p>See <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/vsock(7)">vsock(7)</a></em></p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.7 sürümünde geldi.</span></p>
 </div>
@@ -383,7 +539,9 @@ looped back to a packet socket.</p></li>
 address, whose interpretation depends on the device.</p></li>
 </ul>
 <blockquote>
-<div><p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.2.</p>
+<div><div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.2.</p>
+</div>
 </div></blockquote>
 </li>
 <li><p><a class="reference internal" href="#socket.AF_QIPCRTR" title="socket.AF_QIPCRTR"><code class="xref py py-const docutils literal notranslate"><span class="pre">AF_QIPCRTR</span></code></a> is a Linux-only socket based interface for communicating
@@ -391,7 +549,9 @@ with services running on co-processors in Qualcomm platforms. The address
 family is represented as a <code class="docutils literal notranslate"><span class="pre">(node,</span> <span class="pre">port)</span></code> tuple where the <em>node</em> and <em>port</em>
 are non-negative integers.</p>
 <blockquote>
-<div><p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 4.7.</p>
+<div><div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 4.7.</p>
+</div>
 </div></blockquote>
 <div class="versionadded">
 <p><span class="versionmodified added">3.8 sürümünde geldi.</span></p>
@@ -408,7 +568,9 @@ filter out packets which cover too little of their data. In both cases
 <p>Such a socket should be constructed with
 <code class="docutils literal notranslate"><span class="pre">socket(AF_INET,</span> <span class="pre">SOCK_DGRAM,</span> <span class="pre">IPPROTO_UDPLITE)</span></code> for IPv4 or
 <code class="docutils literal notranslate"><span class="pre">socket(AF_INET6,</span> <span class="pre">SOCK_DGRAM,</span> <span class="pre">IPPROTO_UDPLITE)</span></code> for IPv6.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.20, FreeBSD &gt;= 10.1</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.20, FreeBSD &gt;= 10.1</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.9 sürümünde geldi.</span></p>
 </div>
@@ -429,10 +591,10 @@ generalization of this based on timeouts is supported through
 <a class="reference internal" href="#socket.socket.settimeout" title="socket.socket.settimeout"><code class="xref py py-meth docutils literal notranslate"><span class="pre">settimeout()</span></code></a>.</p>
 </section>
 <section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
 <p>The module <a class="reference internal" href="#module-socket" title="socket: Low-level networking interface."><code class="xref py py-mod docutils literal notranslate"><span class="pre">socket</span></code></a> exports the following elements.</p>
 <section id="exceptions">
-<h3>Exceptions<a class="headerlink" href="#exceptions" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading">¶</a></h3>
 <dl class="py exception">
 <dt class="sig sig-object py" id="socket.error">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#socket.error" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
@@ -491,7 +653,7 @@ whose value is currently always “timed out”.</p>
 
 </section>
 <section id="constants">
-<h3>Constants<a class="headerlink" href="#constants" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Constants<a class="headerlink" href="#constants" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The AF_* and SOCK_* constants are now <code class="xref py py-class docutils literal notranslate"><span class="pre">AddressFamily</span></code> and
 <code class="xref py py-class docutils literal notranslate"><span class="pre">SocketKind</span></code> <a class="reference internal" href="enum.html#enum.IntEnum" title="enum.IntEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></a> collections.</p>
@@ -542,7 +704,9 @@ conditions and the need for separate calls).</p>
 <p><a class="reference external" href="https://udrepper.livejournal.com/20407.html">Secure File Descriptor Handling</a>
 for a more thorough explanation.</p>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.27.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.27.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.2 sürümünde geldi.</span></p>
 </div>
@@ -618,7 +782,9 @@ same way that <code class="docutils literal notranslate"><span class="pre">TCP_I
 <span class="sig-name descname"><span class="pre">CAN_*</span></span></dt>
 <dd><p>Many constants of these forms, documented in the Linux documentation, are
 also defined in the socket module.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.25, NetBSD &gt;= 8.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.25, NetBSD &gt;= 8.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -635,7 +801,9 @@ also defined in the socket module.</p>
 <dd><p>CAN_BCM, in the CAN protocol family, is the broadcast manager (BCM) protocol.
 Broadcast manager constants, documented in the Linux documentation, are also
 defined in the socket module.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.25.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.25.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Not</p>
 <p>The <code class="xref py py-data docutils literal notranslate"><span class="pre">CAN_BCM_CAN_FD_FRAME</span></code> flag is only available on Linux &gt;= 4.8.</p>
@@ -652,7 +820,9 @@ defined in the socket module.</p>
 This allows your application to send both CAN and CAN FD frames; however,
 you must accept both CAN and CAN FD frames when reading from the socket.</p>
 <p>This constant is documented in the Linux documentation.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 3.6.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 3.6.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.5 sürümünde geldi.</span></p>
 </div>
@@ -664,7 +834,9 @@ you must accept both CAN and CAN FD frames when reading from the socket.</p>
 <dd><p>Joins the applied CAN filters such that only CAN frames that match all
 given CAN filters are passed to user space.</p>
 <p>This constant is documented in the Linux documentation.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 4.1.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 4.1.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.9 sürümünde geldi.</span></p>
 </div>
@@ -675,7 +847,9 @@ given CAN filters are passed to user space.</p>
 <span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">CAN_ISOTP</span></span><a class="headerlink" href="#socket.CAN_ISOTP" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>CAN_ISOTP, in the CAN protocol family, is the ISO-TP (ISO 15765-2) protocol.
 ISO-TP constants, documented in the Linux documentation.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.25.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.25.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.7 sürümünde geldi.</span></p>
 </div>
@@ -686,7 +860,9 @@ ISO-TP constants, documented in the Linux documentation.</p>
 <span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">CAN_J1939</span></span><a class="headerlink" href="#socket.CAN_J1939" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>CAN_J1939, in the CAN protocol family, is the SAE J1939 protocol.
 J1939 constants, documented in the Linux documentation.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 5.4.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 5.4.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.9 sürümünde geldi.</span></p>
 </div>
@@ -701,7 +877,9 @@ J1939 constants, documented in the Linux documentation.</p>
 <span class="sig-name descname"><span class="pre">PACKET_*</span></span></dt>
 <dd><p>Many constants of these forms, documented in the Linux documentation, are
 also defined in the socket module.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.2.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.2.</p>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -715,7 +893,9 @@ also defined in the socket module.</p>
 <span class="sig-name descname"><span class="pre">RDS_*</span></span></dt>
 <dd><p>Many constants of these forms, documented in the Linux documentation, are
 also defined in the socket module.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.30.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.30.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -752,7 +932,9 @@ the TIPC documentation for more information.</p>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">ALG_*</span></span></dt>
 <dd><p>Constants for Linux Kernel cryptography.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.38.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.38.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.6 sürümünde geldi.</span></p>
 </div>
@@ -768,7 +950,9 @@ the TIPC documentation for more information.</p>
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">SO_VM*</span></span></dt>
 <dd><p>Constants for Linux host/guest communication.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 4.8.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 4.8.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.7 sürümünde geldi.</span></p>
 </div>
@@ -777,7 +961,9 @@ the TIPC documentation for more information.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="socket.AF_LINK">
 <span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">AF_LINK</span></span><a class="headerlink" href="#socket.AF_LINK" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
-<dd><p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: BSD, macOS.</p>
+<dd><div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: BSD, macOS.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.4 sürümünde geldi.</span></p>
 </div>
@@ -819,7 +1005,9 @@ DragonFlyBSD.</p>
 <span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">AF_QIPCRTR</span></span><a class="headerlink" href="#socket.AF_QIPCRTR" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Constant for Qualcomm’s IPC router protocol, used to communicate with
 service providing remote processors.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 4.7.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 4.7.</p>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -838,7 +1026,9 @@ the latter for the message type.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">3.11 sürümünde geldi.</span></p>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: FreeBSD.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: FreeBSD.</p>
+</div>
 </dd></dl>
 
 <dl class="py data">
@@ -851,14 +1041,16 @@ the latter for the message type.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">3.11 sürümünde geldi.</span></p>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 3.9</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 3.9</p>
+</div>
 </dd></dl>
 
 </section>
 <section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
 <section id="creating-sockets">
-<h4>Creating sockets<a class="headerlink" href="#creating-sockets" title="Bu başlık için kalıcı bağlantı">¶</a></h4>
+<h4>Creating sockets<a class="headerlink" href="#creating-sockets" title="Permalink to this heading">¶</a></h4>
 <p>The following functions all create <a class="reference internal" href="#socket-objects"><span class="std std-ref">socket objects</span></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="socket.socket">
@@ -1037,7 +1229,9 @@ started by the Unix inet daemon).  The socket is assumed to be in blocking mode.
 <span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">fromshare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#socket.fromshare" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Instantiate a socket from data obtained from the <a class="reference internal" href="#socket.socket.share" title="socket.socket.share"><code class="xref py py-meth docutils literal notranslate"><span class="pre">socket.share()</span></code></a>
 method.  The socket is assumed to be in blocking mode.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -1052,7 +1246,7 @@ same as <code class="docutils literal notranslate"><span class="pre">type(socket
 
 </section>
 <section id="other-functions">
-<h4>Other functions<a class="headerlink" href="#other-functions" title="Bu başlık için kalıcı bağlantı">¶</a></h4>
+<h4>Other functions<a class="headerlink" href="#other-functions" title="Permalink to this heading">¶</a></h4>
 <p>The <a class="reference internal" href="#module-socket" title="socket: Low-level networking interface."><code class="xref py py-mod docutils literal notranslate"><span class="pre">socket</span></code></a> module also offers various network-related services:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="socket.close">
@@ -1133,7 +1327,9 @@ it is returned unchanged.  See <a class="reference internal" href="#socket.getho
 interface. <a class="reference internal" href="#socket.gethostbyname" title="socket.gethostbyname"><code class="xref py py-func docutils literal notranslate"><span class="pre">gethostbyname()</span></code></a> does not support IPv6 name resolution, and
 <a class="reference internal" href="#socket.getaddrinfo" title="socket.getaddrinfo"><code class="xref py py-func docutils literal notranslate"><span class="pre">getaddrinfo()</span></code></a> should be used instead for IPv4/v6 dual stack support.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.gethostbyname</span></code> with argument <code class="docutils literal notranslate"><span class="pre">hostname</span></code>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -1148,7 +1344,9 @@ always a single address). <a class="reference internal" href="#socket.gethostbyn
 resolution, and <a class="reference internal" href="#socket.getaddrinfo" title="socket.getaddrinfo"><code class="xref py py-func docutils literal notranslate"><span class="pre">getaddrinfo()</span></code></a> should be used instead for IPv4/v6 dual
 stack support.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.gethostbyname</span></code> with argument <code class="docutils literal notranslate"><span class="pre">hostname</span></code>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -1159,7 +1357,9 @@ interpreter is currently executing.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.gethostname</span></code> with no arguments.</p>
 <p>Note: <a class="reference internal" href="#socket.gethostname" title="socket.gethostname"><code class="xref py py-func docutils literal notranslate"><span class="pre">gethostname()</span></code></a> doesn’t always return the fully qualified domain
 name; use <a class="reference internal" href="#socket.getfqdn" title="socket.getfqdn"><code class="xref py py-func docutils literal notranslate"><span class="pre">getfqdn()</span></code></a> for that.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -1173,7 +1373,9 @@ host (most likely containing only a single address). To find the fully qualified
 domain name, use the function <a class="reference internal" href="#socket.getfqdn" title="socket.getfqdn"><code class="xref py py-func docutils literal notranslate"><span class="pre">getfqdn()</span></code></a>. <a class="reference internal" href="#socket.gethostbyaddr" title="socket.gethostbyaddr"><code class="xref py py-func docutils literal notranslate"><span class="pre">gethostbyaddr()</span></code></a> supports
 both IPv4 and IPv6.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.gethostbyaddr</span></code> with argument <code class="docutils literal notranslate"><span class="pre">ip_address</span></code>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -1187,7 +1389,9 @@ string port name or a numeric port number.</p>
 contains meaningful <em>scope_id</em>. Usually this happens for multicast addresses.</p>
 <p>For more information about <em>flags</em> you can consult <em class="manpage"><a class="manpage reference external" href="https://manpages.debian.org/getnameinfo(3)">getnameinfo(3)</a></em>.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.getnameinfo</span></code> with argument <code class="docutils literal notranslate"><span class="pre">sockaddr</span></code>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -1198,7 +1402,9 @@ suitable for passing as the (optional) third argument to the <code class="xref p
 function.  This is usually only needed for sockets opened in “raw” mode
 (<a class="reference internal" href="#socket.SOCK_RAW" title="socket.SOCK_RAW"><code class="xref py py-const docutils literal notranslate"><span class="pre">SOCK_RAW</span></code></a>); for the normal socket modes, the correct protocol is chosen
 automatically if the protocol is omitted or zero.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -1208,7 +1414,9 @@ automatically if the protocol is omitted or zero.</p>
 service.  The optional protocol name, if given, should be <code class="docutils literal notranslate"><span class="pre">'tcp'</span></code> or
 <code class="docutils literal notranslate"><span class="pre">'udp'</span></code>, otherwise any protocol will match.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.getservbyname</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">servicename</span></code>, <code class="docutils literal notranslate"><span class="pre">protocolname</span></code>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -1218,7 +1426,9 @@ service.  The optional protocol name, if given, should be <code class="docutils 
 service.  The optional protocol name, if given, should be <code class="docutils literal notranslate"><span class="pre">'tcp'</span></code> or
 <code class="docutils literal notranslate"><span class="pre">'udp'</span></code>, otherwise any protocol will match.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.getservbyport</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">port</span></code>, <code class="docutils literal notranslate"><span class="pre">protocolname</span></code>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -1308,7 +1518,9 @@ calls for an object of type <code class="xref c c-struct docutils literal notran
 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> will be raised. Note that exactly what is valid depends on
 both the value of <em>address_family</em> and the underlying implementation of
 <code class="xref c c-func docutils literal notranslate"><span class="pre">inet_pton()</span></code>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.4 sürümünde değişti: </span>Windows support added</p>
 </div>
@@ -1327,7 +1539,9 @@ object of type <code class="xref c c-struct docutils literal notranslate"><span 
 <a class="reference internal" href="#socket.AF_INET6" title="socket.AF_INET6"><code class="xref py py-const docutils literal notranslate"><span class="pre">AF_INET6</span></code></a>. If the bytes object <em>packed_ip</em> is not the correct
 length for the specified address family, <a class="reference internal" href="exceptions.html#ValueError" title="ValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> will be raised.
 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> is raised for errors from the call to <a class="reference internal" href="#socket.inet_ntop" title="socket.inet_ntop"><code class="xref py py-func docutils literal notranslate"><span class="pre">inet_ntop()</span></code></a>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.4 sürümünde değişti: </span>Windows support added</p>
 </div>
@@ -1347,8 +1561,10 @@ portable applications to use <a class="reference internal" href="#socket.CMSG_SP
 space for padding, even when the item will be the last in the
 buffer.  Raises <a class="reference internal" href="exceptions.html#OverflowError" title="OverflowError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OverflowError</span></code></a> if <em>length</em> is outside the
 permissible range of values.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, not Emscripten, not WASI.<p>Most Unix platforms.</p>
-</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, not Emscripten, not WASI.</p>
+<p>Most Unix platforms.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -1369,8 +1585,10 @@ providing this function.  Also note that setting the buffer size
 using the results of this function may not precisely limit the
 amount of ancillary data that can be received, since additional
 data may be able to fit into the padding area.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, not Emscripten, not WASI.<p>most Unix platforms.</p>
-</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, not Emscripten, not WASI.</p>
+<p>most Unix platforms.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -1399,7 +1617,9 @@ meanings.</p>
 <dd><p>Set the machine’s hostname to <em>name</em>.  This will raise an
 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> if you don’t have enough rights.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.sethostname</span></code> with argument <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -1411,7 +1631,9 @@ meanings.</p>
 <dd><p>Return a list of network interface information
 (index int, name string) tuples.
 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> if the system call fails.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows, not Emscripten, not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows, not Emscripten, not WASI.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -1439,7 +1661,9 @@ in this example case.</p>
 <dd><p>Return a network interface index number corresponding to an
 interface name.
 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> if no interface with the given name exists.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows, not Emscripten, not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows, not Emscripten, not WASI.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -1458,7 +1682,9 @@ interface name.
 <dd><p>Return a network interface name corresponding to an
 interface index number.
 <a class="reference internal" href="exceptions.html#OSError" title="OSError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> if no interface with the given index exists.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows, not Emscripten, not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows, not Emscripten, not WASI.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -1477,9 +1703,11 @@ interface index number.
 <dd><p>Send the list of file descriptors <em>fds</em> over an <a class="reference internal" href="#socket.AF_UNIX" title="socket.AF_UNIX"><code class="xref py py-const docutils literal notranslate"><span class="pre">AF_UNIX</span></code></a> socket <em>sock</em>.
 The <em>fds</em> parameter is a sequence of file descriptors.
 Consult <code class="xref py py-meth docutils literal notranslate"><span class="pre">sendmsg()</span></code> for the documentation of these parameters.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows, not Emscripten, not WASI.<p>Unix platforms supporting <a class="reference internal" href="#socket.socket.sendmsg" title="socket.socket.sendmsg"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sendmsg()</span></code></a>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows, not Emscripten, not WASI.</p>
+<p>Unix platforms supporting <a class="reference internal" href="#socket.socket.sendmsg" title="socket.socket.sendmsg"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sendmsg()</span></code></a>
 and <code class="xref py py-const docutils literal notranslate"><span class="pre">SCM_RIGHTS</span></code> mechanism.</p>
-</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.9 sürümünde geldi.</span></p>
 </div>
@@ -1491,9 +1719,11 @@ and <code class="xref py py-const docutils literal notranslate"><span class="pre
 <dd><p>Receive up to <em>maxfds</em> file descriptors from an <a class="reference internal" href="#socket.AF_UNIX" title="socket.AF_UNIX"><code class="xref py py-const docutils literal notranslate"><span class="pre">AF_UNIX</span></code></a> socket <em>sock</em>.
 Return <code class="docutils literal notranslate"><span class="pre">(msg,</span> <span class="pre">list(fds),</span> <span class="pre">flags,</span> <span class="pre">addr)</span></code>.
 Consult <code class="xref py py-meth docutils literal notranslate"><span class="pre">recvmsg()</span></code> for the documentation of these parameters.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows, not Emscripten, not WASI.<p>Unix platforms supporting <a class="reference internal" href="#socket.socket.sendmsg" title="socket.socket.sendmsg"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sendmsg()</span></code></a>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, Windows, not Emscripten, not WASI.</p>
+<p>Unix platforms supporting <a class="reference internal" href="#socket.socket.sendmsg" title="socket.socket.sendmsg"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sendmsg()</span></code></a>
 and <code class="xref py py-const docutils literal notranslate"><span class="pre">SCM_RIGHTS</span></code> mechanism.</p>
-</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.9 sürümünde geldi.</span></p>
 </div>
@@ -1507,7 +1737,7 @@ and <code class="xref py py-const docutils literal notranslate"><span class="pre
 </section>
 </section>
 <section id="socket-objects">
-<span id="id1"></span><h2>Socket Objects<a class="headerlink" href="#socket-objects" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="id1"></span><h2>Socket Objects<a class="headerlink" href="#socket-objects" title="Permalink to this heading">¶</a></h2>
 <p>Socket objects have the following methods.  Except for
 <a class="reference internal" href="#socket.socket.makefile" title="socket.socket.makefile"><code class="xref py py-meth docutils literal notranslate"><span class="pre">makefile()</span></code></a>, these correspond to Unix system calls applicable
 to sockets.</p>
@@ -1539,7 +1769,9 @@ an <a class="reference internal" href="exceptions.html#InterruptedError" title="
 <dd><p>Bind the socket to <em>address</em>.  The socket must not already be bound. (The format
 of <em>address</em> depends on the address family — see above.)</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.bind</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">self</span></code>, <code class="docutils literal notranslate"><span class="pre">address</span></code>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1584,7 +1816,9 @@ signal (or the exception raised by the signal handler).</p>
 signal, the signal handler doesn’t raise an exception and the socket is
 blocking or has a timeout (see the <span class="target" id="index-5"></span><a class="pep reference external" href="https://peps.python.org/pep-0475/"><strong>PEP 475</strong></a> for the rationale).</p>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1597,7 +1831,9 @@ indicator is <code class="docutils literal notranslate"><span class="pre">0</spa
 <code class="xref c c-data docutils literal notranslate"><span class="pre">errno</span></code> variable.  This is useful to support, for example, asynchronous
 connects.</p>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.connect</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">self</span></code>, <code class="docutils literal notranslate"><span class="pre">address</span></code>.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1619,7 +1855,9 @@ be reused for other purposes.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.4 sürümünde değişti: </span>The socket is now non-inheritable.</p>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1671,7 +1909,9 @@ specifies the maximum length of the buffer used to receive the option in, and
 this buffer is returned as a bytes object.  It is up to the caller to decode the
 contents of the buffer (see the optional built-in module <a class="reference internal" href="struct.html#module-struct" title="struct: Interpret bytes as packed binary data."><code class="xref py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> for a way
 to decode C structures encoded as byte strings).</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1697,7 +1937,7 @@ or <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dt class="sig sig-object py" id="socket.socket.ioctl">
 <span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">ioctl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">control</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#socket.socket.ioctl" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Platform</dt>
+<dt class="field-odd">Platform<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Windows</p>
 </dd>
 </dl>
@@ -1720,7 +1960,9 @@ functions may be used; they accept a socket object as their first argument.</p>
 be at least 0 (if it is lower, it is set to 0); it specifies the number of
 unaccepted connections that the system will allow before refusing new
 connections. If not specified, a default reasonable value is chosen.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.5 sürümünde değişti: </span>The <em>backlog</em> parameter is now optional.</p>
 </div>
@@ -1844,8 +2086,10 @@ messages being received).  See also <a class="reference internal" href="#socket.
     <span class="k">return</span> <span class="n">msg</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">fds</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix.<p>Most Unix platforms.</p>
-</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix.</p>
+<p>Most Unix platforms.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -1887,8 +2131,10 @@ non-ancillary data written into the buffers, and <em>ancdata</em>,
 <span class="go">[bytearray(b&#39;Mary&#39;), bytearray(b&#39;01 had a 9&#39;), bytearray(b&#39;little lamb---&#39;)]</span>
 </pre></div>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix.<p>Most Unix platforms.</p>
-</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix.</p>
+<p>Most Unix platforms.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -2000,8 +2246,10 @@ over an <a class="reference internal" href="#socket.AF_UNIX" title="socket.AF_UN
     <span class="k">return</span> <span class="n">sock</span><span class="o">.</span><span class="n">sendmsg</span><span class="p">([</span><span class="n">msg</span><span class="p">],</span> <span class="p">[(</span><span class="n">socket</span><span class="o">.</span><span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SCM_RIGHTS</span><span class="p">,</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="n">fds</span><span class="p">))])</span>
 </pre></div>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, not WASI.<p>Most Unix platforms.</p>
-</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Unix, not WASI.</p>
+<p>Most Unix platforms.</p>
+</div>
 <p class="audit-hook">Raises an <a class="reference internal" href="sys.html#auditing"><span class="std std-ref">auditing event</span></a> <code class="docutils literal notranslate"><span class="pre">socket.sendmsg</span></code> with arguments <code class="docutils literal notranslate"><span class="pre">self</span></code>, <code class="docutils literal notranslate"><span class="pre">address</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
@@ -2018,7 +2266,9 @@ an <a class="reference internal" href="exceptions.html#InterruptedError" title="
 <span class="sig-prename descclassname"><span class="pre">socket.</span></span><span class="sig-name descname"><span class="pre">sendmsg_afalg</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <span class="optional">]</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">iv</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">assoclen</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#socket.socket.sendmsg_afalg" title="Bu tanım için kalıcı bağlantı">¶</a></dt>
 <dd><p>Specialized version of <a class="reference internal" href="#socket.socket.sendmsg" title="socket.socket.sendmsg"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sendmsg()</span></code></a> for <a class="reference internal" href="#socket.AF_ALG" title="socket.AF_ALG"><code class="xref py py-const docutils literal notranslate"><span class="pre">AF_ALG</span></code></a> socket.
 Set mode, IV, AEAD associated data length and flags for <a class="reference internal" href="#socket.AF_ALG" title="socket.AF_ALG"><code class="xref py py-const docutils literal notranslate"><span class="pre">AF_ALG</span></code></a> socket.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.38.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Linux &gt;= 2.6.38.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.6 sürümünde geldi.</span></p>
 </div>
@@ -2113,7 +2363,9 @@ function with <code class="docutils literal notranslate"><span class="pre">optva
 <div class="versionchanged">
 <p><span class="versionmodified changed">3.6 sürümünde değişti: </span>setsockopt(level, optname, None, optlen: int) form added.</p>
 </div>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -2123,7 +2375,9 @@ function with <code class="docutils literal notranslate"><span class="pre">optva
 further receives are disallowed.  If <em>how</em> is <code class="xref py py-const docutils literal notranslate"><span class="pre">SHUT_WR</span></code>, further sends
 are disallowed.  If <em>how</em> is <code class="xref py py-const docutils literal notranslate"><span class="pre">SHUT_RDWR</span></code>, further sends and receives are
 disallowed.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: not WASI.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -2135,7 +2389,9 @@ can then be passed to the target process using some form of interprocess
 communication and the socket can be recreated there using <a class="reference internal" href="#socket.fromshare" title="socket.fromshare"><code class="xref py py-func docutils literal notranslate"><span class="pre">fromshare()</span></code></a>.
 Once this method has been called, it is safe to close the socket since
 the operating system has already duplicated it for the target process.</p>
-<p class="availability"><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+<div class="availability docutils container">
+<p><a class="reference internal" href="intro.html#availability"><span class="std std-ref">Availability</span></a>: Windows.</p>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">3.3 sürümünde geldi.</span></p>
 </div>
@@ -2165,7 +2421,7 @@ values given to the <a class="reference internal" href="#socket.socket" title="s
 
 </section>
 <section id="notes-on-socket-timeouts">
-<span id="socket-timeouts"></span><h2>Notes on socket timeouts<a class="headerlink" href="#notes-on-socket-timeouts" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="socket-timeouts"></span><h2>Notes on socket timeouts<a class="headerlink" href="#notes-on-socket-timeouts" title="Permalink to this heading">¶</a></h2>
 <p>A socket object can be in one of three modes: blocking, non-blocking, or
 timeout.  Sockets are by default always created in blocking mode, but this
 can be changed by calling <a class="reference internal" href="#socket.setdefaulttimeout" title="socket.setdefaulttimeout"><code class="xref py py-func docutils literal notranslate"><span class="pre">setdefaulttimeout()</span></code></a>.</p>
@@ -2189,7 +2445,7 @@ This implementation detail can have visible consequences if e.g. you decide
 to use the <a class="reference internal" href="#socket.socket.fileno" title="socket.socket.fileno"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fileno()</span></code></a> of a socket.</p>
 </div>
 <section id="timeouts-and-the-connect-method">
-<h3>Timeouts and the <code class="docutils literal notranslate"><span class="pre">connect</span></code> method<a class="headerlink" href="#timeouts-and-the-connect-method" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Timeouts and the <code class="docutils literal notranslate"><span class="pre">connect</span></code> method<a class="headerlink" href="#timeouts-and-the-connect-method" title="Permalink to this heading">¶</a></h3>
 <p>The <a class="reference internal" href="#socket.socket.connect" title="socket.socket.connect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">connect()</span></code></a> operation is also subject to the timeout
 setting, and in general it is recommended to call <a class="reference internal" href="#socket.socket.settimeout" title="socket.socket.settimeout"><code class="xref py py-meth docutils literal notranslate"><span class="pre">settimeout()</span></code></a>
 before calling <a class="reference internal" href="#socket.socket.connect" title="socket.socket.connect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">connect()</span></code></a> or pass a timeout parameter to
@@ -2198,7 +2454,7 @@ return a connection timeout error of its own regardless of any Python socket
 timeout setting.</p>
 </section>
 <section id="timeouts-and-the-accept-method">
-<h3>Timeouts and the <code class="docutils literal notranslate"><span class="pre">accept</span></code> method<a class="headerlink" href="#timeouts-and-the-accept-method" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
+<h3>Timeouts and the <code class="docutils literal notranslate"><span class="pre">accept</span></code> method<a class="headerlink" href="#timeouts-and-the-accept-method" title="Permalink to this heading">¶</a></h3>
 <p>If <a class="reference internal" href="#socket.getdefaulttimeout" title="socket.getdefaulttimeout"><code class="xref py py-func docutils literal notranslate"><span class="pre">getdefaulttimeout()</span></code></a> is not <a class="reference internal" href="constants.html#None" title="None"><code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code></a>, sockets returned by
 the <a class="reference internal" href="#socket.socket.accept" title="socket.socket.accept"><code class="xref py py-meth docutils literal notranslate"><span class="pre">accept()</span></code></a> method inherit that timeout.  Otherwise, the
 behaviour depends on settings of the listening socket:</p>
@@ -2213,7 +2469,7 @@ behaviour, it is recommended you manually override this setting.</p></li>
 </section>
 </section>
 <section id="example">
-<span id="socket-example"></span><h2>Example<a class="headerlink" href="#example" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
+<span id="socket-example"></span><h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h2>
 <p>Here are four minimal example programs using the TCP/IP protocol: a server that
 echoes all data that it receives back (servicing only one client), and a client
 using it.  Note that a server must perform the sequence <code class="xref py py-func docutils literal notranslate"><span class="pre">socket()</span></code>,
@@ -2445,16 +2701,147 @@ want to refer to <span class="target" id="index-15"></span><a class="rfc referen
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">socket</span></code> — Low-level networking interface</a><ul>
 <li><a class="reference internal" href="#socket-families">Socket families</a></li>
 <li><a class="reference internal" href="#module-contents">Module contents</a><ul>
-<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
-<li><a class="reference internal" href="#constants">Constants</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li><a class="reference internal" href="#socket.error"><code class="docutils literal notranslate"><span class="pre">error</span></code></a></li>
+<li><a class="reference internal" href="#socket.herror"><code class="docutils literal notranslate"><span class="pre">herror</span></code></a></li>
+<li><a class="reference internal" href="#socket.gaierror"><code class="docutils literal notranslate"><span class="pre">gaierror</span></code></a></li>
+<li><a class="reference internal" href="#socket.timeout"><code class="docutils literal notranslate"><span class="pre">timeout</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#constants">Constants</a><ul>
+<li><a class="reference internal" href="#socket.AF_UNIX"><code class="docutils literal notranslate"><span class="pre">AF_UNIX</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_INET"><code class="docutils literal notranslate"><span class="pre">AF_INET</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_INET6"><code class="docutils literal notranslate"><span class="pre">AF_INET6</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_STREAM"><code class="docutils literal notranslate"><span class="pre">SOCK_STREAM</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_DGRAM"><code class="docutils literal notranslate"><span class="pre">SOCK_DGRAM</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_RAW"><code class="docutils literal notranslate"><span class="pre">SOCK_RAW</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_RDM"><code class="docutils literal notranslate"><span class="pre">SOCK_RDM</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_SEQPACKET"><code class="docutils literal notranslate"><span class="pre">SOCK_SEQPACKET</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_CLOEXEC"><code class="docutils literal notranslate"><span class="pre">SOCK_CLOEXEC</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOCK_NONBLOCK"><code class="docutils literal notranslate"><span class="pre">SOCK_NONBLOCK</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOMAXCONN"><code class="docutils literal notranslate"><span class="pre">SOMAXCONN</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_CAN"><code class="docutils literal notranslate"><span class="pre">AF_CAN</span></code></a></li>
+<li><a class="reference internal" href="#socket.PF_CAN"><code class="docutils literal notranslate"><span class="pre">PF_CAN</span></code></a></li>
+<li><a class="reference internal" href="#socket.CAN_BCM"><code class="docutils literal notranslate"><span class="pre">CAN_BCM</span></code></a></li>
+<li><a class="reference internal" href="#socket.CAN_RAW_FD_FRAMES"><code class="docutils literal notranslate"><span class="pre">CAN_RAW_FD_FRAMES</span></code></a></li>
+<li><a class="reference internal" href="#socket.CAN_RAW_JOIN_FILTERS"><code class="docutils literal notranslate"><span class="pre">CAN_RAW_JOIN_FILTERS</span></code></a></li>
+<li><a class="reference internal" href="#socket.CAN_ISOTP"><code class="docutils literal notranslate"><span class="pre">CAN_ISOTP</span></code></a></li>
+<li><a class="reference internal" href="#socket.CAN_J1939"><code class="docutils literal notranslate"><span class="pre">CAN_J1939</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_PACKET"><code class="docutils literal notranslate"><span class="pre">AF_PACKET</span></code></a></li>
+<li><a class="reference internal" href="#socket.PF_PACKET"><code class="docutils literal notranslate"><span class="pre">PF_PACKET</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_RDS"><code class="docutils literal notranslate"><span class="pre">AF_RDS</span></code></a></li>
+<li><a class="reference internal" href="#socket.PF_RDS"><code class="docutils literal notranslate"><span class="pre">PF_RDS</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOL_RDS"><code class="docutils literal notranslate"><span class="pre">SOL_RDS</span></code></a></li>
+<li><a class="reference internal" href="#socket.SIO_RCVALL"><code class="docutils literal notranslate"><span class="pre">SIO_RCVALL</span></code></a></li>
+<li><a class="reference internal" href="#socket.SIO_KEEPALIVE_VALS"><code class="docutils literal notranslate"><span class="pre">SIO_KEEPALIVE_VALS</span></code></a></li>
+<li><a class="reference internal" href="#socket.SIO_LOOPBACK_FAST_PATH"><code class="docutils literal notranslate"><span class="pre">SIO_LOOPBACK_FAST_PATH</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_ALG"><code class="docutils literal notranslate"><span class="pre">AF_ALG</span></code></a></li>
+<li><a class="reference internal" href="#socket.SOL_ALG"><code class="docutils literal notranslate"><span class="pre">SOL_ALG</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_VSOCK"><code class="docutils literal notranslate"><span class="pre">AF_VSOCK</span></code></a></li>
+<li><a class="reference internal" href="#socket.IOCTL_VM_SOCKETS_GET_LOCAL_CID"><code class="docutils literal notranslate"><span class="pre">IOCTL_VM_SOCKETS_GET_LOCAL_CID</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_LINK"><code class="docutils literal notranslate"><span class="pre">AF_LINK</span></code></a></li>
+<li><a class="reference internal" href="#socket.has_ipv6"><code class="docutils literal notranslate"><span class="pre">has_ipv6</span></code></a></li>
+<li><a class="reference internal" href="#socket.BDADDR_ANY"><code class="docutils literal notranslate"><span class="pre">BDADDR_ANY</span></code></a></li>
+<li><a class="reference internal" href="#socket.BDADDR_LOCAL"><code class="docutils literal notranslate"><span class="pre">BDADDR_LOCAL</span></code></a></li>
+<li><a class="reference internal" href="#socket.HCI_FILTER"><code class="docutils literal notranslate"><span class="pre">HCI_FILTER</span></code></a></li>
+<li><a class="reference internal" href="#socket.HCI_TIME_STAMP"><code class="docutils literal notranslate"><span class="pre">HCI_TIME_STAMP</span></code></a></li>
+<li><a class="reference internal" href="#socket.HCI_DATA_DIR"><code class="docutils literal notranslate"><span class="pre">HCI_DATA_DIR</span></code></a></li>
+<li><a class="reference internal" href="#socket.AF_QIPCRTR"><code class="docutils literal notranslate"><span class="pre">AF_QIPCRTR</span></code></a></li>
+<li><a class="reference internal" href="#socket.SCM_CREDS2"><code class="docutils literal notranslate"><span class="pre">SCM_CREDS2</span></code></a></li>
+<li><a class="reference internal" href="#socket.LOCAL_CREDS"><code class="docutils literal notranslate"><span class="pre">LOCAL_CREDS</span></code></a></li>
+<li><a class="reference internal" href="#socket.LOCAL_CREDS_PERSISTENT"><code class="docutils literal notranslate"><span class="pre">LOCAL_CREDS_PERSISTENT</span></code></a></li>
+<li><a class="reference internal" href="#socket.SO_INCOMING_CPU"><code class="docutils literal notranslate"><span class="pre">SO_INCOMING_CPU</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#functions">Functions</a><ul>
-<li><a class="reference internal" href="#creating-sockets">Creating sockets</a></li>
-<li><a class="reference internal" href="#other-functions">Other functions</a></li>
+<li><a class="reference internal" href="#creating-sockets">Creating sockets</a><ul>
+<li><a class="reference internal" href="#socket.socket"><code class="docutils literal notranslate"><span class="pre">socket</span></code></a></li>
+<li><a class="reference internal" href="#socket.socketpair"><code class="docutils literal notranslate"><span class="pre">socketpair()</span></code></a></li>
+<li><a class="reference internal" href="#socket.create_connection"><code class="docutils literal notranslate"><span class="pre">create_connection()</span></code></a></li>
+<li><a class="reference internal" href="#socket.create_server"><code class="docutils literal notranslate"><span class="pre">create_server()</span></code></a></li>
+<li><a class="reference internal" href="#socket.has_dualstack_ipv6"><code class="docutils literal notranslate"><span class="pre">has_dualstack_ipv6()</span></code></a></li>
+<li><a class="reference internal" href="#socket.fromfd"><code class="docutils literal notranslate"><span class="pre">fromfd()</span></code></a></li>
+<li><a class="reference internal" href="#socket.fromshare"><code class="docutils literal notranslate"><span class="pre">fromshare()</span></code></a></li>
+<li><a class="reference internal" href="#socket.SocketType"><code class="docutils literal notranslate"><span class="pre">SocketType</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-functions">Other functions</a><ul>
+<li><a class="reference internal" href="#socket.close"><code class="docutils literal notranslate"><span class="pre">close()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getaddrinfo"><code class="docutils literal notranslate"><span class="pre">getaddrinfo()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getfqdn"><code class="docutils literal notranslate"><span class="pre">getfqdn()</span></code></a></li>
+<li><a class="reference internal" href="#socket.gethostbyname"><code class="docutils literal notranslate"><span class="pre">gethostbyname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.gethostbyname_ex"><code class="docutils literal notranslate"><span class="pre">gethostbyname_ex()</span></code></a></li>
+<li><a class="reference internal" href="#socket.gethostname"><code class="docutils literal notranslate"><span class="pre">gethostname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.gethostbyaddr"><code class="docutils literal notranslate"><span class="pre">gethostbyaddr()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getnameinfo"><code class="docutils literal notranslate"><span class="pre">getnameinfo()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getprotobyname"><code class="docutils literal notranslate"><span class="pre">getprotobyname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getservbyname"><code class="docutils literal notranslate"><span class="pre">getservbyname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getservbyport"><code class="docutils literal notranslate"><span class="pre">getservbyport()</span></code></a></li>
+<li><a class="reference internal" href="#socket.ntohl"><code class="docutils literal notranslate"><span class="pre">ntohl()</span></code></a></li>
+<li><a class="reference internal" href="#socket.ntohs"><code class="docutils literal notranslate"><span class="pre">ntohs()</span></code></a></li>
+<li><a class="reference internal" href="#socket.htonl"><code class="docutils literal notranslate"><span class="pre">htonl()</span></code></a></li>
+<li><a class="reference internal" href="#socket.htons"><code class="docutils literal notranslate"><span class="pre">htons()</span></code></a></li>
+<li><a class="reference internal" href="#socket.inet_aton"><code class="docutils literal notranslate"><span class="pre">inet_aton()</span></code></a></li>
+<li><a class="reference internal" href="#socket.inet_ntoa"><code class="docutils literal notranslate"><span class="pre">inet_ntoa()</span></code></a></li>
+<li><a class="reference internal" href="#socket.inet_pton"><code class="docutils literal notranslate"><span class="pre">inet_pton()</span></code></a></li>
+<li><a class="reference internal" href="#socket.inet_ntop"><code class="docutils literal notranslate"><span class="pre">inet_ntop()</span></code></a></li>
+<li><a class="reference internal" href="#socket.CMSG_LEN"><code class="docutils literal notranslate"><span class="pre">CMSG_LEN()</span></code></a></li>
+<li><a class="reference internal" href="#socket.CMSG_SPACE"><code class="docutils literal notranslate"><span class="pre">CMSG_SPACE()</span></code></a></li>
+<li><a class="reference internal" href="#socket.getdefaulttimeout"><code class="docutils literal notranslate"><span class="pre">getdefaulttimeout()</span></code></a></li>
+<li><a class="reference internal" href="#socket.setdefaulttimeout"><code class="docutils literal notranslate"><span class="pre">setdefaulttimeout()</span></code></a></li>
+<li><a class="reference internal" href="#socket.sethostname"><code class="docutils literal notranslate"><span class="pre">sethostname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.if_nameindex"><code class="docutils literal notranslate"><span class="pre">if_nameindex()</span></code></a></li>
+<li><a class="reference internal" href="#socket.if_nametoindex"><code class="docutils literal notranslate"><span class="pre">if_nametoindex()</span></code></a></li>
+<li><a class="reference internal" href="#socket.if_indextoname"><code class="docutils literal notranslate"><span class="pre">if_indextoname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.send_fds"><code class="docutils literal notranslate"><span class="pre">send_fds()</span></code></a></li>
+<li><a class="reference internal" href="#socket.recv_fds"><code class="docutils literal notranslate"><span class="pre">recv_fds()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#socket-objects">Socket Objects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#socket-objects">Socket Objects</a><ul>
+<li><a class="reference internal" href="#socket.socket.accept"><code class="docutils literal notranslate"><span class="pre">socket.accept()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.bind"><code class="docutils literal notranslate"><span class="pre">socket.bind()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.close"><code class="docutils literal notranslate"><span class="pre">socket.close()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.connect"><code class="docutils literal notranslate"><span class="pre">socket.connect()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.connect_ex"><code class="docutils literal notranslate"><span class="pre">socket.connect_ex()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.detach"><code class="docutils literal notranslate"><span class="pre">socket.detach()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.dup"><code class="docutils literal notranslate"><span class="pre">socket.dup()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.fileno"><code class="docutils literal notranslate"><span class="pre">socket.fileno()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.get_inheritable"><code class="docutils literal notranslate"><span class="pre">socket.get_inheritable()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.getpeername"><code class="docutils literal notranslate"><span class="pre">socket.getpeername()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.getsockname"><code class="docutils literal notranslate"><span class="pre">socket.getsockname()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.getsockopt"><code class="docutils literal notranslate"><span class="pre">socket.getsockopt()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.getblocking"><code class="docutils literal notranslate"><span class="pre">socket.getblocking()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.gettimeout"><code class="docutils literal notranslate"><span class="pre">socket.gettimeout()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.ioctl"><code class="docutils literal notranslate"><span class="pre">socket.ioctl()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.listen"><code class="docutils literal notranslate"><span class="pre">socket.listen()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.makefile"><code class="docutils literal notranslate"><span class="pre">socket.makefile()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recv"><code class="docutils literal notranslate"><span class="pre">socket.recv()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recvfrom"><code class="docutils literal notranslate"><span class="pre">socket.recvfrom()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recvmsg"><code class="docutils literal notranslate"><span class="pre">socket.recvmsg()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recvmsg_into"><code class="docutils literal notranslate"><span class="pre">socket.recvmsg_into()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recvfrom_into"><code class="docutils literal notranslate"><span class="pre">socket.recvfrom_into()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.recv_into"><code class="docutils literal notranslate"><span class="pre">socket.recv_into()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.send"><code class="docutils literal notranslate"><span class="pre">socket.send()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.sendall"><code class="docutils literal notranslate"><span class="pre">socket.sendall()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.sendto"><code class="docutils literal notranslate"><span class="pre">socket.sendto()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.sendmsg"><code class="docutils literal notranslate"><span class="pre">socket.sendmsg()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.sendmsg_afalg"><code class="docutils literal notranslate"><span class="pre">socket.sendmsg_afalg()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.sendfile"><code class="docutils literal notranslate"><span class="pre">socket.sendfile()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.set_inheritable"><code class="docutils literal notranslate"><span class="pre">socket.set_inheritable()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.setblocking"><code class="docutils literal notranslate"><span class="pre">socket.setblocking()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.settimeout"><code class="docutils literal notranslate"><span class="pre">socket.settimeout()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.setsockopt"><code class="docutils literal notranslate"><span class="pre">socket.setsockopt()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.shutdown"><code class="docutils literal notranslate"><span class="pre">socket.shutdown()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.share"><code class="docutils literal notranslate"><span class="pre">socket.share()</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.family"><code class="docutils literal notranslate"><span class="pre">socket.family</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.type"><code class="docutils literal notranslate"><span class="pre">socket.type</span></code></a></li>
+<li><a class="reference internal" href="#socket.socket.proto"><code class="docutils literal notranslate"><span class="pre">socket.proto</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#notes-on-socket-timeouts">Notes on socket timeouts</a><ul>
 <li><a class="reference internal" href="#timeouts-and-the-connect-method">Timeouts and the <code class="docutils literal notranslate"><span class="pre">connect</span></code> method</a></li>
 <li><a class="reference internal" href="#timeouts-and-the-accept-method">Timeouts and the <code class="docutils literal notranslate"><span class="pre">accept</span></code> method</a></li>
@@ -2488,6 +2875,10 @@ want to refer to <span class="target" id="index-15"></span><a class="rfc referen
     </ul>
   </div>
         </div>
+<div id="sidebarbutton" title="Yan çubuğu daralt">
+<span>«</span>
+</div>
+
       </div>
       <div class="clearer"></div>
     </div>  
@@ -2517,7 +2908,7 @@ want to refer to <span class="target" id="index-15"></span><a class="rfc referen
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.11.1 Documentation</a> &#187;
+      <a href="../index.html">3.11.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
@@ -2528,14 +2919,21 @@ want to refer to <span class="target" id="index-15"></span><a class="rfc referen
 
     <div class="inline-search" role="search">
         <form class="inline-search" action="../search.html" method="get">
-          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="text" name="q" />
+          <input placeholder="Hızlı Arama" aria-label="Hızlı Arama" type="search" name="q" />
           <input type="submit" value="Git" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
         </form>
     </div>
                      |
                 </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
             
       </ul>
     </div>  
@@ -2554,11 +2952,11 @@ want to refer to <span class="target" id="index-15"></span><a class="rfc referen
 <br />
     <br />
 
-    Son güncelleme: Şub 04, 2023.
+    Son güncelleme: May 26, 2023.
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
     </div>
 
   </body>
